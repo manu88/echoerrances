@@ -89,7 +89,6 @@ public :
     {
         int index = AudioTools::radianWrap(m_angle) * CICM_1OVER2PI_RATIO;
         
-//        FloatComputation::copyVector(ins[0] , outs[0],  bufferSize);
         FloatComputation::multiplyByConstant(ins[0], outs[0], m_multiplier, bufferSize);
         
         int i = 1;
@@ -108,6 +107,7 @@ public :
     virtual void prepare()
     {
     }
+    
 protected :
     
     void computeMultiplier()

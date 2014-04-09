@@ -22,8 +22,6 @@ typedef struct encoder
     t_sample *m_in;
     t_sample **m_outs;
     
-    // ambisonic stuff
-    int     m_bufferSize;
     float*  m_harmonics;
     
     AmbisonicEncoder *m_encoder;
@@ -40,10 +38,8 @@ t_int *encoder_perform(t_int *w)
 
     float** ins = &x->m_in;
     
-    x->m_encoder->process(ins, x->m_outs, x->m_bufferSize);
+        x->m_encoder->process(ins, x->m_outs, x->m_encoder->getBufferSize());
 
-    
-    
     return (w + 2);
 }
 
@@ -54,8 +50,7 @@ t_int *encoder_perform(t_int *w)
 
 static void encoder_dsp(t_encoder *x, t_signal **sp, t_symbol *s)
 {
-
-    x->m_bufferSize = sp[0]->s_n;
+    x->m_encoder->setConfig(sp[0]->s_n, sp[0]->s_sr);
     
     const int outs = x->m_encoder->getHarmonicNumber();
     
@@ -75,9 +70,7 @@ static void encoder_dsp(t_encoder *x, t_signal **sp, t_symbol *s)
 
 static void encoder_getStats(t_encoder *x )
 {
-    post("num encoders (ordre %i) : %i",x->m_encoder->getOrder(),AmbisonicUtility::getEncoderCountForOrder(x->m_encoder->getOrder()) );
-    post("distance max = %i",AmbisonicEncoder::MaxDistance);
-    
+    libStats();
 }
 
 static void encoder_angle(t_encoder *x , t_floatarg angle)
@@ -127,12 +120,7 @@ static void *encoder_new(t_symbol *s, long argc, t_atom *argv)
         x->m_harmonics = new float[numberOfCirclePoints];
         
     }
-    
-
-    post("order %i", x->m_encoder->getOrder());
-    
-    
-    
+        
     return x;
     
     
@@ -141,7 +129,6 @@ static void *encoder_new(t_symbol *s, long argc, t_atom *argv)
 
 static void encoder_free(t_encoder *x)
 {
-    post("delete");
     if (x)
     {
         delete x->m_in;
@@ -155,8 +142,10 @@ static void encoder_free(t_encoder *x)
 
 /* **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** */
 
-extern "C" void encoder_tilde_setup(void)
+extern "C" void encoder_tilde_setup()
 {
+
+    
     encoder_class = class_new(gensym("encoder~"),
                                      (t_newmethod)encoder_new,
                                      (t_method)encoder_free, sizeof(t_encoder),

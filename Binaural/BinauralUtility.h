@@ -12,7 +12,7 @@
 #include <iostream>
 #include "WavLoader.h"
 
-
+/* **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** */
 
 typedef enum
 {
@@ -20,6 +20,7 @@ typedef enum
     Large
 } HrtfSize;
 
+/* **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** */
 
 class HrtfReader : public WavLoader
 {

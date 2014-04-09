@@ -65,8 +65,8 @@ static void ambiToBinaural_dsp(t_ambiToBinaural *x, t_signal **sp, t_symbol *s)
     // m_outs[1] est la sortie gauche de l'obj
     // il faut donc inverser car le reste du code ( et de l'audio en
     // général comptent d'abord la gauche en 1er ...
-    x->m_outs[0]= sp[i]->s_vec;
-    x->m_outs[1]= sp[i+1]->s_vec;
+    x->m_outs[1]= sp[i]->s_vec;
+    x->m_outs[0]= sp[i+1]->s_vec;
 
     
     
@@ -152,7 +152,7 @@ static void ambiToBinaural_free(t_ambiToBinaural *x)
 
 /* **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** */
 
-extern "C" void ambiToBinaural_tilde_setup(void)
+extern "C" void ambiToBinaural_tilde_setup()
 {
     ambiToBinaural_class = class_new(gensym("ambiToBinaural~"),
                               (t_newmethod)ambiToBinaural_new,

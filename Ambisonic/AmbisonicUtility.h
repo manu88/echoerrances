@@ -175,6 +175,7 @@ public:
         return getInstance()->getEncoderForOrder(order);
     }
     
+    
     static InternalAmbisonicDecoder* getDecoder(int order,int numberOfOutputs)
     {
         return getInstance()->getDecoderForOrder(order, numberOfOutputs);
@@ -205,6 +206,13 @@ public:
     {
         return s_instance->m_decoderList.size();
     }
+    
+    static int getEncoderCount()
+    {
+        return s_instance->m_encoderList.size();
+    }
+    
+
 
 protected:
     

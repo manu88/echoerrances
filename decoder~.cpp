@@ -73,6 +73,12 @@ static void decoder_dsp(t_decoder *x, t_signal **sp, t_symbol *s)
     dsp_add(decoder_perform, 1, x);
 }
 
+/* **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** */
+
+static void decoder_getStats(t_decoder *x )
+{
+    libStats();
+}
 
 /* **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** */
 
@@ -149,7 +155,7 @@ static void decoder_free(t_decoder *x)
 
 /* **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** */
 
-extern "C" void decoder_tilde_setup(void)
+extern "C" void decoder_tilde_setup()
 {
     decoder_class = class_new(gensym("decoder~"),
                                      (t_newmethod)decoder_new,
@@ -164,6 +170,7 @@ extern "C" void decoder_tilde_setup(void)
     
     
     class_addmethod(decoder_class, (t_method)decoder_dsp, gensym("dsp"), A_CANT);
+    class_addmethod(decoder_class, (t_method)decoder_getStats, gensym("stats"), A_NULL);
     
     CLASS_MAINSIGNALIN(decoder_class, t_decoder, f);
     

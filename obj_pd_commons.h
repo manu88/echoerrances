@@ -11,11 +11,11 @@
 
 #include "m_pd.h"
 #include "Debug_pd.h"
+#include "Ambisonic.h"
 
 static void getComputationVersion(const char* from)
 {
     
-    pdAssert(false, "test assert");
 #ifdef USE_BASIC_COMPUTATION
     post("%s uses BASIC COMPUTATION, it's *not* very effective...",from);
 
@@ -30,5 +30,12 @@ static void getComputationVersion(const char* from)
 #endif
 }
 
+
+static void libStats(void)
+{
+    post("nb encoders : %i",AmbisonicUtility::getEncoderCount());
+    post("nb decoders : %i",AmbisonicUtility::getDecoderCount());
+    post("distance max = %i",AmbisonicEncoder::MaxDistance);
+}
 
 #endif

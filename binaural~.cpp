@@ -22,8 +22,6 @@ typedef struct binaural
     t_sample **m_ins;
     t_sample **m_outs;
     
-    int m_bufferSize;
-    
     
 
     AmbisonicBinauralDecoder *m_decoder;
@@ -41,8 +39,7 @@ t_int *binaural_perform(t_int *w)
 {
     t_binaural *x	= (t_binaural *)(w[1]);
     
-
-    x->m_decoder->process(x->m_ins, x->m_outs, x->m_bufferSize);
+    x->m_decoder->process(x->m_ins, x->m_outs, x->m_decoder->getBufferSize());
 
     
     
@@ -57,7 +54,9 @@ t_int *binaural_perform(t_int *w)
 static void binaural_dsp(t_binaural *x, t_signal **sp, t_symbol *s)
 {
     
-    x->m_bufferSize = sp[0]->s_n;
+
+    
+    x->m_decoder->setConfig(sp[0]->s_n, sp[0]->s_sr);
     
     x->m_ins[0] = sp[0]->s_vec;
     
@@ -91,7 +90,6 @@ static void *binaural_new(t_symbol *s, long argc, t_atom *argv)
         x->m_ins = new float*[1];
         x->m_ins[0] = NULL;
 
-        
         for (int i = 0; i < 2; i++)
         {
 			outlet_new(&x->x_obj, &s_signal);
@@ -110,7 +108,7 @@ static void binaural_free(t_binaural *x)
     {
      
         delete x->m_decoder;
-        delete[] x->m_ins[0];
+        delete[] x->m_outs;
         delete[] x->m_ins;        
     }
 }

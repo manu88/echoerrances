@@ -76,6 +76,31 @@
 		593EA75E18ED7C6100F909F9 /* Ambisonic.h in Headers */ = {isa = PBXBuildFile; fileRef = 5917A61B189AC2AF00047F39 /* Ambisonic.h */; };
 		593EA75F18ED7C7600F909F9 /* AmbisonicUtility.h in Headers */ = {isa = PBXBuildFile; fileRef = 5917A61D189AC2AF00047F39 /* AmbisonicUtility.h */; };
 		593EA76018ED7C8400F909F9 /* AmbisonicReverb~.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 593EA74518ED7BDE00F909F9 /* AmbisonicReverb~.cpp */; };
+		595DEE6218F58D5600E1B74A /* AmbisonicUtility.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5917A61C189AC2AF00047F39 /* AmbisonicUtility.cpp */; };
+		595DEE6318F58D5600E1B74A /* Internal.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 59B07A9918D6DB3800288B59 /* Internal.cpp */; };
+		595DEE6418F58D5600E1B74A /* AudioInternals.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 59B07A9E18D6E06600288B59 /* AudioInternals.cpp */; };
+		595DEE6518F58D5600E1B74A /* AmbisonicReverb.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 593EA73918ED6F2000F909F9 /* AmbisonicReverb.cpp */; };
+		595DEE6618F58D5600E1B74A /* AmbisonicReverb~.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 593EA74518ED7BDE00F909F9 /* AmbisonicReverb~.cpp */; };
+		595DEE6918F58D5600E1B74A /* Audio_Basic.h in Headers */ = {isa = PBXBuildFile; fileRef = 5917A5FF189AC29200047F39 /* Audio_Basic.h */; };
+		595DEE6A18F58D5600E1B74A /* Audio_Darwin.h in Headers */ = {isa = PBXBuildFile; fileRef = 5917A600189AC29200047F39 /* Audio_Darwin.h */; };
+		595DEE6B18F58D5600E1B74A /* Audio_Neon.h in Headers */ = {isa = PBXBuildFile; fileRef = 5917A601189AC29200047F39 /* Audio_Neon.h */; };
+		595DEE6C18F58D5600E1B74A /* AudioTools.h in Headers */ = {isa = PBXBuildFile; fileRef = 5917A602189AC29200047F39 /* AudioTools.h */; };
+		595DEE6D18F58D5600E1B74A /* FloatComputation.h in Headers */ = {isa = PBXBuildFile; fileRef = 5917A603189AC29200047F39 /* FloatComputation.h */; };
+		595DEE6E18F58D5600E1B74A /* Ambisonic.h in Headers */ = {isa = PBXBuildFile; fileRef = 5917A61B189AC2AF00047F39 /* Ambisonic.h */; };
+		595DEE6F18F58D5600E1B74A /* AmbisonicUtility.h in Headers */ = {isa = PBXBuildFile; fileRef = 5917A61D189AC2AF00047F39 /* AmbisonicUtility.h */; };
+		595DEE7018F58D5600E1B74A /* Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = 59B07A9A18D6DB3800288B59 /* Internal.h */; };
+		595DEE7118F58D5600E1B74A /* AudioInternals.h in Headers */ = {isa = PBXBuildFile; fileRef = 59B07A9F18D6E06600288B59 /* AudioInternals.h */; };
+		595DEE7218F58D5600E1B74A /* Geometry.h in Headers */ = {isa = PBXBuildFile; fileRef = 59E387CF18ECB6040079EECE /* Geometry.h */; };
+		595DEE7318F58D5600E1B74A /* AmbisonicReverb.h in Headers */ = {isa = PBXBuildFile; fileRef = 593EA73A18ED6F2000F909F9 /* AmbisonicReverb.h */; };
+		595DEE7E18F58DC200E1B74A /* Library~.c in Sources */ = {isa = PBXBuildFile; fileRef = 595DEE5F18F58D4E00E1B74A /* Library~.c */; };
+		595DEE7F18F58F5400E1B74A /* Binaural.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5917A613189AC29F00047F39 /* Binaural.cpp */; };
+		595DEE8018F58F5700E1B74A /* BinauralUtility.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5917A615189AC29F00047F39 /* BinauralUtility.cpp */; };
+		595DEE8118F58F5F00E1B74A /* encoder~.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 59E5F73618944A3400731CBE /* encoder~.cpp */; };
+		595DEE8218F58F6400E1B74A /* ambiToBinaural~.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5938485F18D7727900267F32 /* ambiToBinaural~.cpp */; };
+		595DEE8318F58F6700E1B74A /* decoder~.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5985424E18957683006F67DD /* decoder~.cpp */; };
+		595DEE8418F58F6C00E1B74A /* binaural~.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 592EB446189655660058600A /* binaural~.cpp */; };
+		595DEE8518F58F6F00E1B74A /* wavPlayer~.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 59DA84EA189BA21E007699EC /* wavPlayer~.cpp */; };
+		595DEE8618F58F8B00E1B74A /* WavLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 59DA84FF189BA3E4007699EC /* WavLoader.cpp */; };
 		59B07A9B18D6DB3800288B59 /* Internal.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 59B07A9918D6DB3800288B59 /* Internal.cpp */; };
 		59B07A9C18D6DB3800288B59 /* Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = 59B07A9A18D6DB3800288B59 /* Internal.h */; };
 		59B07AA018D6E06600288B59 /* AudioInternals.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 59B07A9E18D6E06600288B59 /* AudioInternals.cpp */; };
@@ -123,6 +148,8 @@
 		593EA73A18ED6F2000F909F9 /* AmbisonicReverb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AmbisonicReverb.h; path = Ambisonic/AmbisonicReverb.h; sourceTree = "<group>"; };
 		593EA74518ED7BDE00F909F9 /* AmbisonicReverb~.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "AmbisonicReverb~.cpp"; sourceTree = "<group>"; };
 		593EA75D18ED7BF900F909F9 /* ambisonicReverb~.pd_darwin */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = "ambisonicReverb~.pd_darwin"; sourceTree = BUILT_PRODUCTS_DIR; };
+		595DEE5F18F58D4E00E1B74A /* Library~.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = "Library~.c"; sourceTree = "<group>"; };
+		595DEE7718F58D5600E1B74A /* Library.pd_darwin */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = Library.pd_darwin; sourceTree = BUILT_PRODUCTS_DIR; };
 		5985424D18957633006F67DD /* decoder~.pd_darwin */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = "decoder~.pd_darwin"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5985424E18957683006F67DD /* decoder~.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "decoder~.cpp"; sourceTree = "<group>"; };
 		59B07A9918D6DB3800288B59 /* Internal.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Internal.cpp; path = Internal/Internal.cpp; sourceTree = "<group>"; };
@@ -155,6 +182,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		593EA74D18ED7BF900F909F9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		595DEE6718F58D5600E1B74A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -206,6 +240,7 @@
 			children = (
 				593EA73818ED637F00F909F9 /* Debug_pd.h */,
 				59DA84E9189B9CA5007699EC /* obj_pd_commons.h */,
+				595DEE5F18F58D4E00E1B74A /* Library~.c */,
 				59E5F73618944A3400731CBE /* encoder~.cpp */,
 				5938485F18D7727900267F32 /* ambiToBinaural~.cpp */,
 				5985424E18957683006F67DD /* decoder~.cpp */,
@@ -270,6 +305,7 @@
 				59DA84FD189BA228007699EC /* wavPlayer~.pd_darwin */,
 				5938487518D7768A00267F32 /* ambiToBinaural~.pd_darwin */,
 				593EA75D18ED7BF900F909F9 /* ambisonicReverb~.pd_darwin */,
+				595DEE7718F58D5600E1B74A /* Library.pd_darwin */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -324,6 +360,24 @@
 				593EA75718ED7BF900F909F9 /* AudioInternals.h in Headers */,
 				593EA75818ED7BF900F909F9 /* Geometry.h in Headers */,
 				593EA75918ED7BF900F909F9 /* AmbisonicReverb.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		595DEE6818F58D5600E1B74A /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				595DEE6918F58D5600E1B74A /* Audio_Basic.h in Headers */,
+				595DEE6A18F58D5600E1B74A /* Audio_Darwin.h in Headers */,
+				595DEE6B18F58D5600E1B74A /* Audio_Neon.h in Headers */,
+				595DEE6C18F58D5600E1B74A /* AudioTools.h in Headers */,
+				595DEE6D18F58D5600E1B74A /* FloatComputation.h in Headers */,
+				595DEE6E18F58D5600E1B74A /* Ambisonic.h in Headers */,
+				595DEE6F18F58D5600E1B74A /* AmbisonicUtility.h in Headers */,
+				595DEE7018F58D5600E1B74A /* Internal.h in Headers */,
+				595DEE7118F58D5600E1B74A /* AudioInternals.h in Headers */,
+				595DEE7218F58D5600E1B74A /* Geometry.h in Headers */,
+				595DEE7318F58D5600E1B74A /* AmbisonicReverb.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -397,9 +451,9 @@
 			productReference = 592EB456189655750058600A /* binaural~.pd_darwin */;
 			productType = "com.apple.product-type.library.dynamic";
 		};
-		5938486118D7768A00267F32 /* ambiToBianural~ */ = {
+		5938486118D7768A00267F32 /* ambiToBinaural~ */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5938487218D7768A00267F32 /* Build configuration list for PBXNativeTarget "ambiToBianural~" */;
+			buildConfigurationList = 5938487218D7768A00267F32 /* Build configuration list for PBXNativeTarget "ambiToBinaural~" */;
 			buildPhases = (
 				5938486218D7768A00267F32 /* Sources */,
 				5938486918D7768A00267F32 /* Frameworks */,
@@ -409,7 +463,7 @@
 			);
 			dependencies = (
 			);
-			name = "ambiToBianural~";
+			name = "ambiToBinaural~";
 			productName = 2Dencoder;
 			productReference = 5938487518D7768A00267F32 /* ambiToBinaural~.pd_darwin */;
 			productType = "com.apple.product-type.library.dynamic";
@@ -429,6 +483,23 @@
 			name = "ambisonicReverb~";
 			productName = 2Dencoder;
 			productReference = 593EA75D18ED7BF900F909F9 /* ambisonicReverb~.pd_darwin */;
+			productType = "com.apple.product-type.library.dynamic";
+		};
+		595DEE6018F58D5600E1B74A /* Library */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 595DEE7418F58D5600E1B74A /* Build configuration list for PBXNativeTarget "Library" */;
+			buildPhases = (
+				595DEE6118F58D5600E1B74A /* Sources */,
+				595DEE6718F58D5600E1B74A /* Frameworks */,
+				595DEE6818F58D5600E1B74A /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Library;
+			productName = 2Dencoder;
+			productReference = 595DEE7718F58D5600E1B74A /* Library.pd_darwin */;
 			productType = "com.apple.product-type.library.dynamic";
 		};
 		5985424018957633006F67DD /* decoder~ */ = {
@@ -507,8 +578,9 @@
 				5985424018957633006F67DD /* decoder~ */,
 				592EB448189655750058600A /* binaural~ */,
 				59DA84EC189BA228007699EC /* wavPlayer~ */,
-				5938486118D7768A00267F32 /* ambiToBianural~ */,
+				5938486118D7768A00267F32 /* ambiToBinaural~ */,
 				593EA74618ED7BF900F909F9 /* ambisonicReverb~ */,
+				595DEE6018F58D5600E1B74A /* Library */,
 			);
 		};
 /* End PBXProject section */
@@ -550,6 +622,27 @@
 				593EA74B18ED7BF900F909F9 /* AudioInternals.cpp in Sources */,
 				593EA74C18ED7BF900F909F9 /* AmbisonicReverb.cpp in Sources */,
 				593EA76018ED7C8400F909F9 /* AmbisonicReverb~.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		595DEE6118F58D5600E1B74A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				595DEE6218F58D5600E1B74A /* AmbisonicUtility.cpp in Sources */,
+				595DEE6318F58D5600E1B74A /* Internal.cpp in Sources */,
+				595DEE6418F58D5600E1B74A /* AudioInternals.cpp in Sources */,
+				595DEE6518F58D5600E1B74A /* AmbisonicReverb.cpp in Sources */,
+				595DEE6618F58D5600E1B74A /* AmbisonicReverb~.cpp in Sources */,
+				595DEE7E18F58DC200E1B74A /* Library~.c in Sources */,
+				595DEE7F18F58F5400E1B74A /* Binaural.cpp in Sources */,
+				595DEE8018F58F5700E1B74A /* BinauralUtility.cpp in Sources */,
+				595DEE8118F58F5F00E1B74A /* encoder~.cpp in Sources */,
+				595DEE8218F58F6400E1B74A /* ambiToBinaural~.cpp in Sources */,
+				595DEE8318F58F6700E1B74A /* decoder~.cpp in Sources */,
+				595DEE8418F58F6C00E1B74A /* binaural~.cpp in Sources */,
+				595DEE8518F58F6F00E1B74A /* wavPlayer~.cpp in Sources */,
+				595DEE8618F58F8B00E1B74A /* WavLoader.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -632,7 +725,7 @@
 				EXECUTABLE_EXTENSION = pd_darwin;
 				EXECUTABLE_PREFIX = "";
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				LD_DYLIB_INSTALL_NAME = "";
+				LD_DYLIB_INSTALL_NAME = "build/ambiToBinaural~.pd_darwin";
 				OTHER_LDFLAGS = (
 					"-undefined",
 					dynamic_lookup,
@@ -648,7 +741,7 @@
 				EXECUTABLE_EXTENSION = pd_darwin;
 				EXECUTABLE_PREFIX = "";
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				LD_DYLIB_INSTALL_NAME = "";
+				LD_DYLIB_INSTALL_NAME = "build/ambiToBinaural~.pd_darwin";
 				OTHER_LDFLAGS = (
 					"-undefined",
 					dynamic_lookup,
@@ -664,7 +757,7 @@
 				EXECUTABLE_EXTENSION = pd_darwin;
 				EXECUTABLE_PREFIX = "";
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				LD_DYLIB_INSTALL_NAME = "build/encoder~.pd_darwin";
+				LD_DYLIB_INSTALL_NAME = "build/ambisonicReverb~.pd_darwin";
 				OTHER_LDFLAGS = (
 					"-undefined",
 					dynamic_lookup,
@@ -680,12 +773,44 @@
 				EXECUTABLE_EXTENSION = pd_darwin;
 				EXECUTABLE_PREFIX = "";
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				LD_DYLIB_INSTALL_NAME = "build/encoder~.pd_darwin";
+				LD_DYLIB_INSTALL_NAME = "build/ambisonicReverb~.pd_darwin";
 				OTHER_LDFLAGS = (
 					"-undefined",
 					dynamic_lookup,
 				);
 				PRODUCT_NAME = "ambisonicReverb~";
+			};
+			name = Release;
+		};
+		595DEE7518F58D5600E1B74A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				EXECUTABLE_EXTENSION = pd_darwin;
+				EXECUTABLE_PREFIX = "";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				LD_DYLIB_INSTALL_NAME = build/Library.pd_darwin;
+				OTHER_LDFLAGS = (
+					"-undefined",
+					dynamic_lookup,
+				);
+				PRODUCT_NAME = Library;
+			};
+			name = Debug;
+		};
+		595DEE7618F58D5600E1B74A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				EXECUTABLE_EXTENSION = pd_darwin;
+				EXECUTABLE_PREFIX = "";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				LD_DYLIB_INSTALL_NAME = build/Library.pd_darwin;
+				OTHER_LDFLAGS = (
+					"-undefined",
+					dynamic_lookup,
+				);
+				PRODUCT_NAME = Library;
 			};
 			name = Release;
 		};
@@ -854,7 +979,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5938487218D7768A00267F32 /* Build configuration list for PBXNativeTarget "ambiToBianural~" */ = {
+		5938487218D7768A00267F32 /* Build configuration list for PBXNativeTarget "ambiToBinaural~" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5938487318D7768A00267F32 /* Debug */,
@@ -868,6 +993,15 @@
 			buildConfigurations = (
 				593EA75B18ED7BF900F909F9 /* Debug */,
 				593EA75C18ED7BF900F909F9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		595DEE7418F58D5600E1B74A /* Build configuration list for PBXNativeTarget "Library" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				595DEE7518F58D5600E1B74A /* Debug */,
+				595DEE7618F58D5600E1B74A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

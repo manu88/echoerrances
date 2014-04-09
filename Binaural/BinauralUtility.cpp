@@ -62,18 +62,14 @@ void HrtfReader::getHrtfSet(float* bufferL, float* bufferR)
     post("%s",urlL.c_str());
     post("%s",urlR.c_str());
     
-    /*
-    if (openAndCopyWavFile(urlL.c_str(), bufferL))
-        post("left OK");
+
+    bool isOk = openAndCopyWavFile(urlL.c_str(), bufferL);
+    pdAssert(isOk, "left ERROR :");
+
+    isOk = openAndCopyWavFile(urlR.c_str(),bufferR);
     
-    else
-        post("left error");
-    
-    if (openAndCopyWavFile(urlR.c_str(),bufferR))
-        post("right OK");
-    else
-        post("right error");
-     */
+    pdAssert(isOk, "right ERROR");
+
 }
 
 /* **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** */

@@ -113,7 +113,7 @@ bool WavLoader::readFile(const char* file, float* bufferToFill)
 		}
         
 
-        
+        post("read");
         
         result = true;
 	}

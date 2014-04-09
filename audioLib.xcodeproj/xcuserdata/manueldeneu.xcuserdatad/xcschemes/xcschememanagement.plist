@@ -9,6 +9,11 @@
 			<key>orderHint</key>
 			<integer>2</integer>
 		</dict>
+		<key>Library.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>7</integer>
+		</dict>
 		<key>ambisonicReverb~.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -53,6 +58,11 @@
 			<true/>
 		</dict>
 		<key>593EA74618ED7BF900F909F9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>595DEE6018F58D5600E1B74A</key>
 		<dict>
 			<key>primary</key>
 			<true/>

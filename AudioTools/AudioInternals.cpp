@@ -7,7 +7,7 @@
 //
 
 #include "AudioInternals.h"
-
+#include "Debug_pd.h"
 
 AudioProcessorBase::AudioProcessorBase():
 m_bufferSize(64),
@@ -27,6 +27,13 @@ void AudioProcessorBase::setConfig(int bufferSize, double sampleRate)
     setBufferSize(bufferSize);
 }
 
- void AudioProcessorBase::prepare()
+void AudioProcessorBase::prepare()
 {
+    pdAssert(false, "base prepare() called!");    
+}
+
+
+inline void AudioProcessorBase::process(float **ins, float **outs, int bufferSize)
+{
+    pdAssert(false, "base process() called!");
 }

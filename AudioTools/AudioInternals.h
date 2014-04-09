@@ -42,6 +42,7 @@ public:
     
     
     virtual inline void process(float **ins, float **outs, int bufferSize) = 0;
+
     virtual void   prepare() = 0;
     
 protected:
