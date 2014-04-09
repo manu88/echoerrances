@@ -1,0 +1,123 @@
+#N canvas 487 61 750 574 10;
+#X obj 63 136 encoder~ 4 --------------------;
+#N canvas 67 397 610 334 decoder~ 0;
+#X obj 40 32 inlet~;
+#X obj 93 32 inlet~;
+#X obj 138 34 inlet~;
+#X obj 188 34 inlet~;
+#X obj 241 34 inlet~;
+#X obj 287 35 inlet~;
+#X obj 336 34 inlet~;
+#X obj 389 34 inlet~;
+#X obj 435 35 inlet~;
+#X obj 36 249 switch~ 512 1 1;
+#X msg 58 218 set 512 1 1;
+#X obj 102 185 loadbang;
+#X msg 33 165 1;
+#X obj 129 96 ambiToBinaural~ 4 8 -----------;
+#X obj 132 136 outlet~;
+#X obj 299 147 outlet~;
+#X connect 0 0 13 0;
+#X connect 1 0 13 1;
+#X connect 2 0 13 2;
+#X connect 3 0 13 3;
+#X connect 4 0 13 4;
+#X connect 5 0 13 5;
+#X connect 6 0 13 6;
+#X connect 7 0 13 7;
+#X connect 8 0 13 8;
+#X connect 10 0 9 0;
+#X connect 11 0 12 0;
+#X connect 11 0 10 0;
+#X connect 12 0 9 0;
+#X connect 13 0 14 0;
+#X connect 13 1 15 0;
+#X restore 369 443 pd decoder~ ----------------;
+#X obj 414 559 dac~ 1 2;
+#X msg 132 71 angle \$1;
+#X obj 133 53 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 -4.09 256;
+#X obj 317 131 encoder~ 4 --------------------;
+#X msg 386 66 angle \$1;
+#X obj 385 17 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 1.8 256;
+#X obj 305 73 osc~ 400;
+#X obj 519 130 encoder~ 4 --------------------;
+#X msg 588 65 angle \$1;
+#X obj 587 16 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 0.71 256;
+#X obj 507 72 osc~ 800;
+#X msg 10 116 stats;
+#X obj 39 59 readsf~ 1;
+#X msg 39 26 open alfred0.wav;
+#X obj 14 9 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1 1
+;
+#X obj 194 47 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 0 256;
+#X msg 193 65 dist \$1;
+#X obj 452 41 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 5.57 256;
+#X msg 451 59 dist \$1;
+#X obj 663 46 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 6.74 256;
+#X msg 662 64 dist \$1;
+#X obj 16 209 hoa.scope~ @patching_rect [ 16 209 250 250 ] @size [
+250 250 ] @fontname [ helvetica ] @fontweight [ normal ] @fontslant
+[ regular ] @fontsize [ 11 ] @order [ 4 ] @gain [ 1 ] @interval [ 100
+] @drawcircle [ 1 ] @drawangles [ 1 ] @drawcontrib [ 1 ] @bgcolor [
+0.76 0.76 0.76 1 ] @bdcolor [ 0.7 0.7 0.7 1 ] @txcolor [ 0 0 0 7 ]
+@phcolor [ 1 0 0 1 ] @nhcolor [ 0 0 1 1 ];
+#X connect 0 0 1 0;
+#X connect 0 0 23 0;
+#X connect 0 1 1 1;
+#X connect 0 1 23 1;
+#X connect 0 2 1 2;
+#X connect 0 2 23 2;
+#X connect 0 3 1 3;
+#X connect 0 3 23 3;
+#X connect 0 4 1 4;
+#X connect 0 4 23 4;
+#X connect 0 5 1 5;
+#X connect 0 5 23 5;
+#X connect 0 6 1 6;
+#X connect 0 6 23 6;
+#X connect 0 7 1 7;
+#X connect 0 7 23 7;
+#X connect 0 8 1 8;
+#X connect 0 8 23 8;
+#X connect 1 0 2 0;
+#X connect 1 1 2 1;
+#X connect 3 0 0 0;
+#X connect 4 0 3 0;
+#X connect 5 0 1 0;
+#X connect 5 1 1 1;
+#X connect 5 2 1 2;
+#X connect 5 3 1 3;
+#X connect 5 4 1 4;
+#X connect 5 5 1 5;
+#X connect 5 6 1 6;
+#X connect 5 7 1 7;
+#X connect 5 8 1 8;
+#X connect 6 0 5 0;
+#X connect 7 0 6 0;
+#X connect 9 0 1 0;
+#X connect 9 1 1 1;
+#X connect 9 2 1 2;
+#X connect 9 3 1 3;
+#X connect 9 4 1 4;
+#X connect 9 5 1 5;
+#X connect 9 6 1 6;
+#X connect 9 7 1 7;
+#X connect 9 8 1 8;
+#X connect 10 0 9 0;
+#X connect 11 0 10 0;
+#X connect 13 0 0 0;
+#X connect 14 0 0 0;
+#X connect 15 0 14 0;
+#X connect 16 0 14 0;
+#X connect 17 0 18 0;
+#X connect 18 0 0 0;
+#X connect 19 0 20 0;
+#X connect 20 0 5 0;
+#X connect 21 0 22 0;
+#X connect 22 0 9 0;

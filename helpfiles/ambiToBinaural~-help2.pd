@@ -1,0 +1,114 @@
+#N canvas 393 61 829 572 10;
+#N canvas 67 397 610 334 decoder~ 0;
+#X obj 40 32 inlet~;
+#X obj 93 32 inlet~;
+#X obj 138 34 inlet~;
+#X obj 188 34 inlet~;
+#X obj 241 34 inlet~;
+#X obj 287 35 inlet~;
+#X obj 336 34 inlet~;
+#X obj 389 34 inlet~;
+#X obj 435 35 inlet~;
+#X obj 36 249 switch~ 512 1 1;
+#X msg 58 218 set 512 1 1;
+#X obj 102 185 loadbang;
+#X msg 33 165 1;
+#X obj 129 96 ambiToBinaural~ 4 8 -----------;
+#X obj 132 136 outlet~;
+#X obj 299 147 outlet~;
+#X connect 0 0 13 0;
+#X connect 1 0 13 1;
+#X connect 2 0 13 2;
+#X connect 3 0 13 3;
+#X connect 4 0 13 4;
+#X connect 5 0 13 5;
+#X connect 6 0 13 6;
+#X connect 7 0 13 7;
+#X connect 8 0 13 8;
+#X connect 10 0 9 0;
+#X connect 11 0 12 0;
+#X connect 11 0 10 0;
+#X connect 12 0 9 0;
+#X connect 13 0 14 0;
+#X connect 13 1 15 0;
+#X restore 91 292 pd decoder~ ----------------;
+#X obj 53 357 dac~ 1 2;
+#X msg 132 71 angle \$1;
+#X obj 133 53 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 6.3 256;
+#X msg 10 116 stats;
+#X obj 39 59 readsf~ 1;
+#X msg 39 26 open alfred0.wav;
+#X obj 14 9 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
+;
+#X obj 194 47 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 0 256;
+#X msg 193 65 dist \$1;
+#X obj 273 272 hoa.scope~ @size 225 225 @fontname Helvetica @fontweight
+normal @fontslant roman @fontsize 11 @receive (null) @send (null) @order
+4 @gain 1 @interval 20 @bgcolor 0.7 0.7 0.7 1 @bdcolor 0.5 0.5 0.5
+1 @phcolor 1 0 0 1 @nhcolor 0 0 1 1;
+#X obj 293 36 loadbang;
+#X obj 278 74 *~;
+#X text 312 75 angle;
+#X obj 378 41 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 278 15 phasor~ 0.3;
+#X obj 373 155 encoder~ 4 --------------------------;
+#X obj 525 276 hoa.scope~ @size 225 225 @fontname Helvetica @fontweight
+normal @fontslant roman @fontsize 11 @receive (null) @send (null) @order
+4 @gain 1 @interval 20 @bgcolor 0.7 0.7 0.7 1 @bdcolor 0.5 0.5 0.5
+1 @phcolor 1 0 0 1 @nhcolor 0 0 1 1;
+#X msg 480 62 angle \$1;
+#X obj 481 44 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 6.28 256;
+#X obj 542 38 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 0 256;
+#X msg 541 56 dist \$1;
+#X obj 92 106 osc~ 800;
+#X obj 293 55 hoa.pi 0;
+#X obj 83 157 encoder~ 4 ----------------------;
+#X connect 0 0 1 0;
+#X connect 0 1 1 1;
+#X connect 2 0 24 0;
+#X connect 3 0 2 0;
+#X connect 6 0 5 0;
+#X connect 7 0 5 0;
+#X connect 8 0 9 0;
+#X connect 11 0 23 0;
+#X connect 14 0 23 0;
+#X connect 15 0 12 0;
+#X connect 16 0 17 0;
+#X connect 16 1 17 1;
+#X connect 16 2 17 2;
+#X connect 16 3 17 3;
+#X connect 16 4 17 4;
+#X connect 16 5 17 5;
+#X connect 16 6 17 6;
+#X connect 16 7 17 7;
+#X connect 16 8 17 8;
+#X connect 18 0 16 0;
+#X connect 19 0 18 0;
+#X connect 20 0 21 0;
+#X connect 21 0 16 0;
+#X connect 22 0 16 0;
+#X connect 22 0 24 0;
+#X connect 23 0 12 1;
+#X connect 24 0 0 0;
+#X connect 24 0 10 0;
+#X connect 24 1 0 1;
+#X connect 24 1 10 1;
+#X connect 24 2 0 2;
+#X connect 24 2 10 2;
+#X connect 24 3 0 3;
+#X connect 24 3 10 3;
+#X connect 24 4 0 4;
+#X connect 24 4 10 4;
+#X connect 24 5 0 5;
+#X connect 24 5 10 5;
+#X connect 24 6 0 6;
+#X connect 24 6 10 6;
+#X connect 24 7 0 7;
+#X connect 24 7 10 7;
+#X connect 24 8 0 8;
+#X connect 24 8 10 8;

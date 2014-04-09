@@ -1,0 +1,228 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		592EB466189659460058600A /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 592EB465189659460058600A /* main.cpp */; };
+		592EB468189659460058600A /* simdAudioTest.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 592EB467189659460058600A /* simdAudioTest.1 */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		592EB460189659460058600A /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+				592EB468189659460058600A /* simdAudioTest.1 in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		5917A5EF189AB74F00047F39 /* Audio_Neon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Audio_Neon.h; path = ../../Audio_Neon.h; sourceTree = "<group>"; };
+		5917A5F0189AB74F00047F39 /* FloatComputation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FloatComputation.h; path = ../../FloatComputation.h; sourceTree = "<group>"; };
+		592EB462189659460058600A /* simdAudioTest */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = simdAudioTest; sourceTree = BUILT_PRODUCTS_DIR; };
+		592EB465189659460058600A /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		592EB467189659460058600A /* simdAudioTest.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = simdAudioTest.1; sourceTree = "<group>"; };
+		592EB46E1896595F0058600A /* Audio_Darwin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Audio_Darwin.h; path = ../../Audio_Darwin.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		592EB45F189659460058600A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		592EB459189659460058600A = {
+			isa = PBXGroup;
+			children = (
+				592EB464189659460058600A /* simdAudioTest */,
+				592EB463189659460058600A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		592EB463189659460058600A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				592EB462189659460058600A /* simdAudioTest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		592EB464189659460058600A /* simdAudioTest */ = {
+			isa = PBXGroup;
+			children = (
+				592EB46E1896595F0058600A /* Audio_Darwin.h */,
+				5917A5EF189AB74F00047F39 /* Audio_Neon.h */,
+				5917A5F0189AB74F00047F39 /* FloatComputation.h */,
+				592EB465189659460058600A /* main.cpp */,
+				592EB467189659460058600A /* simdAudioTest.1 */,
+			);
+			path = simdAudioTest;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		592EB461189659460058600A /* simdAudioTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 592EB46B189659460058600A /* Build configuration list for PBXNativeTarget "simdAudioTest" */;
+			buildPhases = (
+				592EB45E189659460058600A /* Sources */,
+				592EB45F189659460058600A /* Frameworks */,
+				592EB460189659460058600A /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = simdAudioTest;
+			productName = simdAudioTest;
+			productReference = 592EB462189659460058600A /* simdAudioTest */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		592EB45A189659460058600A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = "Manuel Deneu";
+			};
+			buildConfigurationList = 592EB45D189659460058600A /* Build configuration list for PBXProject "simdAudioTest" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 592EB459189659460058600A;
+			productRefGroup = 592EB463189659460058600A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				592EB461189659460058600A /* simdAudioTest */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		592EB45E189659460058600A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				592EB466189659460058600A /* main.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		592EB469189659460058600A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		592EB46A189659460058600A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		592EB46C189659460058600A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		592EB46D189659460058600A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		592EB45D189659460058600A /* Build configuration list for PBXProject "simdAudioTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				592EB469189659460058600A /* Debug */,
+				592EB46A189659460058600A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		592EB46B189659460058600A /* Build configuration list for PBXNativeTarget "simdAudioTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				592EB46C189659460058600A /* Debug */,
+				592EB46D189659460058600A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 592EB45A189659460058600A /* Project object */;
+}
