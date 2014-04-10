@@ -57,7 +57,7 @@ private:
     
     AmbisonicDecoder* m_ambiDecoder;
     
-    float** m_tempOutput;
+    float** m_tempOutput; // buffer temp après décodage ambi
     
     int     m_order;
     int     m_numberOfVirtualOutputs;

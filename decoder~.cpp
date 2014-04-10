@@ -162,7 +162,6 @@ extern "C" void decoder_tilde_setup()
                                      (t_method)decoder_free, sizeof(t_decoder),
                                      CLASS_DEFAULT,
                                      A_GIMME, 0);
-    getComputationVersion("decoder");    
     
     
     // in params

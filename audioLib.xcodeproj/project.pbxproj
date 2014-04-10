@@ -92,7 +92,7 @@
 		595DEE7118F58D5600E1B74A /* AudioInternals.h in Headers */ = {isa = PBXBuildFile; fileRef = 59B07A9F18D6E06600288B59 /* AudioInternals.h */; };
 		595DEE7218F58D5600E1B74A /* Geometry.h in Headers */ = {isa = PBXBuildFile; fileRef = 59E387CF18ECB6040079EECE /* Geometry.h */; };
 		595DEE7318F58D5600E1B74A /* AmbisonicReverb.h in Headers */ = {isa = PBXBuildFile; fileRef = 593EA73A18ED6F2000F909F9 /* AmbisonicReverb.h */; };
-		595DEE7E18F58DC200E1B74A /* Library~.c in Sources */ = {isa = PBXBuildFile; fileRef = 595DEE5F18F58D4E00E1B74A /* Library~.c */; };
+		595DEE7E18F58DC200E1B74A /* Library~.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 595DEE5F18F58D4E00E1B74A /* Library~.cpp */; };
 		595DEE7F18F58F5400E1B74A /* Binaural.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5917A613189AC29F00047F39 /* Binaural.cpp */; };
 		595DEE8018F58F5700E1B74A /* BinauralUtility.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5917A615189AC29F00047F39 /* BinauralUtility.cpp */; };
 		595DEE8118F58F5F00E1B74A /* encoder~.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 59E5F73618944A3400731CBE /* encoder~.cpp */; };
@@ -148,7 +148,7 @@
 		593EA73A18ED6F2000F909F9 /* AmbisonicReverb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AmbisonicReverb.h; path = Ambisonic/AmbisonicReverb.h; sourceTree = "<group>"; };
 		593EA74518ED7BDE00F909F9 /* AmbisonicReverb~.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "AmbisonicReverb~.cpp"; sourceTree = "<group>"; };
 		593EA75D18ED7BF900F909F9 /* ambisonicReverb~.pd_darwin */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = "ambisonicReverb~.pd_darwin"; sourceTree = BUILT_PRODUCTS_DIR; };
-		595DEE5F18F58D4E00E1B74A /* Library~.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = "Library~.c"; sourceTree = "<group>"; };
+		595DEE5F18F58D4E00E1B74A /* Library~.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "Library~.cpp"; sourceTree = "<group>"; };
 		595DEE7718F58D5600E1B74A /* Library.pd_darwin */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = Library.pd_darwin; sourceTree = BUILT_PRODUCTS_DIR; };
 		5985424D18957633006F67DD /* decoder~.pd_darwin */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = "decoder~.pd_darwin"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5985424E18957683006F67DD /* decoder~.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "decoder~.cpp"; sourceTree = "<group>"; };
@@ -240,7 +240,7 @@
 			children = (
 				593EA73818ED637F00F909F9 /* Debug_pd.h */,
 				59DA84E9189B9CA5007699EC /* obj_pd_commons.h */,
-				595DEE5F18F58D4E00E1B74A /* Library~.c */,
+				595DEE5F18F58D4E00E1B74A /* Library~.cpp */,
 				59E5F73618944A3400731CBE /* encoder~.cpp */,
 				5938485F18D7727900267F32 /* ambiToBinaural~.cpp */,
 				5985424E18957683006F67DD /* decoder~.cpp */,
@@ -634,7 +634,7 @@
 				595DEE6418F58D5600E1B74A /* AudioInternals.cpp in Sources */,
 				595DEE6518F58D5600E1B74A /* AmbisonicReverb.cpp in Sources */,
 				595DEE6618F58D5600E1B74A /* AmbisonicReverb~.cpp in Sources */,
-				595DEE7E18F58DC200E1B74A /* Library~.c in Sources */,
+				595DEE7E18F58DC200E1B74A /* Library~.cpp in Sources */,
 				595DEE7F18F58F5400E1B74A /* Binaural.cpp in Sources */,
 				595DEE8018F58F5700E1B74A /* BinauralUtility.cpp in Sources */,
 				595DEE8118F58F5F00E1B74A /* encoder~.cpp in Sources */,

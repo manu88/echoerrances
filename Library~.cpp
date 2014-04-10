@@ -11,30 +11,25 @@
 /*
     Librarie complète
  */
-#include "m_pd.h"
+#include "obj_pd_commons.h"
 
 
 
-extern void encoder_tilde_setup();
-extern void decoder_tilde_setup();
-extern void ambiToBinaural_tilde_setup();
+extern "C" void encoder_tilde_setup();
+extern "C" void decoder_tilde_setup();
+extern "C" void ambiToBinaural_tilde_setup();
 
 
 
 
 
-void Library_setup()
+extern "C" void Library_setup()
 {
-    post("library setup");
+    
+    getComputationVersion();
     encoder_tilde_setup();
     decoder_tilde_setup();
     ambiToBinaural_tilde_setup();
     
     
-}
-
-
-void test_setup()
-{
-    post("bla");
 }

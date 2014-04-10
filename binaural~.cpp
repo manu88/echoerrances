@@ -123,7 +123,6 @@ extern "C" void binaural_tilde_setup(void)
                               CLASS_DEFAULT,
                               A_GIMME, 0);
     
-    getComputationVersion("binaural");
 
 
     

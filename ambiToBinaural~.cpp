@@ -24,7 +24,6 @@ typedef struct ambiToBinaural
     t_sample **m_ins;
     t_sample **m_outs;
     
-    int m_bufferSize;
     
     
 
@@ -41,7 +40,7 @@ t_int *ambiToBinaural_perform(t_int *w)
     t_ambiToBinaural *x	= (t_ambiToBinaural *)(w[1]);
     
 
-    x->m_decoder->process(x->m_ins, x->m_outs, x->m_bufferSize);
+    x->m_decoder->process(x->m_ins, x->m_outs, x->m_decoder->getBufferSize());
     
     return (w + 2);
 }
@@ -51,7 +50,7 @@ t_int *ambiToBinaural_perform(t_int *w)
 static void ambiToBinaural_dsp(t_ambiToBinaural *x, t_signal **sp, t_symbol *s)
 {
     x->m_decoder->setConfig(sp[0]->s_n, sp[0]->s_sr);
-    
+    x->m_decoder->prepare();
     
 
     int i=0;
@@ -65,8 +64,8 @@ static void ambiToBinaural_dsp(t_ambiToBinaural *x, t_signal **sp, t_symbol *s)
     // m_outs[1] est la sortie gauche de l'obj
     // il faut donc inverser car le reste du code ( et de l'audio en
     // général comptent d'abord la gauche en 1er ...
-    x->m_outs[1]= sp[i]->s_vec;
-    x->m_outs[0]= sp[i+1]->s_vec;
+    x->m_outs[0]= sp[i]->s_vec;
+    x->m_outs[1]= sp[i+1]->s_vec;
 
     
     
@@ -116,7 +115,8 @@ static void *ambiToBinaural_new(t_symbol *s, long argc, t_atom *argv)
         
         for (/* i=1 */;i<x->m_decoder->getNumOfHarmonics();i++)
         {
-            signalinlet_new(&x->x_obj, x->f);
+            //signalinlet_new(&x->x_obj, x->f);
+            inlet_new(&x->x_obj, &x->x_obj.ob_pd, &s_signal, &s_signal);
             x->m_ins[i]= NULL;
             
         }
@@ -159,8 +159,7 @@ extern "C" void ambiToBinaural_tilde_setup()
                               (t_method)ambiToBinaural_free, sizeof(t_ambiToBinaural),
                               CLASS_DEFAULT,
                               A_GIMME, 0);
-    
-    getComputationVersion("ambiToBinaural");
+
 
     
     

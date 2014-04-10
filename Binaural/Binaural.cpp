@@ -62,28 +62,6 @@ m_numberOfVirtualOutputs(numVirtualOutputs)
     }
 }
 
-void AmbisonicBinauralDecoder::prepare()
-{
-    if (m_tempOutput!=NULL)
-    {
-        int i = 0;
-        for(;i<m_numberOfVirtualOutputs;i++)
-            delete[] m_tempOutput[i];
-        
-        delete[] m_tempOutput;
-    }
-    
-    m_tempOutput= new float*[m_numberOfVirtualOutputs];
-    
-    int i = 0;
-    for(;i<m_numberOfVirtualOutputs;i++)
-    {
-        m_tempOutput[i] = new float[getBufferSize()];
-        FloatComputation::clearVector(m_tempOutput[0], getBufferSize());
-    }
-    
-}
-
 AmbisonicBinauralDecoder::~AmbisonicBinauralDecoder()
 {
     delete [] m_hrtfArray[0];
@@ -106,26 +84,57 @@ AmbisonicBinauralDecoder::~AmbisonicBinauralDecoder()
     delete m_ambiDecoder;
 }
 
+void AmbisonicBinauralDecoder::prepare()
+{
+    
+    m_ambiDecoder->setConfig(getBufferSize(), getSampleRate());
+    m_ambiDecoder->prepare();
+    
+    if (m_tempOutput!=NULL)
+    {
+        int i = 0;
+        for(;i<m_numberOfVirtualOutputs;i++)
+            delete[] m_tempOutput[i];
+        
+        delete[] m_tempOutput;
+    }
+    
+    m_tempOutput= new float*[m_numberOfVirtualOutputs];
+    
+    int i = 0;
+    for(;i<m_numberOfVirtualOutputs;i++)
+    {
+        m_tempOutput[i] = new float[getBufferSize()];
+        FloatComputation::clearVector(m_tempOutput[0], getBufferSize());
+    }
+    
+}
+
+
+
 
 inline void AmbisonicBinauralDecoder::process(float **ins, float **outs, int bufferSize)
 {
-    
+
     /*
      1 : décodage du flux ambisonique sur m_numberOfVirtualOutputs.
      Le résultat est placé dans m_tempOutput
      */
     
     m_ambiDecoder->process(ins, m_tempOutput, bufferSize);
+
     FloatComputation::clearVector(outs[0], bufferSize);
     FloatComputation::clearVector(outs[1], bufferSize);
+    
     /*
      on recopie la queue du buffer precedent à la place du buffer
      */
-    
     FloatComputation::copyVector(m_tempBuffer[0]+bufferSize, m_tempBuffer[0], bufferSize);
     FloatComputation::copyVector(m_tempBuffer[1]+bufferSize, m_tempBuffer[1], bufferSize);
     
-    
+    /*
+     On efface la queue du buffer
+     */
     FloatComputation::clearVector(m_tempBuffer[0]+bufferSize-1, bufferSize);
     FloatComputation::clearVector(m_tempBuffer[1]+bufferSize-1, bufferSize);
     
@@ -138,20 +147,21 @@ inline void AmbisonicBinauralDecoder::process(float **ins, float **outs, int buf
     {
         const int hrtfSize     = HrtfReader::HrtfLength;
         const int hrtfPosition = speaker*hrtfSize;//m_testAngle; //getIndexForAzimuth(m_azimuth);
-        
+    
         
         int i = bufferSize;
         for (; i--;) // bufferIN
         {
-            const float inVal = ins[speaker][i];
+            const float inVal = m_tempOutput[speaker][i];
             
             FloatComputation::addWithMultiply(m_tempBuffer[0]+i, m_hrtfArray[0]+hrtfPosition, inVal, hrtfSize);
             FloatComputation::addWithMultiply(m_tempBuffer[1]+i, m_hrtfArray[1]+hrtfPosition, inVal, hrtfSize);
             
         }
-        
-        FloatComputation::copyVector(m_tempBuffer[0], outs[0], bufferSize);
-        FloatComputation::copyVector(m_tempBuffer[1], outs[1], bufferSize);
+        // acum de la contrib de chaque HP dans la sortie stéréo
+        FloatComputation::add(m_tempBuffer[0], outs[0],bufferSize);
+        FloatComputation::add(m_tempBuffer[1], outs[1],bufferSize);
+
     }
     
 }

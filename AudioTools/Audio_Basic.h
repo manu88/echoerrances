@@ -98,11 +98,22 @@ namespace FloatComputation
     /* **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** */
     static inline void addWithMultiply (float* dest, const float* src, float multiplier, int num)
     {
-        pdAssert( (multiplier>=0.0) , "addWithMultiply : multiplier <0");
+     //   pdAssert( (multiplier>=0.0) , "addWithMultiply : multiplier <0");
         int i=0;
         for (; i<num; i++)
         {
             dest[i] += src[i] * multiplier;
+        }
+    }
+
+    /* **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** */
+    /* **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** */
+    static inline void add(const float* src, float* dest, int num)
+    {
+        int i=0;
+        for (; i<num; i++)
+        {
+            dest[i] += src[i];
         }
     }
     

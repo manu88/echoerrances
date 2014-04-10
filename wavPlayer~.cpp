@@ -154,7 +154,7 @@ extern "C" void wavPlayer_tilde_setup(void)
                                CLASS_DEFAULT,
                                A_GIMME, 0);
     
-    getComputationVersion("decoder");
+
     
     
     // in params

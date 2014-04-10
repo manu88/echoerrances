@@ -153,6 +153,15 @@ namespace FloatComputation
         }
     }
     
+    static inline void  add(const float* src, float* dest, int num)
+    {
+        int i=0;
+        for (; i<num; i++)
+        {
+            dest[i] += src[i];
+        }
+    }
+    
     
 } // namespace
 

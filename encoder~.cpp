@@ -51,6 +51,8 @@ t_int *encoder_perform(t_int *w)
 static void encoder_dsp(t_encoder *x, t_signal **sp, t_symbol *s)
 {
     x->m_encoder->setConfig(sp[0]->s_n, sp[0]->s_sr);
+
+    x->m_encoder->prepare();
     
     const int outs = x->m_encoder->getHarmonicNumber();
     
@@ -152,7 +154,7 @@ extern "C" void encoder_tilde_setup()
                                      CLASS_DEFAULT,
                                      A_GIMME, 0);
     
-    getComputationVersion("encoder");    
+    
     
     // in params
     

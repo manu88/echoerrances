@@ -99,7 +99,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "595DEE6018F58D5600E1B74A"
-               BuildableName = "Library~.pd_darwin"
+               BuildableName = "Library.pd_darwin"
                BlueprintName = "Library"
                ReferencedContainer = "container:audioLib.xcodeproj">
             </BuildableReference>

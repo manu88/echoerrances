@@ -142,7 +142,6 @@ extern "C" void ambisonicReverb_tilde_setup(void)
                               CLASS_DEFAULT,
                               A_GIMME, 0);
     
-    getComputationVersion("ambisonicReverb");
     
     // in params
     

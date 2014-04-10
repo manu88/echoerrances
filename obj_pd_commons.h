@@ -13,20 +13,20 @@
 #include "Debug_pd.h"
 #include "Ambisonic.h"
 
-static void getComputationVersion(const char* from)
+static void getComputationVersion()
 {
     
 #ifdef USE_BASIC_COMPUTATION
-    post("%s uses BASIC COMPUTATION, it's *not* very effective...",from);
+    post(" BASIC COMPUTATION, it's *not* very effective...");
 
 
 #elif defined __APPLE__
-    post("%s uses APPLE SIMD, it's very effective...",from);
+    post("APPLE SIMD, it's very effective...");
 
     
     
 #elif defined __arm__
-    post("%s uses ARM NEON, it's very effective...",from);
+    post("ARM NEON, it's very effective...");
 #endif
 }
 

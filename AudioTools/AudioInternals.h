@@ -47,7 +47,7 @@ public:
     
 protected:
     AudioProcessorBase();
-    ~AudioProcessorBase();
+    virtual ~AudioProcessorBase();
     
     int m_bufferSize;
     double m_sampleRate;
