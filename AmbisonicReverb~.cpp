@@ -12,12 +12,15 @@
 #include "Ambisonic.h"
 #include "FloatComputation.h"
 #include "AudioTools.h"
+#include "GrandMaster.h"
 
 typedef struct ambisonicReverb
 {
     // PD' stuff
     t_object x_obj;
     t_sample f;
+    
+    int m_nodeId;
   
 // a apronfondir...
 //    t_inlet  **m_inlets;
@@ -109,8 +112,9 @@ static void* ambisonicReverb_new(t_symbol *s, long argc, t_atom *argv)
             x->m_outs[i] = NULL;
         }
         
-        
-        
+        GrandMaster::retain();
+        post("ref count = %i",GrandMaster::getRefCount());        
+        x->m_nodeId  = GrandMaster::getMainAudioGraph()->addNode(x->m_reverb);
 
     }
     
@@ -124,7 +128,11 @@ static void ambisonicReverb_free(t_ambisonicReverb *x)
 {
     if (x)
     {
-
+        GrandMaster::getMainAudioGraph()->removeNode(x->m_nodeId);        
+        GrandMaster::release();
+    
+        
+        
         delete[] x->m_ins;
         delete[] x->m_outs;
         delete x->m_reverb;

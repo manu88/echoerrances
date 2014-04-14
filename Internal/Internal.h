@@ -43,7 +43,6 @@ protected:
         
     }
     
-    
 private:
     
     mutable int m_refCount;

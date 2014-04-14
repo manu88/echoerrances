@@ -10,6 +10,8 @@
 #include "Ambisonic.h"
 #include "FloatComputation.h"
 #include "AudioTools.h"
+#include "AudioInternals.h"
+#include "GrandMaster.h"
 
 
 
@@ -18,6 +20,8 @@ typedef struct encoder
     // PD' stuff
     t_object x_obj;
     t_sample f;
+    
+    int m_nodeId;
     
     t_sample *m_in;
     t_sample **m_outs;
@@ -121,6 +125,12 @@ static void *encoder_new(t_symbol *s, long argc, t_atom *argv)
         
         x->m_harmonics = new float[numberOfCirclePoints];
         
+        
+        GrandMaster::retain();
+        post("ref count = %i",GrandMaster::getRefCount());
+        
+        x->m_nodeId = GrandMaster::getMainAudioGraph()->addNode(x->m_encoder);
+        
     }
         
     return x;
@@ -133,6 +143,11 @@ static void encoder_free(t_encoder *x)
 {
     if (x)
     {
+        GrandMaster::getMainAudioGraph()->removeNode(x->m_nodeId);        
+        GrandMaster::release();
+        
+
+        
         delete x->m_in;
         delete[] x->m_outs;
         

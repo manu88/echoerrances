@@ -11,12 +11,15 @@
 #include "FloatComputation.h"
 #include "AudioTools.h"
 #include "obj_pd_commons.h"
+#include "GrandMaster.h"
 
 typedef struct decoder
 {
     // PD' stuff
     t_object x_obj;
     t_sample f;
+    
+    int m_nodeId;
     
     t_sample **m_ins;
     t_sample **m_outs;
@@ -123,6 +126,10 @@ static void *decoder_new(t_symbol *s, long argc, t_atom *argv)
             signalinlet_new(&x->x_obj, x->f);
             x->m_ins[i] = NULL;
         }
+        
+        GrandMaster::retain();
+        post("ref count = %i",GrandMaster::getRefCount());
+        x->m_nodeId = GrandMaster::getMainAudioGraph()->addNode(x->m_decoder);
     
     }
     
@@ -143,6 +150,10 @@ static void decoder_free(t_decoder *x)
     post("delete");
     if (x)
     {
+        GrandMaster::getMainAudioGraph()->removeNode(x->m_nodeId);        
+        GrandMaster::release();
+
+        
         delete[] x->m_ins;
         delete[] x->m_outs;
         

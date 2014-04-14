@@ -11,13 +11,15 @@
 #include "Binaural.h"
 #include "FloatComputation.h"
 #include "obj_pd_commons.h"
+#include "GrandMaster.h"
 
 typedef struct ambiToBinaural
 {
     // PD' stuff
     t_object x_obj;
     t_sample f;
-    
+
+    int m_nodeId;
 
 
     
@@ -128,7 +130,9 @@ static void *ambiToBinaural_new(t_symbol *s, long argc, t_atom *argv)
         x->m_outs[0] = NULL;
         x->m_outs[1] = NULL;
 
-        
+        GrandMaster::retain();
+        post("ref count = %i",GrandMaster::getRefCount());
+        x->m_nodeId = GrandMaster::getMainAudioGraph()->addNode(x->m_decoder);
     }
 
     return x;
@@ -139,7 +143,9 @@ static void ambiToBinaural_free(t_ambiToBinaural *x)
 {
     if (x)
     {
-
+        GrandMaster::getMainAudioGraph()->removeNode(x->m_nodeId);         
+        GrandMaster::release();
+       
         delete[] x->m_outs;
         
 
