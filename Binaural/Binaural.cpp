@@ -135,8 +135,8 @@ inline void AmbisonicBinauralDecoder::process(float **ins, float **outs, int buf
     /*
      On efface la queue du buffer
      */
-    FloatComputation::clearVector(m_tempBuffer[0]+bufferSize-1, bufferSize);
-    FloatComputation::clearVector(m_tempBuffer[1]+bufferSize-1, bufferSize);
+    FloatComputation::clearVector(m_tempBuffer[0]+bufferSize, bufferSize);
+    FloatComputation::clearVector(m_tempBuffer[1]+bufferSize, bufferSize);
     
     /*
      2 on effectue l'encodage Binaural pour chaque haut-parleur virtuel
