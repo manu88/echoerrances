@@ -31,9 +31,12 @@ namespace FloatComputation
     /* **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** */
     static inline void copyVector(const float* src , float* dest, const int size)
     {
+        /*
         int i;
         for (i=0 ; i<size; i++)
             dest[i] = src[i];
+        */
+        memcpy(dest, src, size * sizeof(float));
         
     }
     
@@ -43,7 +46,6 @@ namespace FloatComputation
     /* **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** */
     static inline void multiplyByConstant(const float *input, float *output, float value, int size)
     {
-        pdAssert( (value>=0.0) , "multByConstant : value <0");
         int i;
         for (i=0 ; i<size; i++)
         {

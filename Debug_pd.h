@@ -10,20 +10,22 @@
 #define audioLib_Debug_pd_h
 
 #include "m_pd.h"
+#include "Config.h"
 
 
-#ifdef DEBUG 
-#undef DEBUG
-#endif
 
-// debug mode
-#define DEBUG
 
-static void pdAssert(bool cond, const char *err)
+
+static void pdAssert(bool cond, const char *err, int num = 123456)
 {
-#ifdef DEBUG
+#ifdef PD_DEBUG
     if (!cond)
-        error("Assertion ERROR : %s",err);
+    {
+        if (num==123456)
+            error("Assertion ERROR : %s",err);
+        else
+            error("Assertion ERROR : %s %i",err,num);
+    }
 #endif
 }
 

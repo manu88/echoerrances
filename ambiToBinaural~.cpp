@@ -19,6 +19,7 @@ typedef struct ambiToBinaural
     t_object x_obj;
     t_sample f;
 
+    AmbisonicBinauralDecoder *m_proc;    
     int m_nodeId;
 
 
@@ -26,10 +27,7 @@ typedef struct ambiToBinaural
     t_sample **m_ins;
     t_sample **m_outs;
     
-    
-    
 
-    AmbisonicBinauralDecoder *m_decoder;
 
     
 } t_ambiToBinaural;
@@ -41,8 +39,8 @@ t_int *ambiToBinaural_perform(t_int *w)
 {
     t_ambiToBinaural *x	= (t_ambiToBinaural *)(w[1]);
     
-
-    x->m_decoder->process(x->m_ins, x->m_outs, x->m_decoder->getBufferSize());
+    
+    x->m_proc->process(x->m_ins, x->m_outs, x->m_proc->getBufferSize());
     
     return (w + 2);
 }
@@ -51,30 +49,29 @@ t_int *ambiToBinaural_perform(t_int *w)
 
 static void ambiToBinaural_dsp(t_ambiToBinaural *x, t_signal **sp, t_symbol *s)
 {
-    x->m_decoder->setConfig(sp[0]->s_n, sp[0]->s_sr);
-    x->m_decoder->prepare();
+
+    x->m_proc->setConfig(sp[0]->s_n, sp[0]->s_sr);
+    x->m_proc->prepare();
     
 
     int i=0;
-    for (; i<x->m_decoder->getNumOfHarmonics();i++)
+    for (; i<x->m_proc->getNumOfHarmonics();i++)
         x->m_ins[i] = sp[i]->s_vec;
     
     
 
-    // PD compte les e/s des objets dans le sens horaire:
-    // m_outs[0] est la sortie droite de l'obj
-    // m_outs[1] est la sortie gauche de l'obj
-    // il faut donc inverser car le reste du code ( et de l'audio en
-    // général comptent d'abord la gauche en 1er ...
     x->m_outs[0]= sp[i]->s_vec;
     x->m_outs[1]= sp[i+1]->s_vec;
 
     
-    
+
     dsp_add(ambiToBinaural_perform, 1, x);
 }
 
-
+static void ambiToBinaural_bang(t_ambiToBinaural *x)
+{
+    post("encoder node ID = %i",x->m_nodeId);
+}
 
 
 /* **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** */
@@ -87,7 +84,7 @@ static void *ambiToBinaural_new(t_symbol *s, long argc, t_atom *argv)
 	{
         int order = 0;
         int numVirtualSpeakers = 0;
-        if (argc>=2)
+        if (argc >= 2)
         {
             order   = atom_getint (argv);
             numVirtualSpeakers = atom_getint(argv+1);
@@ -95,27 +92,25 @@ static void *ambiToBinaural_new(t_symbol *s, long argc, t_atom *argv)
             
         }
         
-        if (order==0)
+        if (order == 0)
             order = 4;
         
-        if (numVirtualSpeakers==0)
+        if (numVirtualSpeakers == 0)
             numVirtualSpeakers = 8;
         
-        post("config :");
-        post("order : %i virtual speakers : %i",order,numVirtualSpeakers);
         
         
-        x->m_decoder = new AmbisonicBinauralDecoder(order,numVirtualSpeakers);
+        x->m_proc = new AmbisonicBinauralDecoder(order,numVirtualSpeakers , Large);
         
         
         x->m_outs = new float*[2];
         
-        x->m_ins = new float*[x->m_decoder->getNumOfHarmonics()];
+        x->m_ins = new float*[x->m_proc->getNumOfHarmonics()];
         x->m_ins[0] = NULL;
         
         int i=1;
         
-        for (/* i=1 */;i<x->m_decoder->getNumOfHarmonics();i++)
+        for (/* i=1 */;i<x->m_proc->getNumOfHarmonics();i++)
         {
             //signalinlet_new(&x->x_obj, x->f);
             inlet_new(&x->x_obj, &x->x_obj.ob_pd, &s_signal, &s_signal);
@@ -130,20 +125,22 @@ static void *ambiToBinaural_new(t_symbol *s, long argc, t_atom *argv)
         x->m_outs[0] = NULL;
         x->m_outs[1] = NULL;
 
-        GrandMaster::retain();
-        post("ref count = %i",GrandMaster::getRefCount());
-        x->m_nodeId = GrandMaster::getMainAudioGraph()->addNode(x->m_decoder);
+        x->m_nodeId = GrandMaster::registerForAudioProcessor(x->m_proc);
+        post("ref count = %i",GrandMaster::getRefCount());        
+        
     }
 
     return x;
 
 }
 
+/* **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** */
+
 static void ambiToBinaural_free(t_ambiToBinaural *x)
 {
     if (x)
     {
-        GrandMaster::getMainAudioGraph()->removeNode(x->m_nodeId);         
+        GrandMaster::getMainAudioGraph()->removeNode(x->m_nodeId);
         GrandMaster::release();
        
         delete[] x->m_outs;
@@ -152,7 +149,7 @@ static void ambiToBinaural_free(t_ambiToBinaural *x)
         
         delete[] x->m_ins;
         
-        delete x->m_decoder;
+        delete x->m_proc;
     }
 }
 
@@ -170,7 +167,7 @@ extern "C" void ambiToBinaural_tilde_setup()
     
     
     class_addmethod(ambiToBinaural_class, (t_method)ambiToBinaural_dsp, gensym("dsp"), A_CANT);
-    
+    class_addbang(ambiToBinaural_class, ambiToBinaural_bang);    
     CLASS_MAINSIGNALIN(ambiToBinaural_class, t_ambiToBinaural, f);
     
     

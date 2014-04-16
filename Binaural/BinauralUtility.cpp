@@ -21,8 +21,8 @@ m_angle(angle),
 m_sampleRate(sampleRate),
 m_numSamples(0),
 m_size(size),
-m_channels(0),
-m_currentFile(NULL)
+m_channels(0)
+
 {
     
 }
@@ -41,7 +41,7 @@ void HrtfReader::getHrtfSet(float* bufferL, float* bufferR)
     std::string url = "/Users/manueldeneu/HrtfDatabase/";
     url+=std::to_string(m_sampleRate);
     
-    if (m_size==Large)
+    if (m_size == Large)
         url+="/Large/";
     else
         url+="/Small/";
@@ -59,8 +59,6 @@ void HrtfReader::getHrtfSet(float* bufferL, float* bufferR)
     urlL+=".wav";
     urlR+=".wav";
     
-    post("%s",urlL.c_str());
-    post("%s",urlR.c_str());
     
 
     bool isOk = openAndCopyWavFile(urlL.c_str(), bufferL);

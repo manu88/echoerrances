@@ -209,7 +209,7 @@ public:
     
     static int getEncoderCount()
     {
-        return s_instance->m_encoderList.size();
+        return getInstance()->m_encoderList.size();
     }
     
 

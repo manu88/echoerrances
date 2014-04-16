@@ -18,7 +18,8 @@ typedef struct decoder
     // PD' stuff
     t_object x_obj;
     t_sample f;
-    
+
+    AmbisonicDecoder* m_proc;    
     int m_nodeId;
     
     t_sample **m_ins;
@@ -28,7 +29,7 @@ typedef struct decoder
     
 
     
-    AmbisonicDecoder* m_decoder;
+
 
     
     
@@ -45,7 +46,7 @@ t_int *decoder_perform(t_int *w)
     t_decoder *x	= (t_decoder *)(w[1]);
 
     
-    x->m_decoder->process(x->m_ins, x->m_outs, x->m_decoder->getBufferSize() );
+    x->m_proc->process(x->m_ins, x->m_outs, x->m_proc->getBufferSize() );
     
     return (w + 2);
 }
@@ -58,17 +59,17 @@ t_int *decoder_perform(t_int *w)
 static void decoder_dsp(t_decoder *x, t_signal **sp, t_symbol *s)
 {
 
-    x->m_decoder->setConfig(sp[0]->s_n, sp[0]->s_sr);
+    x->m_proc->setConfig(sp[0]->s_n, sp[0]->s_sr);
 
-    x->m_decoder->prepare();
+    x->m_proc->prepare();
     
     int i =0;
-    for (;i < x->m_decoder->getHarmonicNumber();i++)
+    for (;i < x->m_proc->getHarmonicNumber();i++)
         x->m_ins[i] = sp[i]->s_vec;
     
 
-    for (i = 0; i < x->m_decoder->getNumOuts(); i++)
-        x->m_outs[i]= sp[i+x->m_decoder->getHarmonicNumber()]->s_vec;
+    for (i = 0; i < x->m_proc->getNumOuts(); i++)
+        x->m_outs[i]= sp[i+x->m_proc->getHarmonicNumber()]->s_vec;
 
 
     
@@ -81,6 +82,12 @@ static void decoder_dsp(t_decoder *x, t_signal **sp, t_symbol *s)
 static void decoder_getStats(t_decoder *x )
 {
     libStats();
+}
+
+
+static void decoder_bang(t_decoder *x)
+{
+    post("decoder node ID = %i",x->m_nodeId);
 }
 
 /* **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** */
@@ -106,37 +113,37 @@ static void *decoder_new(t_symbol *s, long argc, t_atom *argv)
             numOuts = 8;
         
         
-        x->m_decoder = new AmbisonicDecoder(order,numOuts);
+        x->m_proc = new AmbisonicDecoder(order,numOuts);
 
         
 
         
-        x->m_ins = new float*[x->m_decoder->getHarmonicNumber()];
-        x->m_outs = new float*[x->m_decoder->getNumOuts()];
+        x->m_ins = new float*[x->m_proc->getHarmonicNumber()];
+        x->m_outs = new float*[x->m_proc->getNumOuts()];
         
-        for (int i = 0; i < x->m_decoder->getNumOuts(); i++)
+        for (int i = 0; i < x->m_proc->getNumOuts(); i++)
         {
 			outlet_new(&x->x_obj, &s_signal);
             x->m_outs[i] = NULL;
         }
         
         x->m_ins[0] = NULL;        
-        for (int i= 1;i<x->m_decoder->getHarmonicNumber();i++)
+        for (int i= 1;i<x->m_proc->getHarmonicNumber();i++)
         {
             signalinlet_new(&x->x_obj, x->f);
             x->m_ins[i] = NULL;
         }
         
-        GrandMaster::retain();
+        x->m_nodeId = GrandMaster::registerForAudioProcessor(x->m_proc);
         post("ref count = %i",GrandMaster::getRefCount());
-        x->m_nodeId = GrandMaster::getMainAudioGraph()->addNode(x->m_decoder);
+
     
     }
     
 
-    post("order %i", x->m_decoder->getOrder() );
-    post("ins %i",x->m_decoder->getHarmonicNumber() );
-    post("outs %i",x->m_decoder->getNumOuts() );
+    post("order %i", x->m_proc->getOrder() );
+    post("ins %i",x->m_proc->getHarmonicNumber() );
+    post("outs %i",x->m_proc->getNumOuts() );
     
     
     return x;
@@ -158,7 +165,7 @@ static void decoder_free(t_decoder *x)
         delete[] x->m_outs;
         
         
-        delete x->m_decoder;
+        delete x->m_proc;
         
         
     }
@@ -181,6 +188,7 @@ extern "C" void decoder_tilde_setup()
     
     class_addmethod(decoder_class, (t_method)decoder_dsp, gensym("dsp"), A_CANT);
     class_addmethod(decoder_class, (t_method)decoder_getStats, gensym("stats"), A_NULL);
+    class_addbang(decoder_class, decoder_bang);
     
     CLASS_MAINSIGNALIN(decoder_class, t_decoder, f);
     

@@ -33,7 +33,7 @@ public:
     }
     
     
-    virtual void prepare();
+    virtual void internalPrepare();
     
 private:
     

@@ -27,7 +27,8 @@ WavLoader::WavLoader():
 
 WavLoader::~WavLoader()
 {
-    // closeFile() ??
+    //! closeFile() ?? on sait jamais...
+    closeFile();
 }
 
 void WavLoader::closeFile()
@@ -62,7 +63,9 @@ bool WavLoader::getWavAttributes(const char* file)
 	}
     else
     {
+        pdAssert(false, "Error in WavLoader::getWavAttributes");
         //PB...
+
     }
     
     free(meta);
@@ -81,10 +84,10 @@ bool WavLoader::readFile(const char* file, float* bufferToFill)
     FILE * infile = fopen(file,"rb");
 	
     
-	int BUFSIZE = 512;
+	const int bufSize = 512;
 
     
-	short buff[BUFSIZE];
+	short buff[bufSize];
 	header_p meta = (header_p)malloc(sizeof(header));
     
 	int nb;
@@ -104,7 +107,7 @@ bool WavLoader::readFile(const char* file, float* bufferToFill)
         int index = 0;
 		while (!feof(infile))
 		{
-			nb = fread(buff,meta->block_align,BUFSIZE,infile);
+			nb = fread(buff,meta->block_align,bufSize,infile);
 
             for (int i=0;i<nb;i++)
                 bufferToFill[index+i]  = (((float)buff[i])/ maxIntValue);
@@ -113,13 +116,12 @@ bool WavLoader::readFile(const char* file, float* bufferToFill)
 		}
         
 
-        post("read");
         
         result = true;
 	}
     else
     {
-        //PB...
+        pdAssert(false, "Error in WavLoader::read");
     }
     
     free(meta);

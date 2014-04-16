@@ -34,12 +34,22 @@ static void getComputationVersion()
 
 static void libStats(void)
 {
+    post(" ************************* ");
     getComputationVersion();
     post("nb encoders : %i",AmbisonicUtility::getEncoderCount());
     post("nb decoders : %i",AmbisonicUtility::getDecoderCount());
     post("distance max = %i",AmbisonicEncoder::MaxDistance);
     
     post("num nodes %i", GrandMaster::getMainAudioGraph()->getNodeCount() );
+    post("ref count GrandMaster %i", GrandMaster::getRefCount());
+    
+    
+#ifdef PD_DEBUG
+    post("DEBUG MODE");
+
+#endif
+    
+    post(" ************************* ");
 }
 
 #endif

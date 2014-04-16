@@ -41,6 +41,23 @@ AudioGraph::AudioGraph()
 
 AudioGraph::~AudioGraph()
 {
+
+}
+
+
+
+AudioNode* AudioGraph::getNodeForId(int nodeId)
+{
+    for(std::list<AudioNode*>::iterator iter = m_nodesList.begin();iter != m_nodesList.end(); iter++)
+    {
+        if ((*iter)->getNodeId() == nodeId)
+        {
+            return *iter;
+        }
+        
+    }
+    return nullptr;
+    
     
 }
 
@@ -105,9 +122,11 @@ bool AudioGraph::connect(int sourceNode , int destNode)
 /* **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** */
 /* **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** */
 
-AudioProcessorBase::AudioProcessorBase():
+AudioProcessorBase::AudioProcessorBase(AudioProcessorType type):
 m_bufferSize(64),
-m_sampleRate(44.100)
+m_sampleRate(44.100),
+m_type(type),
+m_isPrepared(false)
 {
     
 }
@@ -119,13 +138,30 @@ AudioProcessorBase::~AudioProcessorBase()
 
 void AudioProcessorBase::setConfig(int bufferSize, double sampleRate)
 {
+    m_isPrepared = false;
     setSampleRate(sampleRate);
     setBufferSize(bufferSize);
 }
 
 void AudioProcessorBase::prepare()
 {
-    pdAssert(false, "base prepare() called!");    
+    pdAssert(!m_isPrepared, "AudioProc is set prepared but is not");
+        
+    internalPrepare();
+    m_isPrepared = true;
+}
+
+
+
+
+/* **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** */
+/*
+    EMPTY IMPLEMENTATIONS
+ */
+/* **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** */
+void AudioProcessorBase::internalPrepare()
+{
+    pdAssert(false, "base internalPrepare() called!");    
 }
 
 

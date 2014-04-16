@@ -82,7 +82,7 @@ static void *binaural_new(t_symbol *s, long argc, t_atom *argv)
 	{
 
         
-        x->m_decoder = new AmbisonicBinauralDecoder(4,7);
+        x->m_decoder = new AmbisonicBinauralDecoder(4,7,Small);
         
         
         x->m_outs = new float*[2];

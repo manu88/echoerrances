@@ -14,16 +14,19 @@
 #include "FloatComputation.h"
 #include "AudioInternals.h"
 
+
+/* **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** */
 /*
     Decoder ambisonic->binaural
     params:
         - ordre
         - numVirtualOutputs : nb de hp (virtuels) sur lesquels décoder le champ ambisonique
  */
+/* **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** */
 class AmbisonicBinauralDecoder : public AudioProcessorBase
 {
 public:
-    AmbisonicBinauralDecoder(int order , int numVirtualOutputs);
+    AmbisonicBinauralDecoder(int order , int numVirtualOutputs , HrtfSize size );
     ~AmbisonicBinauralDecoder();
 
     
@@ -48,24 +51,29 @@ public:
     }
     
     
-    virtual void   prepare();
-    
+    // redef AudioProcessorBase
+
     virtual inline void process(float **ins, float **outs, int bufferSize);
     
     
 private:
+    virtual void   internalPrepare();
     
     AmbisonicDecoder* m_ambiDecoder;
+
+    void deleteBuffers();
     
-    float** m_tempOutput; // buffer temp après décodage ambi
+    float**  m_tempOutput; // buffer temp. après décodage ambi
+    float**  m_tempBuffer; // buffer temp. pour binaural (2* buffersize pour stocker la queue de la convo)
     
-    int     m_order;
-    int     m_numberOfVirtualOutputs;
-    float** m_hrtfArray;
-    int     m_numSamplesPerImpulse;
+    int      m_order;
+    int      m_numberOfVirtualOutputs;
+    float**  m_hrtfArray;
+    int      m_numSamplesPerImpulse;
     
+    HrtfSize m_size;
     
-    float** m_tempBuffer;
+
 };
 
 #endif /* defined(__encoder___Binaural__) */

@@ -20,7 +20,8 @@ typedef struct encoder
     // PD' stuff
     t_object x_obj;
     t_sample f;
-    
+
+    AmbisonicEncoder *m_proc;
     int m_nodeId;
     
     t_sample *m_in;
@@ -28,7 +29,7 @@ typedef struct encoder
     
     float*  m_harmonics;
     
-    AmbisonicEncoder *m_encoder;
+
     
 } t_encoder;
 
@@ -42,7 +43,7 @@ t_int *encoder_perform(t_int *w)
 
     float** ins = &x->m_in;
     
-        x->m_encoder->process(ins, x->m_outs, x->m_encoder->getBufferSize());
+        x->m_proc->process(ins, x->m_outs, x->m_proc->getBufferSize());
 
     return (w + 2);
 }
@@ -54,11 +55,10 @@ t_int *encoder_perform(t_int *w)
 
 static void encoder_dsp(t_encoder *x, t_signal **sp, t_symbol *s)
 {
-    x->m_encoder->setConfig(sp[0]->s_n, sp[0]->s_sr);
-
-    x->m_encoder->prepare();
+    x->m_proc->setConfig(sp[0]->s_n, sp[0]->s_sr);
+    x->m_proc->prepare();
     
-    const int outs = x->m_encoder->getHarmonicNumber();
+    const int outs = x->m_proc->getHarmonicNumber();
     
     x->m_in = sp[0]->s_vec;
     
@@ -79,16 +79,36 @@ static void encoder_getStats(t_encoder *x )
     libStats();
 }
 
+static void encoder_setPol(t_encoder *x, t_floatarg r,t_floatarg theta)
+{
+    x->m_proc->setAngle(theta);
+    x->m_proc->setDistance(r);
+}
+
 static void encoder_angle(t_encoder *x , t_floatarg angle)
 {    
-    x->m_encoder->setAngle(angle);
+    x->m_proc->setAngle(angle);
 
 }
 static void encoder_distance(t_encoder *x , t_floatarg dist)
 {
-    x->m_encoder->setDistance(dist);
+    x->m_proc->setDistance(dist);
 }
 
+static void encoder_polar(t_encoder *x, t_symbol *s, long argc, t_atom *argv)
+{
+
+    float r = atom_getfloat(argv);
+    float angle = atom_getfloat(argv+1);
+    x->m_proc->setDistance(r);
+    x->m_proc->setAngle(angle);
+
+}
+
+static void encoder_bang(t_encoder *x)
+{
+    post("encoder node ID = %i",x->m_nodeId);
+}
 
 /* **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** */
 
@@ -106,7 +126,7 @@ static void *encoder_new(t_symbol *s, long argc, t_atom *argv)
         if (order==0)
             order = 4;
         
-        x->m_encoder = new AmbisonicEncoder(order);
+        x->m_proc = new AmbisonicEncoder(order);
 
         
 
@@ -126,10 +146,9 @@ static void *encoder_new(t_symbol *s, long argc, t_atom *argv)
         x->m_harmonics = new float[numberOfCirclePoints];
         
         
-        GrandMaster::retain();
+        x->m_nodeId = GrandMaster::registerForAudioProcessor(x->m_proc);
         post("ref count = %i",GrandMaster::getRefCount());
-        
-        x->m_nodeId = GrandMaster::getMainAudioGraph()->addNode(x->m_encoder);
+
         
     }
         
@@ -153,7 +172,7 @@ static void encoder_free(t_encoder *x)
         
         delete[] x->m_harmonics;
         
-        delete x->m_encoder;
+        delete x->m_proc;
     }
 }
 
@@ -171,16 +190,19 @@ extern "C" void encoder_tilde_setup()
     
     
     
-    // in params
     
     
-    
+    //class_addmethod(encoder_class, (t_method)encoder_setPol, gensym("setPol"), A_FLOAT,A_FLOAT);
+    class_addmethod(encoder_class, (t_method)encoder_polar, gensym("pol"), A_GIMME);
     class_addmethod(encoder_class, (t_method)encoder_dsp, gensym("dsp"), A_CANT);
-    class_addmethod(encoder_class, (t_method)encoder_angle, gensym("angle"), A_FLOAT);
-    class_addmethod(encoder_class, (t_method)encoder_distance, gensym("dist"), A_FLOAT);
+//    class_addmethod(encoder_class, (t_method)encoder_angle, gensym("angle"), A_FLOAT);
+//    class_addmethod(encoder_class, (t_method)encoder_distance, gensym("dist"), A_FLOAT);
     
     
     class_addmethod(encoder_class, (t_method)encoder_getStats, gensym("stats"), A_NULL);
+    
+    
+    class_addbang(encoder_class, encoder_bang);
 
     CLASS_MAINSIGNALIN(encoder_class, t_encoder, f);
     

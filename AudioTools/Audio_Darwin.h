@@ -31,7 +31,7 @@ namespace FloatComputation
     /* **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** */
     static inline void copyVector(const float* src , float* dest, const int size)
     {
-/*
+
         __m128 t0;
         
         for (int i=0;i<size; i+=4)
@@ -41,11 +41,11 @@ namespace FloatComputation
             _mm_store_ps(dest+i, t0);
             
         }
-*/
+/*
         int i;
         for (i=0 ; i<size; i++)
             dest[i] = src[i];
-
+*/
     }
     
         

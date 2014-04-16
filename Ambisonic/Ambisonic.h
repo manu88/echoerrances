@@ -18,6 +18,11 @@
 #include "Debug_pd.h"
 
 /* **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** */
+/*
+ 
+    ENCODER
+ 
+ */
 /* **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** */
 class AmbisonicEncoder : public AudioProcessorBase
 {
@@ -28,9 +33,12 @@ public :
     enum {MaxDistance = 8};
     
     AmbisonicEncoder(int order) :
+    AudioProcessorBase(AudioProcessorInput),
     m_angle(0.),
     m_distance(0.),
-    m_multiplier(1.)
+    m_multiplier(1.),
+    m_multiplierLine(1.,1.),
+    m_angleLine(0. , 0.)
     {
         pimpl = AmbisonicUtility::getEncoder(order);
         AmbisonicUtility::retainInstance();
@@ -68,6 +76,7 @@ public :
     void setAngle(float newAngle)
     {
         m_angle = newAngle;
+        m_angleLine.changeDestination(newAngle);
     }
     
     /* **** **** **** */
@@ -87,9 +96,11 @@ public :
     
     virtual inline void process(float **ins, float **outs, int bufferSize)
     {
-        int index = AudioTools::radianWrap(m_angle) * CICM_1OVER2PI_RATIO;
         
-        FloatComputation::multiplyByConstant(ins[0], outs[0], m_multiplier, bufferSize);
+        //post("FROM %f angle %f TO %f",m_angleLine.getStartPoint() ,m_angleLine.getPosition() , m_angleLine.getDestination());
+        const int index = AudioTools::radianWrap(m_angleLine.incPosition() ) * CICM_1OVER2PI_RATIO;
+        
+        FloatComputation::multiplyByConstant(ins[0], outs[0], m_multiplierLine.incPosition(), bufferSize);
         
         int i = 1;
         
@@ -98,15 +109,12 @@ public :
             int j = 0;
             for(; j < bufferSize; j++)
             {
-                outs[i][j] = getEncodingMatrix()[i][index] * ins[0][j];
+                outs[i][j] = getEncodingMatrix()[i][index] * ins[0][j] * m_multiplierLine.incPosition();
             }
         }
     }
     
-    // pas utile
-    virtual void prepare()
-    {
-    }
+
     
 protected :
     
@@ -116,9 +124,17 @@ protected :
         AudioTools::clipVal(m_distance, 0.0, MaxDistance);
 
         m_multiplier = 1. - (m_distance/MaxDistance);
+        m_multiplierLine.changeDestination(m_multiplier);
     }
     
 private:
+    
+    
+    // pas utile
+    virtual void internalPrepare()
+    {
+    }
+    
     float                     m_angle;
     /* Distance virtuelle*/
     float                     m_distance;
@@ -131,16 +147,27 @@ private:
      
      */
     float                     m_multiplier;
+    
+    AudioTools::LinearInterPolator m_multiplierLine;
+    AudioTools::LinearInterPolator m_angleLine;
+    
     InternalAmbisonicEncoder* pimpl;
 };
 
 
 /* **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** */
+/*
+ 
+    DECODER
+ 
+ */
 /* **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** */
+
 class AmbisonicDecoder : public AudioProcessorBase
 {
 public:
-    AmbisonicDecoder(int order, int numOuts)
+    AmbisonicDecoder(int order, int numOuts):
+    AudioProcessorBase(AudioProcessorOutput)
     {
         pimpl = AmbisonicUtility::getDecoder(order, numOuts);
         AmbisonicUtility::retainInstance();
@@ -155,7 +182,7 @@ public:
         AmbisonicUtility::getInstance()->inspectDecoderList();
         AmbisonicUtility::releaseInstance();
 
-        deleteBuffersIfNeeded();
+        deleteBuffers();
 
     }
 
@@ -174,8 +201,10 @@ public:
         return pimpl->getNumberOfOutputs();
     }
 
+    // redef AudioProcessorBase
     virtual inline void process(float **ins, float **outs, int bufferSize)
     {
+        
         for(int i = 0; i < bufferSize; i++)
         {
             for(int j = 0; j < getHarmonicNumber(); j++)
@@ -195,27 +224,26 @@ public:
             }
         }
     }
+    // redef AudioProcessorBase
 
-    virtual void prepare()
-    {
-        deleteBuffersIfNeeded();
-        
-        m_vectorInput  = new float[pimpl->getHarmonicNumber()];
-        m_vectorOutput = new float[pimpl->getHarmonicNumber()];
-    }
     
 
 
     
 private:
     
-    void deleteBuffersIfNeeded()
+    virtual void internalPrepare()
     {
-        if (m_vectorInput!=NULL)
-            delete[] m_vectorInput;
+        deleteBuffers();
         
-        if (m_vectorOutput!=NULL)
-            delete[] m_vectorOutput;
+        m_vectorInput  = new float[pimpl->getHarmonicNumber()];
+        m_vectorOutput = new float[pimpl->getHarmonicNumber()];
+    }
+    
+    void deleteBuffers()
+    {
+        delete[] m_vectorInput;
+        delete[] m_vectorOutput;
     }
     InternalAmbisonicDecoder* pimpl;
     

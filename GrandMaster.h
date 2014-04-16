@@ -32,6 +32,12 @@ public:
         return s_instance;
     }
     
+    static int registerForAudioProcessor(AudioProcessorBase *proc)
+    {
+        GrandMaster::retain();
+        return GrandMaster::getMainAudioGraph()->addNode(proc);
+    }
+    
     static void retain()
     {
         getInstance()->RefCountedObj::retain();
@@ -45,6 +51,9 @@ public:
         {
             delete s_instance;
             s_instance = nullptr;
+            
+            AudioGraph::resetIdCounter();
+            
         }
     }
     

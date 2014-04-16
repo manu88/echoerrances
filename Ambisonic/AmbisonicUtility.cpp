@@ -72,16 +72,18 @@ InternalAmbisonicEncoder::~InternalAmbisonicEncoder()
 
 void InternalAmbisonicEncoder::computeEncodingMatrix()
 {
-    for(int i = 0; i < m_numberOfHarmonics; i++)
+    int i = 0;
+    for(; i < m_numberOfHarmonics; i++)
 	{
+        int j = 0;
         if(getHarmonicIndex(i) >= 0)
         {
-            for(int j = 0; j < numberOfCirclePoints; j++)
+            for(/* j = 0 */; j < numberOfCirclePoints; j++)
                 m_encoderMatrix[i][j] = cos((float)getHarmonicOrder(i) * (((float)j / (float)numberOfCirclePoints) * (float)M_PI*2 ));
         }
         else
         {
-            for(int j = 0; j < numberOfCirclePoints; j++)
+            for(/*j = 0*/; j < numberOfCirclePoints; j++)
                 m_encoderMatrix[i][j] = sin((float)getHarmonicOrder(i) * (((float)j / (float)numberOfCirclePoints) * (float)M_PI*2));
         }
     }
@@ -96,7 +98,8 @@ m_outputCount(numberOfOutputs)
 {
     m_decoderMatrix = new float*[m_outputCount];
     
-    for (int i=0; i<m_outputCount ; i++)
+    int i=0;
+    for (; i<m_outputCount ; i++)
         m_decoderMatrix[i] = new float[m_numberOfHarmonics];
     
     computeDecodingMatrix();
@@ -112,12 +115,14 @@ InternalAmbisonicDecoder::~InternalAmbisonicDecoder()
 
 void InternalAmbisonicDecoder::computeDecodingMatrix()
 {
-    for (int i = 0; i < m_outputCount; i++)
+    int i = 0;
+    for (; i < m_outputCount; i++)
 	{
 		float angle = M_PI* 2 * ((float)i / (float)(m_outputCount));
         angle = AudioTools::radianWrap(angle);
         
-		for (int j = 0; j < m_numberOfHarmonics; j++)
+        int j = 0;
+		for (; j < m_numberOfHarmonics; j++)
 		{
             int index = getHarmonicIndex(j);
             if(j == 0)
@@ -162,12 +167,12 @@ InternalAmbisonicEncoder* AmbisonicUtility::getEncoderForOrder(int order,bool re
 {
     InternalAmbisonicEncoder *encoder = containsEncoder(order);
     
-    if (encoder==nullptr)
+    if (encoder == nullptr)
     {
         encoder = new InternalAmbisonicEncoder(order);
         m_encoderList.push_back(encoder);
     }
-    else if (retain)
+    if (retain)
         encoder->retain();
     
     return encoder;
@@ -182,7 +187,7 @@ InternalAmbisonicDecoder* AmbisonicUtility::getDecoderForOrder(int order, int nu
         decoder = new InternalAmbisonicDecoder(order,numberOfOutputs);
         m_decoderList.push_back(decoder);
     }
-    else if (retain)
+    if (retain)
         decoder->retain();
 
     

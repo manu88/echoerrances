@@ -57,6 +57,15 @@ public:
         m_to = node;
     }
     
+    bool hasSource() const
+    {
+        return m_from != nullptr;
+    }
+    bool hasDestination() const
+    {
+        return m_to != nullptr;
+    }
+    
     
 protected:
     int                 m_nodeId;
@@ -85,14 +94,28 @@ public:
         return m_nodesList.size();
     }
     
-private:
     
-    std::list<AudioNode*> m_nodesList;
+    AudioNode* getNodeForId(int nodeId);
+    
+    static void resetIdCounter()
+    {
+        s_idCounter = 0;
+    }
     
     static int getNextId()
     {
         return ++s_idCounter;
     }
+    
+    static int getCurrentId() 
+    {
+        return s_idCounter;
+    }
+private:
+    
+    std::list<AudioNode*> m_nodesList;
+    
+
     
     
     static int s_idCounter;
@@ -103,6 +126,15 @@ private:
 /*
  Base class for audio processors
  */
+
+typedef enum
+{
+    AudioProcessorInput, // Buffers have to be created for max(numIn;numOut)
+    AudioProcessorOutput,
+    AudioProcessorFX     //
+}AudioProcessorType;
+
+
 class AudioProcessorBase
 {
 public:
@@ -129,18 +161,30 @@ public:
     
     void setConfig(int bufferSize, double sampleRate);
     
+    AudioProcessorType getType() const
+    {
+        return m_type;
+    }
     
     virtual inline void process(float **ins, float **outs, int bufferSize) = 0;
 
-    virtual void   prepare() = 0;
+    void prepare();
     
 protected:
-    AudioProcessorBase();
+    AudioProcessorBase(AudioProcessorType type);
     virtual ~AudioProcessorBase();
     
     int m_bufferSize;
     double m_sampleRate;
-   
+    
+    AudioProcessorType m_type;
+    
+    bool m_isPrepared;
+
+private:
+    // ne pas appeller directement, utiliser prepare() !
+    virtual void   internalPrepare() = 0;
+    
 };
 
 

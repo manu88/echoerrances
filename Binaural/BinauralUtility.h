@@ -11,6 +11,7 @@
 
 #include <iostream>
 #include "WavLoader.h"
+#include "Config.h"
 
 /* **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** */
 
@@ -26,7 +27,7 @@ class HrtfReader : public WavLoader
 {
 public :
     
-    enum {HrtfLength = 400};
+    enum {HrtfLength = HRTF_LENGTH};
     
     HrtfReader(int angle, int sampleRate , HrtfSize size );
     ~HrtfReader();
@@ -46,7 +47,6 @@ private:
     int      m_channels;
 
     
-    FILE*    m_currentFile;
 
     
 

@@ -116,6 +116,13 @@
 		595DEE8418F58F6C00E1B74A /* binaural~.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 592EB446189655660058600A /* binaural~.cpp */; };
 		595DEE8518F58F6F00E1B74A /* wavPlayer~.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 59DA84EA189BA21E007699EC /* wavPlayer~.cpp */; };
 		595DEE8618F58F8B00E1B74A /* WavLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 59DA84FF189BA3E4007699EC /* WavLoader.cpp */; };
+		5988A75A18FD264700A4D562 /* Config.h in Headers */ = {isa = PBXBuildFile; fileRef = 5988A75918FD264600A4D562 /* Config.h */; };
+		5988A75B18FD264700A4D562 /* Config.h in Headers */ = {isa = PBXBuildFile; fileRef = 5988A75918FD264600A4D562 /* Config.h */; };
+		5988A75C18FD264700A4D562 /* Config.h in Headers */ = {isa = PBXBuildFile; fileRef = 5988A75918FD264600A4D562 /* Config.h */; };
+		5988A75D18FD264700A4D562 /* Config.h in Headers */ = {isa = PBXBuildFile; fileRef = 5988A75918FD264600A4D562 /* Config.h */; };
+		5988A75E18FD264700A4D562 /* Config.h in Headers */ = {isa = PBXBuildFile; fileRef = 5988A75918FD264600A4D562 /* Config.h */; };
+		5988A75F18FD264700A4D562 /* Config.h in Headers */ = {isa = PBXBuildFile; fileRef = 5988A75918FD264600A4D562 /* Config.h */; };
+		5988A76018FD264700A4D562 /* Config.h in Headers */ = {isa = PBXBuildFile; fileRef = 5988A75918FD264600A4D562 /* Config.h */; };
 		59B07A9B18D6DB3800288B59 /* Internal.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 59B07A9918D6DB3800288B59 /* Internal.cpp */; };
 		59B07A9C18D6DB3800288B59 /* Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = 59B07A9A18D6DB3800288B59 /* Internal.h */; };
 		59B07AA018D6E06600288B59 /* AudioInternals.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 59B07A9E18D6E06600288B59 /* AudioInternals.cpp */; };
@@ -170,6 +177,8 @@
 		595DEE7718F58D5600E1B74A /* Library.pd_darwin */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = Library.pd_darwin; sourceTree = BUILT_PRODUCTS_DIR; };
 		5985424D18957633006F67DD /* decoder~.pd_darwin */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = "decoder~.pd_darwin"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5985424E18957683006F67DD /* decoder~.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "decoder~.cpp"; sourceTree = "<group>"; };
+		5988A75918FD264600A4D562 /* Config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Config.h; sourceTree = "<group>"; };
+		5988A76118FD2EC700A4D562 /* TODO.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = TODO.rtf; sourceTree = "<group>"; };
 		59B07A9918D6DB3800288B59 /* Internal.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Internal.cpp; path = Internal/Internal.cpp; sourceTree = "<group>"; };
 		59B07A9A18D6DB3800288B59 /* Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Internal.h; path = Internal/Internal.h; sourceTree = "<group>"; };
 		59B07A9E18D6E06600288B59 /* AudioInternals.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AudioInternals.cpp; path = AudioTools/AudioInternals.cpp; sourceTree = "<group>"; };
@@ -307,6 +316,8 @@
 		59E5F724189449BC00731CBE = {
 			isa = PBXGroup;
 			children = (
+				5988A76118FD2EC700A4D562 /* TODO.rtf */,
+				5988A75918FD264600A4D562 /* Config.h */,
 				59E387CF18ECB6040079EECE /* Geometry.h */,
 				59B07A9D18D6DB4200288B59 /* Utilities */,
 				5917A5FD189AB82E00047F39 /* audioTools */,
@@ -346,6 +357,7 @@
 				5917A618189AC29F00047F39 /* Binaural.h in Headers */,
 				5917A61A189AC29F00047F39 /* BinauralUtility.h in Headers */,
 				59E387D218ECB6040079EECE /* Geometry.h in Headers */,
+				5988A75C18FD264700A4D562 /* Config.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -363,6 +375,7 @@
 				59E387D418ECB6040079EECE /* Geometry.h in Headers */,
 				593EA75E18ED7C6100F909F9 /* Ambisonic.h in Headers */,
 				593EA75F18ED7C7600F909F9 /* AmbisonicUtility.h in Headers */,
+				5988A75E18FD264700A4D562 /* Config.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -381,6 +394,7 @@
 				593EA75718ED7BF900F909F9 /* AudioInternals.h in Headers */,
 				593EA75818ED7BF900F909F9 /* Geometry.h in Headers */,
 				593EA75918ED7BF900F909F9 /* AmbisonicReverb.h in Headers */,
+				5988A75F18FD264700A4D562 /* Config.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -399,6 +413,7 @@
 				595DEE7118F58D5600E1B74A /* AudioInternals.h in Headers */,
 				595DEE7218F58D5600E1B74A /* Geometry.h in Headers */,
 				595DEE7318F58D5600E1B74A /* AmbisonicReverb.h in Headers */,
+				5988A76018FD264700A4D562 /* Config.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -415,6 +430,7 @@
 				5917A623189AC2AF00047F39 /* AmbisonicUtility.h in Headers */,
 				59E387D118ECB6040079EECE /* Geometry.h in Headers */,
 				593EA74118ED6F2000F909F9 /* AmbisonicReverb.h in Headers */,
+				5988A75B18FD264700A4D562 /* Config.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -431,6 +447,7 @@
 				59DA84F9189BA228007699EC /* BinauralUtility.h in Headers */,
 				59DA8502189BA3E4007699EC /* WavLoader.h in Headers */,
 				59E387D318ECB6040079EECE /* Geometry.h in Headers */,
+				5988A75D18FD264700A4D562 /* Config.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -450,6 +467,7 @@
 				59E387D018ECB6040079EECE /* Geometry.h in Headers */,
 				593EA74018ED6F2000F909F9 /* AmbisonicReverb.h in Headers */,
 				595D35DD18FC850F00D0D192 /* GrandMaster.h in Headers */,
+				5988A75A18FD264700A4D562 /* Config.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
