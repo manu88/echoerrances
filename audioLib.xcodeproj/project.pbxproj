@@ -79,14 +79,6 @@
 		593EA75E18ED7C6100F909F9 /* Ambisonic.h in Headers */ = {isa = PBXBuildFile; fileRef = 5917A61B189AC2AF00047F39 /* Ambisonic.h */; };
 		593EA75F18ED7C7600F909F9 /* AmbisonicUtility.h in Headers */ = {isa = PBXBuildFile; fileRef = 5917A61D189AC2AF00047F39 /* AmbisonicUtility.h */; };
 		593EA76018ED7C8400F909F9 /* AmbisonicReverb~.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 593EA74518ED7BDE00F909F9 /* AmbisonicReverb~.cpp */; };
-		595D35DC18FC850F00D0D192 /* GrandMaster.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 595D35DA18FC850E00D0D192 /* GrandMaster.cpp */; };
-		595D35DD18FC850F00D0D192 /* GrandMaster.h in Headers */ = {isa = PBXBuildFile; fileRef = 595D35DB18FC850F00D0D192 /* GrandMaster.h */; };
-		595D35DE18FC852300D0D192 /* GrandMaster.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 595D35DA18FC850E00D0D192 /* GrandMaster.cpp */; };
-		595D35DF18FC852400D0D192 /* GrandMaster.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 595D35DA18FC850E00D0D192 /* GrandMaster.cpp */; };
-		595D35E018FC852400D0D192 /* GrandMaster.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 595D35DA18FC850E00D0D192 /* GrandMaster.cpp */; };
-		595D35E118FC852500D0D192 /* GrandMaster.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 595D35DA18FC850E00D0D192 /* GrandMaster.cpp */; };
-		595D35E218FC852600D0D192 /* GrandMaster.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 595D35DA18FC850E00D0D192 /* GrandMaster.cpp */; };
-		595D35E318FC852600D0D192 /* GrandMaster.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 595D35DA18FC850E00D0D192 /* GrandMaster.cpp */; };
 		595D35E518FC945100D0D192 /* libStat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 595D35E418FC945100D0D192 /* libStat.cpp */; };
 		595D35E618FC958000D0D192 /* libStat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 595D35E418FC945100D0D192 /* libStat.cpp */; };
 		595D35E718FC958100D0D192 /* libStat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 595D35E418FC945100D0D192 /* libStat.cpp */; };
@@ -119,6 +111,20 @@
 		595DEE8418F58F6C00E1B74A /* binaural~.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 592EB446189655660058600A /* binaural~.cpp */; };
 		595DEE8518F58F6F00E1B74A /* wavPlayer~.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 59DA84EA189BA21E007699EC /* wavPlayer~.cpp */; };
 		595DEE8618F58F8B00E1B74A /* WavLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 59DA84FF189BA3E4007699EC /* WavLoader.cpp */; };
+		5965D605190172AC00ECA8D2 /* GrandMaster.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5965D603190172AC00ECA8D2 /* GrandMaster.cpp */; };
+		5965D606190172AC00ECA8D2 /* GrandMaster.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5965D603190172AC00ECA8D2 /* GrandMaster.cpp */; };
+		5965D607190172AC00ECA8D2 /* GrandMaster.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5965D603190172AC00ECA8D2 /* GrandMaster.cpp */; };
+		5965D608190172AC00ECA8D2 /* GrandMaster.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5965D603190172AC00ECA8D2 /* GrandMaster.cpp */; };
+		5965D609190172AC00ECA8D2 /* GrandMaster.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5965D603190172AC00ECA8D2 /* GrandMaster.cpp */; };
+		5965D60A190172AC00ECA8D2 /* GrandMaster.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5965D603190172AC00ECA8D2 /* GrandMaster.cpp */; };
+		5965D60B190172AC00ECA8D2 /* GrandMaster.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5965D603190172AC00ECA8D2 /* GrandMaster.cpp */; };
+		5965D60C190172AC00ECA8D2 /* GrandMaster.h in Headers */ = {isa = PBXBuildFile; fileRef = 5965D604190172AC00ECA8D2 /* GrandMaster.h */; };
+		5965D60D190172AC00ECA8D2 /* GrandMaster.h in Headers */ = {isa = PBXBuildFile; fileRef = 5965D604190172AC00ECA8D2 /* GrandMaster.h */; };
+		5965D60E190172AC00ECA8D2 /* GrandMaster.h in Headers */ = {isa = PBXBuildFile; fileRef = 5965D604190172AC00ECA8D2 /* GrandMaster.h */; };
+		5965D60F190172AC00ECA8D2 /* GrandMaster.h in Headers */ = {isa = PBXBuildFile; fileRef = 5965D604190172AC00ECA8D2 /* GrandMaster.h */; };
+		5965D610190172AC00ECA8D2 /* GrandMaster.h in Headers */ = {isa = PBXBuildFile; fileRef = 5965D604190172AC00ECA8D2 /* GrandMaster.h */; };
+		5965D611190172AC00ECA8D2 /* GrandMaster.h in Headers */ = {isa = PBXBuildFile; fileRef = 5965D604190172AC00ECA8D2 /* GrandMaster.h */; };
+		5965D612190172AC00ECA8D2 /* GrandMaster.h in Headers */ = {isa = PBXBuildFile; fileRef = 5965D604190172AC00ECA8D2 /* GrandMaster.h */; };
 		5988A75A18FD264700A4D562 /* Config.h in Headers */ = {isa = PBXBuildFile; fileRef = 5988A75918FD264600A4D562 /* Config.h */; };
 		5988A75B18FD264700A4D562 /* Config.h in Headers */ = {isa = PBXBuildFile; fileRef = 5988A75918FD264600A4D562 /* Config.h */; };
 		5988A75C18FD264700A4D562 /* Config.h in Headers */ = {isa = PBXBuildFile; fileRef = 5988A75918FD264600A4D562 /* Config.h */; };
@@ -176,11 +182,11 @@
 		593EA73A18ED6F2000F909F9 /* AmbisonicReverb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AmbisonicReverb.h; path = Ambisonic/AmbisonicReverb.h; sourceTree = "<group>"; };
 		593EA74518ED7BDE00F909F9 /* AmbisonicReverb~.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "AmbisonicReverb~.cpp"; sourceTree = "<group>"; };
 		593EA75D18ED7BF900F909F9 /* ambisonicReverb~.pd_darwin */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = "ambisonicReverb~.pd_darwin"; sourceTree = BUILT_PRODUCTS_DIR; };
-		595D35DA18FC850E00D0D192 /* GrandMaster.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GrandMaster.cpp; sourceTree = "<group>"; };
-		595D35DB18FC850F00D0D192 /* GrandMaster.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GrandMaster.h; sourceTree = "<group>"; };
 		595D35E418FC945100D0D192 /* libStat.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = libStat.cpp; sourceTree = "<group>"; };
 		595DEE5F18F58D4E00E1B74A /* Library~.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "Library~.cpp"; sourceTree = "<group>"; };
 		595DEE7718F58D5600E1B74A /* Library.pd_darwin */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = Library.pd_darwin; sourceTree = BUILT_PRODUCTS_DIR; };
+		5965D603190172AC00ECA8D2 /* GrandMaster.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GrandMaster.cpp; path = Internal/GrandMaster.cpp; sourceTree = "<group>"; };
+		5965D604190172AC00ECA8D2 /* GrandMaster.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GrandMaster.h; path = Internal/GrandMaster.h; sourceTree = "<group>"; };
 		5985424D18957633006F67DD /* decoder~.pd_darwin */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = "decoder~.pd_darwin"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5985424E18957683006F67DD /* decoder~.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "decoder~.cpp"; sourceTree = "<group>"; };
 		5988A75918FD264600A4D562 /* Config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Config.h; sourceTree = "<group>"; };
@@ -314,10 +320,10 @@
 		59B07A9D18D6DB4200288B59 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				5965D603190172AC00ECA8D2 /* GrandMaster.cpp */,
+				5965D604190172AC00ECA8D2 /* GrandMaster.h */,
 				59B07A9A18D6DB3800288B59 /* Internal.h */,
 				59B07A9918D6DB3800288B59 /* Internal.cpp */,
-				595D35DB18FC850F00D0D192 /* GrandMaster.h */,
-				595D35DA18FC850E00D0D192 /* GrandMaster.cpp */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -367,6 +373,7 @@
 				5917A61A189AC29F00047F39 /* BinauralUtility.h in Headers */,
 				59E387D218ECB6040079EECE /* Geometry.h in Headers */,
 				5988A75C18FD264700A4D562 /* Config.h in Headers */,
+				5965D60E190172AC00ECA8D2 /* GrandMaster.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -385,6 +392,7 @@
 				593EA75E18ED7C6100F909F9 /* Ambisonic.h in Headers */,
 				593EA75F18ED7C7600F909F9 /* AmbisonicUtility.h in Headers */,
 				5988A75E18FD264700A4D562 /* Config.h in Headers */,
+				5965D610190172AC00ECA8D2 /* GrandMaster.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -404,6 +412,7 @@
 				593EA75818ED7BF900F909F9 /* Geometry.h in Headers */,
 				593EA75918ED7BF900F909F9 /* AmbisonicReverb.h in Headers */,
 				5988A75F18FD264700A4D562 /* Config.h in Headers */,
+				5965D611190172AC00ECA8D2 /* GrandMaster.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -424,6 +433,7 @@
 				595DEE7318F58D5600E1B74A /* AmbisonicReverb.h in Headers */,
 				5988A76018FD264700A4D562 /* Config.h in Headers */,
 				5916B3A619005F860012BAAA /* AmbisonicRotation.h in Headers */,
+				5965D612190172AC00ECA8D2 /* GrandMaster.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -441,6 +451,7 @@
 				59E387D118ECB6040079EECE /* Geometry.h in Headers */,
 				593EA74118ED6F2000F909F9 /* AmbisonicReverb.h in Headers */,
 				5988A75B18FD264700A4D562 /* Config.h in Headers */,
+				5965D60D190172AC00ECA8D2 /* GrandMaster.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -458,6 +469,7 @@
 				59DA8502189BA3E4007699EC /* WavLoader.h in Headers */,
 				59E387D318ECB6040079EECE /* Geometry.h in Headers */,
 				5988A75D18FD264700A4D562 /* Config.h in Headers */,
+				5965D60F190172AC00ECA8D2 /* GrandMaster.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -476,8 +488,8 @@
 				59B07AA118D6E06600288B59 /* AudioInternals.h in Headers */,
 				59E387D018ECB6040079EECE /* Geometry.h in Headers */,
 				593EA74018ED6F2000F909F9 /* AmbisonicReverb.h in Headers */,
-				595D35DD18FC850F00D0D192 /* GrandMaster.h in Headers */,
 				5988A75A18FD264700A4D562 /* Config.h in Headers */,
+				5965D60C190172AC00ECA8D2 /* GrandMaster.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -646,8 +658,8 @@
 				59DA8503189D13DE007699EC /* WavLoader.cpp in Sources */,
 				5938485A18D7722B00267F32 /* AudioInternals.cpp in Sources */,
 				5938485D18D7723400267F32 /* Internal.cpp in Sources */,
-				595D35E218FC852600D0D192 /* GrandMaster.cpp in Sources */,
 				595D35E818FC958100D0D192 /* libStat.cpp in Sources */,
+				5965D607190172AC00ECA8D2 /* GrandMaster.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -662,8 +674,8 @@
 				5938486818D7768A00267F32 /* Internal.cpp in Sources */,
 				5938487618D776D300267F32 /* ambiToBinaural~.cpp in Sources */,
 				5938487718D7797E00267F32 /* AmbisonicUtility.cpp in Sources */,
-				595D35E018FC852400D0D192 /* GrandMaster.cpp in Sources */,
 				595D35EA18FC958200D0D192 /* libStat.cpp in Sources */,
+				5965D609190172AC00ECA8D2 /* GrandMaster.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -676,8 +688,8 @@
 				593EA74B18ED7BF900F909F9 /* AudioInternals.cpp in Sources */,
 				593EA74C18ED7BF900F909F9 /* AmbisonicReverb.cpp in Sources */,
 				593EA76018ED7C8400F909F9 /* AmbisonicReverb~.cpp in Sources */,
-				595D35DF18FC852400D0D192 /* GrandMaster.cpp in Sources */,
 				595D35EB18FC958300D0D192 /* libStat.cpp in Sources */,
+				5965D60A190172AC00ECA8D2 /* GrandMaster.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -699,10 +711,10 @@
 				595DEE8418F58F6C00E1B74A /* binaural~.cpp in Sources */,
 				595DEE8518F58F6F00E1B74A /* wavPlayer~.cpp in Sources */,
 				595DEE8618F58F8B00E1B74A /* WavLoader.cpp in Sources */,
-				595D35DE18FC852300D0D192 /* GrandMaster.cpp in Sources */,
 				595D35E518FC945100D0D192 /* libStat.cpp in Sources */,
 				5916B3A519005F860012BAAA /* AmbisonicRotation.cpp in Sources */,
 				5916B3A9190066B80012BAAA /* rotator~.cpp in Sources */,
+				5965D60B190172AC00ECA8D2 /* GrandMaster.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -715,8 +727,8 @@
 				5938485918D7722B00267F32 /* AudioInternals.cpp in Sources */,
 				5938485C18D7723300267F32 /* Internal.cpp in Sources */,
 				593EA73C18ED6F2000F909F9 /* AmbisonicReverb.cpp in Sources */,
-				595D35E318FC852600D0D192 /* GrandMaster.cpp in Sources */,
 				595D35E718FC958100D0D192 /* libStat.cpp in Sources */,
+				5965D606190172AC00ECA8D2 /* GrandMaster.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -730,8 +742,8 @@
 				59DA8501189BA3E4007699EC /* WavLoader.cpp in Sources */,
 				5938485B18D7722C00267F32 /* AudioInternals.cpp in Sources */,
 				5938485E18D7723600267F32 /* Internal.cpp in Sources */,
-				595D35E118FC852500D0D192 /* GrandMaster.cpp in Sources */,
 				595D35E918FC958200D0D192 /* libStat.cpp in Sources */,
+				5965D608190172AC00ECA8D2 /* GrandMaster.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -744,8 +756,8 @@
 				59B07A9B18D6DB3800288B59 /* Internal.cpp in Sources */,
 				59B07AA018D6E06600288B59 /* AudioInternals.cpp in Sources */,
 				593EA73B18ED6F2000F909F9 /* AmbisonicReverb.cpp in Sources */,
-				595D35DC18FC850F00D0D192 /* GrandMaster.cpp in Sources */,
 				595D35E618FC958000D0D192 /* libStat.cpp in Sources */,
+				5965D605190172AC00ECA8D2 /* GrandMaster.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

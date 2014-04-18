@@ -1,0 +1,209 @@
+Tencoder~
+v5
+r1
+cCheck dependencies
+cCompileC build/audioLib.build/Release/encoder~.build/Objects-normal/i386/Internal.o /Users/manueldeneu/Documents/projets/dev/echoerrances/Internal/Internal.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/audioLib.build/Release/encoder~.build/Objects-normal/i386/encoder~.o /Users/manueldeneu/Documents/projets/dev/echoerrances/encoder~.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/audioLib.build/Release/encoder~.build/Objects-normal/i386/AmbisonicUtility.o /Users/manueldeneu/Documents/projets/dev/echoerrances/Ambisonic/AmbisonicUtility.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/audioLib.build/Release/encoder~.build/Objects-normal/i386/AudioInternals.o /Users/manueldeneu/Documents/projets/dev/echoerrances/AudioTools/AudioInternals.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/audioLib.build/Release/encoder~.build/Objects-normal/i386/AmbisonicReverb.o /Users/manueldeneu/Documents/projets/dev/echoerrances/Ambisonic/AmbisonicReverb.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/audioLib.build/Release/encoder~.build/Objects-normal/i386/libStat.o /Users/manueldeneu/Documents/projets/dev/echoerrances/libStat.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/audioLib.build/Release/encoder~.build/Objects-normal/i386/GrandMaster.o /Users/manueldeneu/Documents/projets/dev/echoerrances/Internal/GrandMaster.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
+cLd /Users/manueldeneu/Documents/projets/dev/echoerrances/build/Release/encoder~.pd_darwin normal i386
+cGenerateDSYMFile /Users/manueldeneu/Documents/projets/dev/echoerrances/build/Release/encoder~.pd_darwin.dSYM /Users/manueldeneu/Documents/projets/dev/echoerrances/build/Release/encoder~.pd_darwin
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk
+c00000000518FC0F300000000000000AA
+t1368375539
+s170
+
+N/Users/manueldeneu/Documents/projets/dev/echoerrances/Ambisonic/AmbisonicReverb.cpp
+c00000000534E53B10000000000000188
+t1397642161
+s392
+
+N/Users/manueldeneu/Documents/projets/dev/echoerrances/Ambisonic/AmbisonicUtility.cpp
+c00000000534F8A2300000000000017F0
+t1397721635
+s6128
+
+N/Users/manueldeneu/Documents/projets/dev/echoerrances/AudioTools/AudioInternals.cpp
+c00000000534EFD540000000000000DD9
+t1397685588
+s3545
+
+N/Users/manueldeneu/Documents/projets/dev/echoerrances/Internal/GrandMaster.cpp
+c00000000534C5BD200000000000001AA
+t1397513170
+s426
+
+N/Users/manueldeneu/Documents/projets/dev/echoerrances/Internal/Internal.cpp
+c000000005326A3B700000000000000A1
+t1395041207
+s161
+
+N/Users/manueldeneu/Documents/projets/dev/echoerrances/build/Release/encoder~.pd_darwin
+t2
+s0
+
+N/Users/manueldeneu/Documents/projets/dev/echoerrances/build/Release/encoder~.pd_darwin.dSYM
+t2
+s0
+
+N/Users/manueldeneu/Documents/projets/dev/echoerrances/build/audioLib.build/Release/encoder~.build/Objects-normal/i386/AmbisonicReverb.o
+t2
+s0
+
+N/Users/manueldeneu/Documents/projets/dev/echoerrances/build/audioLib.build/Release/encoder~.build/Objects-normal/i386/AmbisonicUtility.o
+t2
+s0
+
+N/Users/manueldeneu/Documents/projets/dev/echoerrances/build/audioLib.build/Release/encoder~.build/Objects-normal/i386/AudioInternals.o
+t2
+s0
+
+N/Users/manueldeneu/Documents/projets/dev/echoerrances/build/audioLib.build/Release/encoder~.build/Objects-normal/i386/GrandMaster.o
+t2
+s0
+
+N/Users/manueldeneu/Documents/projets/dev/echoerrances/build/audioLib.build/Release/encoder~.build/Objects-normal/i386/Internal.o
+t2
+s0
+
+N/Users/manueldeneu/Documents/projets/dev/echoerrances/build/audioLib.build/Release/encoder~.build/Objects-normal/i386/encoder~.LinkFileList
+c0000000053513C8B000000000000039E
+t1397832843
+s926
+
+N/Users/manueldeneu/Documents/projets/dev/echoerrances/build/audioLib.build/Release/encoder~.build/Objects-normal/i386/encoder~.o
+t2
+s0
+
+N/Users/manueldeneu/Documents/projets/dev/echoerrances/build/audioLib.build/Release/encoder~.build/Objects-normal/i386/libStat.o
+t2
+s0
+
+N/Users/manueldeneu/Documents/projets/dev/echoerrances/encoder~.cpp
+c00000000534F7AD8000000000000104E
+t1397717720
+s4174
+
+N/Users/manueldeneu/Documents/projets/dev/echoerrances/libStat.cpp
+c00000000534E516C0000000000000D3C
+t1397641580
+s3388
+
+CCheck dependencies
+r0
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependenciesb2f5140b7401b941^8e20710b7401b941^---0#1#0#--18"Check dependencies36"6261D646-AAB4-4035-BB5B-7B719A7D1FFF-
+
+CCompileC build/audioLib.build/Release/encoder~.build/Objects-normal/i386/AmbisonicReverb.o /Users/manueldeneu/Documents/projets/dev/echoerrances/Ambisonic/AmbisonicReverb.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
+s419525645.025764
+e419525645.770805
+r1
+xCompileC
+xbuild/audioLib.build/Release/encoder~.build/Objects-normal/i386/AmbisonicReverb.o
+x/Users/manueldeneu/Documents/projets/dev/echoerrances/Ambisonic/AmbisonicReverb.cpp
+xnormal
+xi386
+xc++
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection91"Compile /Users/manueldeneu/Documents/projets/dev/echoerrances/Ambisonic/AmbisonicReverb.cpp3acd060d7401b941^1762c50d7401b941^---0#0#0#-19%DVTDocumentLocation2@99"file://localhost/Users/manueldeneu/Documents/projets/dev/echoerrances/Ambisonic/AmbisonicReverb.cpp0000000000000000^3011"CompileC "build/audioLib.build/Release/encoder~.build/Objects-normal/i386/AmbisonicReverb.o" Ambisonic/AmbisonicReverb.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/manueldeneu/Documents/projets/dev/echoerrances    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c++ -arch i386 -fmessage-length=0 -std=gnu++11 -stdlib=libc++ -Wno-trigraphs -fpascal-strings -Os -Wno-missing-field-initializers -Wno-missing-prototypes -Wreturn-type -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wenum-conversion -Wshorten-64-to-32 -Wno-newline-eof -Wno-c++11-extensions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -fasm-blocks -fstrict-aliasing -Wdeprecated-declarations -Winvalid-offsetof -mmacosx-version-min=10.8 -g -fvisibility-inlines-hidden -Wno-sign-conversion -iquote "/Users/manueldeneu/Documents/projets/dev/echoerrances/build/audioLib.build/Release/encoder~.build/encoder~-generated-files.hmap" "-I/Users/manueldeneu/Documents/projets/dev/echoerrances/build/audioLib.build/Release/encoder~.build/encoder~-own-target-headers.hmap" "-I/Users/manueldeneu/Documents/projets/dev/echoerrances/build/audioLib.build/Release/encoder~.build/encoder~-all-target-headers.hmap" -iquote "/Users/manueldeneu/Documents/projets/dev/echoerrances/build/audioLib.build/Release/encoder~.build/encoder~-project-headers.hmap" -I/Users/manueldeneu/Documents/projets/dev/echoerrances/build/Release/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include "-I/Users/manueldeneu/Documents/projets/dev/echoerrances/build/audioLib.build/Release/encoder~.build/DerivedSources/i386" "-I/Users/manueldeneu/Documents/projets/dev/echoerrances/build/audioLib.build/Release/encoder~.build/DerivedSources" -F/Users/manueldeneu/Documents/projets/dev/echoerrances/build/Release -MMD -MT dependencies -MF "/Users/manueldeneu/Documents/projets/dev/echoerrances/build/audioLib.build/Release/encoder~.build/Objects-normal/i386/AmbisonicReverb.d" --serialize-diagnostics "/Users/manueldeneu/Documents/projets/dev/echoerrances/build/audioLib.build/Release/encoder~.build/Objects-normal/i386/AmbisonicReverb.dia" -c /Users/manueldeneu/Documents/projets/dev/echoerrances/Ambisonic/AmbisonicReverb.cpp -o "/Users/manueldeneu/Documents/projets/dev/echoerrances/build/audioLib.build/Release/encoder~.build/Objects-normal/i386/AmbisonicReverb.o"36"9AFC2875-94B9-4627-9BD8-F2D2C50ACE46-
+
+CCompileC build/audioLib.build/Release/encoder~.build/Objects-normal/i386/AmbisonicUtility.o /Users/manueldeneu/Documents/projets/dev/echoerrances/Ambisonic/AmbisonicUtility.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
+s419525643.448001
+e419525645.112704
+r1
+xCompileC
+xbuild/audioLib.build/Release/encoder~.build/Objects-normal/i386/AmbisonicUtility.o
+x/Users/manueldeneu/Documents/projets/dev/echoerrances/Ambisonic/AmbisonicUtility.cpp
+xnormal
+xi386
+xc++
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection92"Compile /Users/manueldeneu/Documents/projets/dev/echoerrances/Ambisonic/AmbisonicUtility.cpp5518730b7401b941^d3841d0d7401b941^---0#0#0#-19%DVTDocumentLocation2@100"file://localhost/Users/manueldeneu/Documents/projets/dev/echoerrances/Ambisonic/AmbisonicUtility.cpp0000000000000000^3017"CompileC "build/audioLib.build/Release/encoder~.build/Objects-normal/i386/AmbisonicUtility.o" Ambisonic/AmbisonicUtility.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/manueldeneu/Documents/projets/dev/echoerrances    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c++ -arch i386 -fmessage-length=0 -std=gnu++11 -stdlib=libc++ -Wno-trigraphs -fpascal-strings -Os -Wno-missing-field-initializers -Wno-missing-prototypes -Wreturn-type -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wenum-conversion -Wshorten-64-to-32 -Wno-newline-eof -Wno-c++11-extensions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -fasm-blocks -fstrict-aliasing -Wdeprecated-declarations -Winvalid-offsetof -mmacosx-version-min=10.8 -g -fvisibility-inlines-hidden -Wno-sign-conversion -iquote "/Users/manueldeneu/Documents/projets/dev/echoerrances/build/audioLib.build/Release/encoder~.build/encoder~-generated-files.hmap" "-I/Users/manueldeneu/Documents/projets/dev/echoerrances/build/audioLib.build/Release/encoder~.build/encoder~-own-target-headers.hmap" "-I/Users/manueldeneu/Documents/projets/dev/echoerrances/build/audioLib.build/Release/encoder~.build/encoder~-all-target-headers.hmap" -iquote "/Users/manueldeneu/Documents/projets/dev/echoerrances/build/audioLib.build/Release/encoder~.build/encoder~-project-headers.hmap" -I/Users/manueldeneu/Documents/projets/dev/echoerrances/build/Release/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include "-I/Users/manueldeneu/Documents/projets/dev/echoerrances/build/audioLib.build/Release/encoder~.build/DerivedSources/i386" "-I/Users/manueldeneu/Documents/projets/dev/echoerrances/build/audioLib.build/Release/encoder~.build/DerivedSources" -F/Users/manueldeneu/Documents/projets/dev/echoerrances/build/Release -MMD -MT dependencies -MF "/Users/manueldeneu/Documents/projets/dev/echoerrances/build/audioLib.build/Release/encoder~.build/Objects-normal/i386/AmbisonicUtility.d" --serialize-diagnostics "/Users/manueldeneu/Documents/projets/dev/echoerrances/build/audioLib.build/Release/encoder~.build/Objects-normal/i386/AmbisonicUtility.dia" -c /Users/manueldeneu/Documents/projets/dev/echoerrances/Ambisonic/AmbisonicUtility.cpp -o "/Users/manueldeneu/Documents/projets/dev/echoerrances/build/audioLib.build/Release/encoder~.build/Objects-normal/i386/AmbisonicUtility.o"36"6DA5D9BF-A7EF-4C88-8C22-13209221387E-
+
+CCompileC build/audioLib.build/Release/encoder~.build/Objects-normal/i386/AudioInternals.o /Users/manueldeneu/Documents/projets/dev/echoerrances/AudioTools/AudioInternals.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
+s419525643.448011
+e419525645.046172
+r1
+xCompileC
+xbuild/audioLib.build/Release/encoder~.build/Objects-normal/i386/AudioInternals.o
+x/Users/manueldeneu/Documents/projets/dev/echoerrances/AudioTools/AudioInternals.cpp
+xnormal
+xi386
+xc++
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection91"Compile /Users/manueldeneu/Documents/projets/dev/echoerrances/AudioTools/AudioInternals.cppca18730b7401b941^9ed00b0d7401b941^---0#0#0#-19%DVTDocumentLocation2@99"file://localhost/Users/manueldeneu/Documents/projets/dev/echoerrances/AudioTools/AudioInternals.cpp0000000000000000^3007"CompileC "build/audioLib.build/Release/encoder~.build/Objects-normal/i386/AudioInternals.o" AudioTools/AudioInternals.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/manueldeneu/Documents/projets/dev/echoerrances    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c++ -arch i386 -fmessage-length=0 -std=gnu++11 -stdlib=libc++ -Wno-trigraphs -fpascal-strings -Os -Wno-missing-field-initializers -Wno-missing-prototypes -Wreturn-type -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wenum-conversion -Wshorten-64-to-32 -Wno-newline-eof -Wno-c++11-extensions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -fasm-blocks -fstrict-aliasing -Wdeprecated-declarations -Winvalid-offsetof -mmacosx-version-min=10.8 -g -fvisibility-inlines-hidden -Wno-sign-conversion -iquote "/Users/manueldeneu/Documents/projets/dev/echoerrances/build/audioLib.build/Release/encoder~.build/encoder~-generated-files.hmap" "-I/Users/manueldeneu/Documents/projets/dev/echoerrances/build/audioLib.build/Release/encoder~.build/encoder~-own-target-headers.hmap" "-I/Users/manueldeneu/Documents/projets/dev/echoerrances/build/audioLib.build/Release/encoder~.build/encoder~-all-target-headers.hmap" -iquote "/Users/manueldeneu/Documents/projets/dev/echoerrances/build/audioLib.build/Release/encoder~.build/encoder~-project-headers.hmap" -I/Users/manueldeneu/Documents/projets/dev/echoerrances/build/Release/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include "-I/Users/manueldeneu/Documents/projets/dev/echoerrances/build/audioLib.build/Release/encoder~.build/DerivedSources/i386" "-I/Users/manueldeneu/Documents/projets/dev/echoerrances/build/audioLib.build/Release/encoder~.build/DerivedSources" -F/Users/manueldeneu/Documents/projets/dev/echoerrances/build/Release -MMD -MT dependencies -MF "/Users/manueldeneu/Documents/projets/dev/echoerrances/build/audioLib.build/Release/encoder~.build/Objects-normal/i386/AudioInternals.d" --serialize-diagnostics "/Users/manueldeneu/Documents/projets/dev/echoerrances/build/audioLib.build/Release/encoder~.build/Objects-normal/i386/AudioInternals.dia" -c /Users/manueldeneu/Documents/projets/dev/echoerrances/AudioTools/AudioInternals.cpp -o "/Users/manueldeneu/Documents/projets/dev/echoerrances/build/audioLib.build/Release/encoder~.build/Objects-normal/i386/AudioInternals.o"36"8780BAC4-3B82-4074-802F-516FDDDCF0AD-
+
+CCompileC build/audioLib.build/Release/encoder~.build/Objects-normal/i386/GrandMaster.o /Users/manueldeneu/Documents/projets/dev/echoerrances/Internal/GrandMaster.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
+s419525645.115620
+e419525645.801476
+r1
+xCompileC
+xbuild/audioLib.build/Release/encoder~.build/Objects-normal/i386/GrandMaster.o
+x/Users/manueldeneu/Documents/projets/dev/echoerrances/Internal/GrandMaster.cpp
+xnormal
+xi386
+xc++
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection86"Compile /Users/manueldeneu/Documents/projets/dev/echoerrances/Internal/GrandMaster.cpp00c41d0d7401b941^b22fcd0d7401b941^---0#0#0#-19%DVTDocumentLocation2@94"file://localhost/Users/manueldeneu/Documents/projets/dev/echoerrances/Internal/GrandMaster.cpp0000000000000000^2985"CompileC "build/audioLib.build/Release/encoder~.build/Objects-normal/i386/GrandMaster.o" Internal/GrandMaster.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/manueldeneu/Documents/projets/dev/echoerrances    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c++ -arch i386 -fmessage-length=0 -std=gnu++11 -stdlib=libc++ -Wno-trigraphs -fpascal-strings -Os -Wno-missing-field-initializers -Wno-missing-prototypes -Wreturn-type -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wenum-conversion -Wshorten-64-to-32 -Wno-newline-eof -Wno-c++11-extensions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -fasm-blocks -fstrict-aliasing -Wdeprecated-declarations -Winvalid-offsetof -mmacosx-version-min=10.8 -g -fvisibility-inlines-hidden -Wno-sign-conversion -iquote "/Users/manueldeneu/Documents/projets/dev/echoerrances/build/audioLib.build/Release/encoder~.build/encoder~-generated-files.hmap" "-I/Users/manueldeneu/Documents/projets/dev/echoerrances/build/audioLib.build/Release/encoder~.build/encoder~-own-target-headers.hmap" "-I/Users/manueldeneu/Documents/projets/dev/echoerrances/build/audioLib.build/Release/encoder~.build/encoder~-all-target-headers.hmap" -iquote "/Users/manueldeneu/Documents/projets/dev/echoerrances/build/audioLib.build/Release/encoder~.build/encoder~-project-headers.hmap" -I/Users/manueldeneu/Documents/projets/dev/echoerrances/build/Release/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include "-I/Users/manueldeneu/Documents/projets/dev/echoerrances/build/audioLib.build/Release/encoder~.build/DerivedSources/i386" "-I/Users/manueldeneu/Documents/projets/dev/echoerrances/build/audioLib.build/Release/encoder~.build/DerivedSources" -F/Users/manueldeneu/Documents/projets/dev/echoerrances/build/Release -MMD -MT dependencies -MF "/Users/manueldeneu/Documents/projets/dev/echoerrances/build/audioLib.build/Release/encoder~.build/Objects-normal/i386/GrandMaster.d" --serialize-diagnostics "/Users/manueldeneu/Documents/projets/dev/echoerrances/build/audioLib.build/Release/encoder~.build/Objects-normal/i386/GrandMaster.dia" -c /Users/manueldeneu/Documents/projets/dev/echoerrances/Internal/GrandMaster.cpp -o "/Users/manueldeneu/Documents/projets/dev/echoerrances/build/audioLib.build/Release/encoder~.build/Objects-normal/i386/GrandMaster.o"36"BA681460-EA3C-4CF2-B9FA-E73A5887EBB5-
+
+CCompileC build/audioLib.build/Release/encoder~.build/Objects-normal/i386/Internal.o /Users/manueldeneu/Documents/projets/dev/echoerrances/Internal/Internal.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
+s419525643.447951
+e419525645.024323
+r1
+xCompileC
+xbuild/audioLib.build/Release/encoder~.build/Objects-normal/i386/Internal.o
+x/Users/manueldeneu/Documents/projets/dev/echoerrances/Internal/Internal.cpp
+xnormal
+xi386
+xc++
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection83"Compile /Users/manueldeneu/Documents/projets/dev/echoerrances/Internal/Internal.cppfc18730b7401b941^ab5a060d7401b941^---0#0#0#-19%DVTDocumentLocation2@91"file://localhost/Users/manueldeneu/Documents/projets/dev/echoerrances/Internal/Internal.cpp0000000000000000^2967"CompileC "build/audioLib.build/Release/encoder~.build/Objects-normal/i386/Internal.o" Internal/Internal.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/manueldeneu/Documents/projets/dev/echoerrances    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c++ -arch i386 -fmessage-length=0 -std=gnu++11 -stdlib=libc++ -Wno-trigraphs -fpascal-strings -Os -Wno-missing-field-initializers -Wno-missing-prototypes -Wreturn-type -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wenum-conversion -Wshorten-64-to-32 -Wno-newline-eof -Wno-c++11-extensions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -fasm-blocks -fstrict-aliasing -Wdeprecated-declarations -Winvalid-offsetof -mmacosx-version-min=10.8 -g -fvisibility-inlines-hidden -Wno-sign-conversion -iquote "/Users/manueldeneu/Documents/projets/dev/echoerrances/build/audioLib.build/Release/encoder~.build/encoder~-generated-files.hmap" "-I/Users/manueldeneu/Documents/projets/dev/echoerrances/build/audioLib.build/Release/encoder~.build/encoder~-own-target-headers.hmap" "-I/Users/manueldeneu/Documents/projets/dev/echoerrances/build/audioLib.build/Release/encoder~.build/encoder~-all-target-headers.hmap" -iquote "/Users/manueldeneu/Documents/projets/dev/echoerrances/build/audioLib.build/Release/encoder~.build/encoder~-project-headers.hmap" -I/Users/manueldeneu/Documents/projets/dev/echoerrances/build/Release/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include "-I/Users/manueldeneu/Documents/projets/dev/echoerrances/build/audioLib.build/Release/encoder~.build/DerivedSources/i386" "-I/Users/manueldeneu/Documents/projets/dev/echoerrances/build/audioLib.build/Release/encoder~.build/DerivedSources" -F/Users/manueldeneu/Documents/projets/dev/echoerrances/build/Release -MMD -MT dependencies -MF "/Users/manueldeneu/Documents/projets/dev/echoerrances/build/audioLib.build/Release/encoder~.build/Objects-normal/i386/Internal.d" --serialize-diagnostics "/Users/manueldeneu/Documents/projets/dev/echoerrances/build/audioLib.build/Release/encoder~.build/Objects-normal/i386/Internal.dia" -c /Users/manueldeneu/Documents/projets/dev/echoerrances/Internal/Internal.cpp -o "/Users/manueldeneu/Documents/projets/dev/echoerrances/build/audioLib.build/Release/encoder~.build/Objects-normal/i386/Internal.o"36"2DF7E0EF-1CE3-4868-8D06-510256AB159C-
+
+CCompileC build/audioLib.build/Release/encoder~.build/Objects-normal/i386/encoder~.o /Users/manueldeneu/Documents/projets/dev/echoerrances/encoder~.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
+s419525643.447963
+e419525645.307656
+r1
+xCompileC
+xbuild/audioLib.build/Release/encoder~.build/Objects-normal/i386/encoder~.o
+x/Users/manueldeneu/Documents/projets/dev/echoerrances/encoder~.cpp
+xnormal
+xi386
+xc++
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection74"Compile /Users/manueldeneu/Documents/projets/dev/echoerrances/encoder~.cpp1118730b7401b941^85cf4e0d7401b941^---0#0#0#-19%DVTDocumentLocation2@82"file://localhost/Users/manueldeneu/Documents/projets/dev/echoerrances/encoder~.cpp0000000000000000^2953"CompileC "build/audioLib.build/Release/encoder~.build/Objects-normal/i386/encoder~.o" "encoder~.cpp" normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/manueldeneu/Documents/projets/dev/echoerrances    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c++ -arch i386 -fmessage-length=0 -std=gnu++11 -stdlib=libc++ -Wno-trigraphs -fpascal-strings -Os -Wno-missing-field-initializers -Wno-missing-prototypes -Wreturn-type -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wenum-conversion -Wshorten-64-to-32 -Wno-newline-eof -Wno-c++11-extensions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -fasm-blocks -fstrict-aliasing -Wdeprecated-declarations -Winvalid-offsetof -mmacosx-version-min=10.8 -g -fvisibility-inlines-hidden -Wno-sign-conversion -iquote "/Users/manueldeneu/Documents/projets/dev/echoerrances/build/audioLib.build/Release/encoder~.build/encoder~-generated-files.hmap" "-I/Users/manueldeneu/Documents/projets/dev/echoerrances/build/audioLib.build/Release/encoder~.build/encoder~-own-target-headers.hmap" "-I/Users/manueldeneu/Documents/projets/dev/echoerrances/build/audioLib.build/Release/encoder~.build/encoder~-all-target-headers.hmap" -iquote "/Users/manueldeneu/Documents/projets/dev/echoerrances/build/audioLib.build/Release/encoder~.build/encoder~-project-headers.hmap" -I/Users/manueldeneu/Documents/projets/dev/echoerrances/build/Release/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include "-I/Users/manueldeneu/Documents/projets/dev/echoerrances/build/audioLib.build/Release/encoder~.build/DerivedSources/i386" "-I/Users/manueldeneu/Documents/projets/dev/echoerrances/build/audioLib.build/Release/encoder~.build/DerivedSources" -F/Users/manueldeneu/Documents/projets/dev/echoerrances/build/Release -MMD -MT dependencies -MF "/Users/manueldeneu/Documents/projets/dev/echoerrances/build/audioLib.build/Release/encoder~.build/Objects-normal/i386/encoder~.d" --serialize-diagnostics "/Users/manueldeneu/Documents/projets/dev/echoerrances/build/audioLib.build/Release/encoder~.build/Objects-normal/i386/encoder~.dia" -c "/Users/manueldeneu/Documents/projets/dev/echoerrances/encoder~.cpp" -o "/Users/manueldeneu/Documents/projets/dev/echoerrances/build/audioLib.build/Release/encoder~.build/Objects-normal/i386/encoder~.o"36"CEC3F4BE-17FC-4500-B324-31E61A47C59C-
+
+CCompileC build/audioLib.build/Release/encoder~.build/Objects-normal/i386/libStat.o /Users/manueldeneu/Documents/projets/dev/echoerrances/libStat.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
+s419525645.048214
+e419525645.905755
+r1
+xCompileC
+xbuild/audioLib.build/Release/encoder~.build/Objects-normal/i386/libStat.o
+x/Users/manueldeneu/Documents/projets/dev/echoerrances/libStat.cpp
+xnormal
+xi386
+xc++
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection73"Compile /Users/manueldeneu/Documents/projets/dev/echoerrances/libStat.cppf5810c0d7401b941^f8dee70d7401b941^---0#0#0#-19%DVTDocumentLocation2@81"file://localhost/Users/manueldeneu/Documents/projets/dev/echoerrances/libStat.cpp0000000000000000^2943"CompileC "build/audioLib.build/Release/encoder~.build/Objects-normal/i386/libStat.o" libStat.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/manueldeneu/Documents/projets/dev/echoerrances    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c++ -arch i386 -fmessage-length=0 -std=gnu++11 -stdlib=libc++ -Wno-trigraphs -fpascal-strings -Os -Wno-missing-field-initializers -Wno-missing-prototypes -Wreturn-type -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wenum-conversion -Wshorten-64-to-32 -Wno-newline-eof -Wno-c++11-extensions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -fasm-blocks -fstrict-aliasing -Wdeprecated-declarations -Winvalid-offsetof -mmacosx-version-min=10.8 -g -fvisibility-inlines-hidden -Wno-sign-conversion -iquote "/Users/manueldeneu/Documents/projets/dev/echoerrances/build/audioLib.build/Release/encoder~.build/encoder~-generated-files.hmap" "-I/Users/manueldeneu/Documents/projets/dev/echoerrances/build/audioLib.build/Release/encoder~.build/encoder~-own-target-headers.hmap" "-I/Users/manueldeneu/Documents/projets/dev/echoerrances/build/audioLib.build/Release/encoder~.build/encoder~-all-target-headers.hmap" -iquote "/Users/manueldeneu/Documents/projets/dev/echoerrances/build/audioLib.build/Release/encoder~.build/encoder~-project-headers.hmap" -I/Users/manueldeneu/Documents/projets/dev/echoerrances/build/Release/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include "-I/Users/manueldeneu/Documents/projets/dev/echoerrances/build/audioLib.build/Release/encoder~.build/DerivedSources/i386" "-I/Users/manueldeneu/Documents/projets/dev/echoerrances/build/audioLib.build/Release/encoder~.build/DerivedSources" -F/Users/manueldeneu/Documents/projets/dev/echoerrances/build/Release -MMD -MT dependencies -MF "/Users/manueldeneu/Documents/projets/dev/echoerrances/build/audioLib.build/Release/encoder~.build/Objects-normal/i386/libStat.d" --serialize-diagnostics "/Users/manueldeneu/Documents/projets/dev/echoerrances/build/audioLib.build/Release/encoder~.build/Objects-normal/i386/libStat.dia" -c /Users/manueldeneu/Documents/projets/dev/echoerrances/libStat.cpp -o "/Users/manueldeneu/Documents/projets/dev/echoerrances/build/audioLib.build/Release/encoder~.build/Objects-normal/i386/libStat.o"36"0E9E01CD-4E1F-4A3C-B1B8-82FD2FBF1291-
+
+CGenerateDSYMFile /Users/manueldeneu/Documents/projets/dev/echoerrances/build/Release/encoder~.pd_darwin.dSYM /Users/manueldeneu/Documents/projets/dev/echoerrances/build/Release/encoder~.pd_darwin
+s419525647.716144
+e419525647.961704
+r1
+xGenerateDSYMFile
+x/Users/manueldeneu/Documents/projets/dev/echoerrances/build/Release/encoder~.pd_darwin.dSYM
+x/Users/manueldeneu/Documents/projets/dev/echoerrances/build/Release/encoder~.pd_darwin
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection100"Generate /Users/manueldeneu/Documents/projets/dev/echoerrances/build/Release/encoder~.pd_darwin.dSYMe76eb70f7401b941^3c32f60f7401b941^---0#0#0#-19%DVTDocumentLocation2@107"file://localhost/Users/manueldeneu/Documents/projets/dev/echoerrances/build/Release/encoder~.pd_darwin.dSYM000000000080d041^439"GenerateDSYMFile "build/Release/encoder~.pd_darwin.dSYM" "build/Release/encoder~.pd_darwin"    cd /Users/manueldeneu/Documents/projets/dev/echoerrances    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/dsymutil "/Users/manueldeneu/Documents/projets/dev/echoerrances/build/Release/encoder~.pd_darwin" -o "/Users/manueldeneu/Documents/projets/dev/echoerrances/build/Release/encoder~.pd_darwin.dSYM"36"EB6F782F-C828-4A2B-8DC5-0D91E85783A4-
+
+CLd /Users/manueldeneu/Documents/projets/dev/echoerrances/build/Release/encoder~.pd_darwin normal i386
+s419525645.914897
+e419525647.709192
+r1
+xLd
+x/Users/manueldeneu/Documents/projets/dev/echoerrances/build/Release/encoder~.pd_darwin
+xnormal
+xi386
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection91"Link /Users/manueldeneu/Documents/projets/dev/echoerrances/build/Release/encoder~.pd_darwinf355ea0d7401b941^478db50f7401b941^---0#0#0#--934"Ld "build/Release/encoder~.pd_darwin" normal i386    cd /Users/manueldeneu/Documents/projets/dev/echoerrances    setenv MACOSX_DEPLOYMENT_TARGET 10.8    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++ -arch i386 -dynamiclib -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -L/Users/manueldeneu/Documents/projets/dev/echoerrances/build/Release -F/Users/manueldeneu/Documents/projets/dev/echoerrances/build/Release -filelist "/Users/manueldeneu/Documents/projets/dev/echoerrances/build/audioLib.build/Release/encoder~.build/Objects-normal/i386/encoder~.LinkFileList" -install_name "build/encoder~.pd_darwin" -mmacosx-version-min=10.8 -undefined dynamic_lookup -stdlib=libc++ -single_module -compatibility_version 1 -current_version 1 -o "/Users/manueldeneu/Documents/projets/dev/echoerrances/build/Release/encoder~.pd_darwin"36"F82793C2-48B5-4C4F-BB3C-FE9BF4CFC473-
+
