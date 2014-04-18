@@ -43,7 +43,7 @@ t_int *encoder_perform(t_int *w)
 
     float** ins = &x->m_in;
     
-        x->m_proc->process(ins, x->m_outs, x->m_proc->getBufferSize());
+    x->m_proc->process(ins, x->m_outs, x->m_proc->getBufferSize());
 
     return (w + 2);
 }
@@ -79,31 +79,28 @@ static void encoder_getStats(t_encoder *x )
     libStats();
 }
 
-static void encoder_setPol(t_encoder *x, t_floatarg r,t_floatarg theta)
-{
-    x->m_proc->setAngle(theta);
-    x->m_proc->setDistance(r);
-}
 
-static void encoder_angle(t_encoder *x , t_floatarg angle)
-{    
-    x->m_proc->setAngle(angle);
-
-}
-static void encoder_distance(t_encoder *x , t_floatarg dist)
-{
-    x->m_proc->setDistance(dist);
-}
+/* **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** */
 
 static void encoder_polar(t_encoder *x, t_symbol *s, long argc, t_atom *argv)
 {
 
     float r = atom_getfloat(argv);
     float angle = atom_getfloat(argv+1);
+    
+    float conv = (2*M_PI) - angle - (M_PI/2);
+
+
+
     x->m_proc->setDistance(r);
-    x->m_proc->setAngle(angle);
+    x->m_proc->setAngle(conv);
+    
+    
+
 
 }
+
+/* **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** */
 
 static void encoder_bang(t_encoder *x)
 {
@@ -192,11 +189,10 @@ extern "C" void encoder_tilde_setup()
     
     
     
-    //class_addmethod(encoder_class, (t_method)encoder_setPol, gensym("setPol"), A_FLOAT,A_FLOAT);
     class_addmethod(encoder_class, (t_method)encoder_polar, gensym("pol"), A_GIMME);
+    class_addmethod(encoder_class, (t_method)encoder_polar, gensym("polar"), A_GIMME);
     class_addmethod(encoder_class, (t_method)encoder_dsp, gensym("dsp"), A_CANT);
-//    class_addmethod(encoder_class, (t_method)encoder_angle, gensym("angle"), A_FLOAT);
-//    class_addmethod(encoder_class, (t_method)encoder_distance, gensym("dist"), A_FLOAT);
+
     
     
     class_addmethod(encoder_class, (t_method)encoder_getStats, gensym("stats"), A_NULL);

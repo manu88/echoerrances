@@ -105,7 +105,7 @@ namespace FloatComputation
         int i = 0;
         for (; i <= n-4; i+=4)
         {
-    /*
+
             float _r[4] = {0.,0.,0.,0.};
             __m128 t0, t1;
             
@@ -116,13 +116,14 @@ namespace FloatComputation
             _mm_store_ps(_r, t0);
 
             res +=_r[0] + _r[1] +_r[2] +_r[3];
-    */
+/*
              res += (x[i] * y[i] +
              x[i+1] * y[i+1] +
              x[i+2] * y[i+2] +
              x[i+3] * y[i+3]);
-
+*/
         }
+  
         for (; i < n; i++)
         {
             res += x[i] * y[i];
@@ -146,17 +147,40 @@ namespace FloatComputation
         
     static inline void addWithMultiply (float* dest, const float* src, float multiplier, int num)
     {
-        int i=0;
-        for (; i<num; i++)
+        int i=num;
+        for (; i--;)
         {
             dest[i] += src[i] * multiplier;
         }
+/*
+        
+        __m128 t0, t1, t2 , t3 , t4;
+        
+        t1 = _mm_set1_ps(multiplier);
+        
+        
+        for (; i <= num-4; i+=4)
+        {
+            
+            t0 = _mm_load_ps(src+i);
+            t3 =  _mm_load_ps(dest+i);
+            
+            t2 =  _mm_mul_ps(t0, t1);
+            t4 = _mm_add_ps(t3, t2);
+            _mm_store_ps(dest+i, t4);
+            
+            
+            
+        }
+ */
     }
     
     static inline void  add(const float* src, float* dest, int num)
     {
-        int i=0;
-        for (; i<num; i++)
+
+        
+        int i=num;
+        for (; i--;)
         {
             dest[i] += src[i];
         }

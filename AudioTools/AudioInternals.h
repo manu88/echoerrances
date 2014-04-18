@@ -166,7 +166,7 @@ public:
         return m_type;
     }
     
-    virtual inline void process(float **ins, float **outs, int bufferSize) = 0;
+    //virtual inline void process(float **ins, float **outs, int bufferSize) = 0;
 
     void prepare();
     

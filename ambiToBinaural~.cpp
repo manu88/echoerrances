@@ -7,9 +7,7 @@
 //
 
 #include "m_pd.h"
-#include "BinauralUtility.h"
 #include "Binaural.h"
-#include "FloatComputation.h"
 #include "obj_pd_commons.h"
 #include "GrandMaster.h"
 
@@ -96,8 +94,9 @@ static void *ambiToBinaural_new(t_symbol *s, long argc, t_atom *argv)
             order = 4;
         
         if (numVirtualSpeakers == 0)
-            numVirtualSpeakers = 8;
+            numVirtualSpeakers = (order+1)*2;
         
+        post("order %i HPs %i",order,numVirtualSpeakers);
         
         
         x->m_proc = new AmbisonicBinauralDecoder(order,numVirtualSpeakers , Large);

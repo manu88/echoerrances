@@ -20,6 +20,8 @@ extern "C" void encoder_tilde_setup();
 extern "C" void decoder_tilde_setup();
 extern "C" void ambiToBinaural_tilde_setup();
 extern "C" void libStat_setup();
+extern "C" void wavPlayer_tilde_setup();
+extern "C" void rotator_tilde_setup();
 
 
 
@@ -33,6 +35,6 @@ extern "C" void Library_setup()
     decoder_tilde_setup();
     ambiToBinaural_tilde_setup();
     libStat_setup();
-    
-    
+    wavPlayer_tilde_setup();
+    rotator_tilde_setup();
 }

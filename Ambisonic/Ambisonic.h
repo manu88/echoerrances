@@ -13,9 +13,11 @@
 #include "AudioInternals.h"
 #include "FloatComputation.h"
 #include "AmbisonicReverb.h"
+#include "AmbisonicRotation.h"
 
 //debug
 #include "Debug_pd.h"
+
 
 /* **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** */
 /*
@@ -92,24 +94,42 @@ public :
         computeMultiplier();
     }
     
+
     
     
-    virtual inline void process(float **ins, float **outs, int bufferSize)
+    //encoder
+    /*virtual*/ inline void process(float **ins, float **outs, int bufferSize)
     {
         
-        //post("FROM %f angle %f TO %f",m_angleLine.getStartPoint() ,m_angleLine.getPosition() , m_angleLine.getDestination());
-        const int index = AudioTools::radianWrap(m_angleLine.incPosition() ) * CICM_1OVER2PI_RATIO;
+        const float mult = m_multiplierLine.incPosition();
         
-        FloatComputation::multiplyByConstant(ins[0], outs[0], m_multiplierLine.incPosition(), bufferSize);
-        
-        int i = 1;
-        
-        for(; i < getHarmonicNumber(); i++)
+        // muted
+        if (m_distance>=MaxDistance)
         {
-            int j = 0;
-            for(; j < bufferSize; j++)
+            int i = 0;
+            for(; i < getHarmonicNumber(); i++)
+                FloatComputation::clearVector(outs[i], bufferSize);
+        }
+        
+        // go ! 
+        else
+        {
+            const int index = AudioTools::radianWrap(m_angleLine.incPosition() ) * CICM_1OVER2PI_RATIO;
+            
+            
+            FloatComputation::multiplyByConstant(ins[0], outs[0],mult , bufferSize);
+            
+            int i = 1;
+            for(; i < getHarmonicNumber(); i++)
             {
-                outs[i][j] = getEncodingMatrix()[i][index] * ins[0][j] * m_multiplierLine.incPosition();
+                int j = 0;
+                for(; j < bufferSize; j++)
+                {
+                    outs[i][j] = getEncodingMatrix()[i][index] * ins[0][j] * mult;
+                    //pdAssert( ( (outs[i][j] <=1.) && (outs[i][j] >=-1. ) ) , "val out of [-1;1] in encoder");
+
+                    
+                }
             }
         }
     }
@@ -200,9 +220,9 @@ public:
     {
         return pimpl->getNumberOfOutputs();
     }
-
-    // redef AudioProcessorBase
-    virtual inline void process(float **ins, float **outs, int bufferSize)
+    
+    //decoder
+    /*virtual*/ inline void process(float **ins, float **outs, int bufferSize)
     {
         
         for(int i = 0; i < bufferSize; i++)
@@ -221,10 +241,11 @@ public:
             for(int j = 0; j < getNumOuts(); j++)
             {
                 outs[j][i] = m_vectorOutput[j];
+
+               // pdAssert( ( (outs[j][i] <=1.) && (outs[j][i] >=-1. ) ) , "val out of [-1;1] in Decoder");
             }
         }
     }
-    // redef AudioProcessorBase
 
     
 

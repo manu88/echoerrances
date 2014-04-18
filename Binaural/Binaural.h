@@ -51,9 +51,69 @@ public:
     }
     
     
-    // redef AudioProcessorBase
+    /*virtual*/ inline void process(float **ins, float **outs, int bufferSize)
+    {
+        const float att = 1. /m_numberOfVirtualOutputs;
+        
+        //     1 : décodage du flux ambisonique sur m_numberOfVirtualOutputs.
+        //     Le résultat est placé dans m_tempOutput
+        
+        
+        m_ambiDecoder->process(ins, m_tempOutput, bufferSize);
 
-    virtual inline void process(float **ins, float **outs, int bufferSize);
+        
+        FloatComputation::clearVector(outs[0], bufferSize);
+        FloatComputation::clearVector(outs[1], bufferSize);
+        
+        
+        //on recopie la queue du buffer precedent à la place du buffer
+        
+        FloatComputation::copyVector(m_tempBuffer[0]+bufferSize, m_tempBuffer[0], bufferSize);
+        FloatComputation::copyVector(m_tempBuffer[1]+bufferSize, m_tempBuffer[1], bufferSize);
+        
+        
+        //     On efface la queue du buffer
+        
+        FloatComputation::clearVector(m_tempBuffer[0]+bufferSize, bufferSize);
+        FloatComputation::clearVector(m_tempBuffer[1]+bufferSize, bufferSize);
+        
+        
+        //     2 on effectue l'encodage Binaural pour chaque haut-parleur virtuel
+        
+        int speaker = 0;
+        for(;speaker<m_numberOfVirtualOutputs;speaker++)
+        {
+            
+            const int hrtfSize     = HrtfReader::HrtfLength;
+            const int hrtfPosition = speaker*hrtfSize;
+            
+            
+            int i = 0;
+            for (; i<bufferSize;i++) // bufferIN
+            {
+                const float inVal = m_tempOutput[speaker][i];
+                
+                FloatComputation::addWithMultiply(m_tempBuffer[0]+i, m_hrtfArray[0]+hrtfPosition, inVal, hrtfSize);
+                FloatComputation::addWithMultiply(m_tempBuffer[1]+i, m_hrtfArray[1]+hrtfPosition, inVal, hrtfSize);
+                
+            }
+            // acum de la contrib de chaque HP dans la sortie stéréo
+            FloatComputation::addWithMultiply( outs[0] , m_tempBuffer[0] , att , bufferSize);
+            FloatComputation::addWithMultiply( outs[1] , m_tempBuffer[1] , att , bufferSize);
+            
+
+            
+            
+        }
+        
+        for (int i = 0; i<bufferSize;i++) 
+        {
+            pdAssert( ( (outs[0][i] <=1.) && (outs[0][i] >=-1. ) ) , "val out of [-1;1] in ambiBinau 0");
+            pdAssert( ( (outs[1][i] <=1.) && (outs[1][i] >=-1. ) ) , "val out of [-1;1] in ambiBinau 1");
+        }
+        
+    }
+
     
     
 private:

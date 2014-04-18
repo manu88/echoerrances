@@ -111,7 +111,7 @@ void AmbisonicBinauralDecoder::deleteBuffers()
 
 void AmbisonicBinauralDecoder::internalPrepare()
 {
-    pdAssert(getBufferSize()>=400, "ERROR : buffer size for binaural encoding >400");
+    pdAssert(getBufferSize()>400, "ERROR : buffer size for binaural encoding >400");
     
     m_ambiDecoder->setConfig(getBufferSize(), getSampleRate());
     m_ambiDecoder->prepare();
@@ -130,8 +130,10 @@ void AmbisonicBinauralDecoder::internalPrepare()
         
     m_tempBuffer = new float*[2];
     const int tempSize  = 2*getBufferSize();
+    
     m_tempBuffer[0] = new float[tempSize];
     m_tempBuffer[1] = new float[tempSize];
+    
     FloatComputation::clearVector(m_tempBuffer[0], tempSize);
     FloatComputation::clearVector(m_tempBuffer[1], tempSize);
     
@@ -139,7 +141,7 @@ void AmbisonicBinauralDecoder::internalPrepare()
 
 /* **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** */
 
-
+/*
 inline void AmbisonicBinauralDecoder::process(float **ins, float **outs, int bufferSize)
 {
 
@@ -168,15 +170,15 @@ inline void AmbisonicBinauralDecoder::process(float **ins, float **outs, int buf
 //     2 on effectue l'encodage Binaural pour chaque haut-parleur virtuel
      
     int speaker = 0;
-    
     for(;speaker<m_numberOfVirtualOutputs;speaker++)
     {
+
         const int hrtfSize     = HrtfReader::HrtfLength;
-        const int hrtfPosition = speaker*hrtfSize;//m_testAngle; //getIndexForAzimuth(m_azimuth);
+        const int hrtfPosition = speaker*hrtfSize;
     
         
-        int i = bufferSize;
-        for (; i--;) // bufferIN
+        int i = 0;
+        for (; i<bufferSize;i++) // bufferIN
         {
             const float inVal = m_tempOutput[speaker][i];
             
@@ -191,7 +193,7 @@ inline void AmbisonicBinauralDecoder::process(float **ins, float **outs, int buf
     }
     
 }
-
+*/
 
 
 

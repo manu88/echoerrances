@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5916B3A519005F860012BAAA /* AmbisonicRotation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5916B3A319005F860012BAAA /* AmbisonicRotation.cpp */; };
+		5916B3A619005F860012BAAA /* AmbisonicRotation.h in Headers */ = {isa = PBXBuildFile; fileRef = 5916B3A419005F860012BAAA /* AmbisonicRotation.h */; };
+		5916B3A9190066B80012BAAA /* rotator~.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5916B3A7190066B80012BAAA /* rotator~.cpp */; };
 		5917A604189AC29200047F39 /* Audio_Basic.h in Headers */ = {isa = PBXBuildFile; fileRef = 5917A5FF189AC29200047F39 /* Audio_Basic.h */; };
 		5917A605189AC29200047F39 /* Audio_Basic.h in Headers */ = {isa = PBXBuildFile; fileRef = 5917A5FF189AC29200047F39 /* Audio_Basic.h */; };
 		5917A606189AC29200047F39 /* Audio_Basic.h in Headers */ = {isa = PBXBuildFile; fileRef = 5917A5FF189AC29200047F39 /* Audio_Basic.h */; };
@@ -149,6 +152,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5916B3A319005F860012BAAA /* AmbisonicRotation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AmbisonicRotation.cpp; sourceTree = "<group>"; };
+		5916B3A419005F860012BAAA /* AmbisonicRotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AmbisonicRotation.h; sourceTree = "<group>"; };
+		5916B3A7190066B80012BAAA /* rotator~.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "rotator~.cpp"; sourceTree = "<group>"; };
 		5917A5FF189AC29200047F39 /* Audio_Basic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Audio_Basic.h; path = AudioTools/Audio_Basic.h; sourceTree = "<group>"; };
 		5917A600189AC29200047F39 /* Audio_Darwin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Audio_Darwin.h; path = AudioTools/Audio_Darwin.h; sourceTree = "<group>"; };
 		5917A601189AC29200047F39 /* Audio_Neon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Audio_Neon.h; path = AudioTools/Audio_Neon.h; sourceTree = "<group>"; };
@@ -272,6 +278,7 @@
 				59E5F73618944A3400731CBE /* encoder~.cpp */,
 				5938485F18D7727900267F32 /* ambiToBinaural~.cpp */,
 				5985424E18957683006F67DD /* decoder~.cpp */,
+				5916B3A7190066B80012BAAA /* rotator~.cpp */,
 				593EA74518ED7BDE00F909F9 /* AmbisonicReverb~.cpp */,
 				592EB446189655660058600A /* binaural~.cpp */,
 				59DA84EA189BA21E007699EC /* wavPlayer~.cpp */,
@@ -285,6 +292,8 @@
 				5917A61B189AC2AF00047F39 /* Ambisonic.h */,
 				593EA73A18ED6F2000F909F9 /* AmbisonicReverb.h */,
 				593EA73918ED6F2000F909F9 /* AmbisonicReverb.cpp */,
+				5916B3A419005F860012BAAA /* AmbisonicRotation.h */,
+				5916B3A319005F860012BAAA /* AmbisonicRotation.cpp */,
 				5917A61D189AC2AF00047F39 /* AmbisonicUtility.h */,
 				5917A61C189AC2AF00047F39 /* AmbisonicUtility.cpp */,
 			);
@@ -414,6 +423,7 @@
 				595DEE7218F58D5600E1B74A /* Geometry.h in Headers */,
 				595DEE7318F58D5600E1B74A /* AmbisonicReverb.h in Headers */,
 				5988A76018FD264700A4D562 /* Config.h in Headers */,
+				5916B3A619005F860012BAAA /* AmbisonicRotation.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -691,6 +701,8 @@
 				595DEE8618F58F8B00E1B74A /* WavLoader.cpp in Sources */,
 				595D35DE18FC852300D0D192 /* GrandMaster.cpp in Sources */,
 				595D35E518FC945100D0D192 /* libStat.cpp in Sources */,
+				5916B3A519005F860012BAAA /* AmbisonicRotation.cpp in Sources */,
+				5916B3A9190066B80012BAAA /* rotator~.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

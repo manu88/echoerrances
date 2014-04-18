@@ -110,7 +110,11 @@ bool WavLoader::readFile(const char* file, float* bufferToFill)
 			nb = fread(buff,meta->block_align,bufSize,infile);
 
             for (int i=0;i<nb;i++)
+            {
                 bufferToFill[index+i]  = (((float)buff[i])/ maxIntValue);
+                
+                pdAssert( ( ( bufferToFill[index+i] <=1.) && (bufferToFill[index+i] >=-1. ) ) , "val out of [-1;1] in HRTF 1");
+            }
 
             index += nb;
 		}

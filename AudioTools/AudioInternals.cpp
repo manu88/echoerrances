@@ -163,9 +163,10 @@ void AudioProcessorBase::internalPrepare()
 {
     pdAssert(false, "base internalPrepare() called!");    
 }
-
+/*
 
 inline void AudioProcessorBase::process(float **ins, float **outs, int bufferSize)
 {
     pdAssert(false, "base process() called!");
 }
+*/

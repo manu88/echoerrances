@@ -22,7 +22,7 @@ class AmbisonicReverb : public InternalAmbisonic, public AudioProcessorBase
 public:
     AmbisonicReverb(int order);
     ~AmbisonicReverb();
-    virtual inline void process(float **ins, float **outs, int bufferSize)
+    inline void process(float **ins, float **outs, int bufferSize)
     {
 
         int i = 0;

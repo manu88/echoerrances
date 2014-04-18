@@ -11,6 +11,8 @@
 
 #include <math.h>
 
+#include "Debug_pd.h"
+
 namespace AudioTools
 {
 
@@ -45,14 +47,15 @@ namespace AudioTools
             val=min;
     }
 
-
+    /* **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** */    
     class LinearInterPolator
     {
     public:
         LinearInterPolator(float from, float to):
         m_start(from),
         m_end(to),
-        m_currentPos(from)
+        m_currentPos(from),
+        m_dir(1)
         {
             
         }
@@ -68,19 +71,23 @@ namespace AudioTools
             
             if (m_end<m_start)
             {
+                m_dir =-1;
                 float temp   = m_start;
                 m_start      = m_end;
                 m_end        = temp;
                 m_currentPos = m_start;
             }
+            else
+                m_dir = 1;
             
 
         }
         
         float incPosition()
         {
-            m_currentPos+=0.002;
+            m_currentPos+=(0.002)*m_dir;
             clipVal(m_currentPos, m_start, m_end);
+
             return m_currentPos;
         }
         
@@ -103,7 +110,10 @@ namespace AudioTools
         float m_currentPos;
         float m_start;
         float m_end;
+        
+        int   m_dir;
     };
+    /* **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** */        
 
 
     

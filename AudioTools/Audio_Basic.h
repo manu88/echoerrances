@@ -24,19 +24,23 @@ namespace FloatComputation
     /* **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** */
     static inline void clearVector(float* vector,int size)
     {
-        memset(vector, 0, size * sizeof (float));
+//        memset(vector, 0, size * sizeof (float));
+        
+        int i;
+        for (i=0 ; i<size; i++)
+            vector[i] = 0.0;
     }
 
     /* **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** */
     /* **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** */
     static inline void copyVector(const float* src , float* dest, const int size)
     {
-        /*
+
         int i;
         for (i=0 ; i<size; i++)
             dest[i] = src[i];
-        */
-        memcpy(dest, src, size * sizeof(float));
+
+//        memcpy(dest, src, size * sizeof(float));
         
     }
     

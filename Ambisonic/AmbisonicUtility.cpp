@@ -79,12 +79,16 @@ void InternalAmbisonicEncoder::computeEncodingMatrix()
         if(getHarmonicIndex(i) >= 0)
         {
             for(/* j = 0 */; j < numberOfCirclePoints; j++)
+            {
                 m_encoderMatrix[i][j] = cos((float)getHarmonicOrder(i) * (((float)j / (float)numberOfCirclePoints) * (float)M_PI*2 ));
+            }
         }
         else
         {
             for(/*j = 0*/; j < numberOfCirclePoints; j++)
+            {
                 m_encoderMatrix[i][j] = sin((float)getHarmonicOrder(i) * (((float)j / (float)numberOfCirclePoints) * (float)M_PI*2));
+            }
         }
     }
     
