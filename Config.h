@@ -9,6 +9,7 @@
 #ifndef audioLib_Config_h
 #define audioLib_Config_h
 
+#define HRTF_FILEPATH "/Users/manueldeneu/HrtfDatabase/"
 
 // debug mode
 #define PD_DEBUG
@@ -18,7 +19,7 @@
 #define HRTF_LENGTH               400  
 
 // Force l'utilisation d'un mode générique non-optimisé des algos
-//#define USE_BASIC_COMPUTATION
+#define USE_BASIC_COMPUTATION
 
 
 #endif

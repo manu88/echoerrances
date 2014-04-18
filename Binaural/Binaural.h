@@ -105,13 +105,13 @@ public:
             
             
         }
-        
+        /*
         for (int i = 0; i<bufferSize;i++) 
         {
             pdAssert( ( (outs[0][i] <=1.) && (outs[0][i] >=-1. ) ) , "val out of [-1;1] in ambiBinau 0");
             pdAssert( ( (outs[1][i] <=1.) && (outs[1][i] >=-1. ) ) , "val out of [-1;1] in ambiBinau 1");
         }
-        
+        */
     }
 
     

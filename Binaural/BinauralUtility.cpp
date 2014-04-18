@@ -38,7 +38,7 @@ HrtfReader::~HrtfReader()
 void HrtfReader::getHrtfSet(float* bufferL, float* bufferR)
 {
     
-    std::string url = "/Users/manueldeneu/HrtfDatabase/";
+    std::string url = HRTF_FILEPATH;
     url+=std::to_string(m_sampleRate);
     
     if (m_size == Large)

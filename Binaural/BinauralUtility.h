@@ -32,8 +32,6 @@ public :
     HrtfReader(int angle, int sampleRate , HrtfSize size );
     ~HrtfReader();
     
-
-    
     
     void getHrtfSet(float* bufferL, float* bufferR);
     
