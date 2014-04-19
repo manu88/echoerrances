@@ -11,12 +11,12 @@
 
 #include "m_pd.h"
 #include "Debug_pd.h"
-#include "Ambisonic.h"
-#include "GrandMaster.h"
+#include "../Ambisonic/Ambisonic.h"
+#include "../Internal/GrandMaster.h"
 
 static void getComputationVersion()
 {
-    
+
 #ifdef USE_BASIC_COMPUTATION
     post(" BASIC COMPUTATION, it's *not* very effective...");
 
@@ -24,8 +24,8 @@ static void getComputationVersion()
 #elif defined __APPLE__
     post("APPLE SIMD, it's very effective...");
 
-    
-    
+
+
 #elif defined __arm__
     post("ARM NEON, it's very effective...");
 #endif
@@ -39,16 +39,16 @@ static void libStats(void)
     post("nb encoders : %i",AmbisonicUtility::getEncoderCount());
     post("nb decoders : %i",AmbisonicUtility::getDecoderCount());
     post("distance max = %i",AmbisonicEncoder::MaxDistance);
-    
+
     post("num nodes %i", GrandMaster::getMainAudioGraph()->getNodeCount() );
     post("ref count GrandMaster %i", GrandMaster::getRefCount());
-    
-    
+
+
 #ifdef PD_DEBUG
     post("DEBUG MODE");
 
 #endif
-    
+
     post(" ************************* ");
 }
 

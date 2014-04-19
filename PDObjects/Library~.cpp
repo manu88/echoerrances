@@ -12,7 +12,7 @@
     Librarie complète
  */
 #include "obj_pd_commons.h"
-#include "GrandMaster.h"
+#include "../Internal/GrandMaster.h"
 
 
 

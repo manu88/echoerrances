@@ -6,11 +6,13 @@
 //  Copyright (c) 2014 Manuel Deneu. All rights reserved.
 //
 
+#include <cstdlib>
+
 #include "WavLoader.h"
 #include "FloatComputation.h"
 #include "AudioTools.h"
 
-#include "Debug_pd.h"
+#include "../PDObjects/Debug_pd.h"
 
 
 
@@ -22,7 +24,7 @@ WavLoader::WavLoader():
     m_currentFile(NULL),
     m_fileExists(false)
 {
-    
+
 }
 
 WavLoader::~WavLoader()
@@ -42,23 +44,23 @@ bool WavLoader::getWavAttributes(const char* file)
 {
     bool result = false;
     FILE * infile = fopen(file,"rb");
-	
-    
+
+
 
 	header_p meta = (header_p)malloc(sizeof(header));
-    
+
 
 	if (infile)
 	{
 		fread(meta, 1, sizeof(header), infile);
-        
+
 
         m_sampleRate = meta->sample_rate;
         m_numSamples = meta->subchunk2_size;
         m_channels   = meta->num_channels;
-        
-        
-        
+
+
+
         result = true;
 	}
     else
@@ -67,12 +69,12 @@ bool WavLoader::getWavAttributes(const char* file)
         //PB...
 
     }
-    
+
     free(meta);
     closeFile();
-    
+
     m_fileExists = result;
-    
+
     return result;
 
 }
@@ -82,28 +84,28 @@ bool WavLoader::readFile(const char* file, float* bufferToFill)
 {
     bool result = false;
     FILE * infile = fopen(file,"rb");
-	
-    
+
+
 	const int bufSize = 512;
 
-    
+
 	short buff[bufSize];
 	header_p meta = (header_p)malloc(sizeof(header));
-    
+
 	int nb;
 	if (infile)
 	{
 		fread(meta, 1, sizeof(header), infile);
-        
+
         if (meta->sample_rate!=m_sampleRate)
         {
             free(meta);
             closeFile();
             return false;
         }
-        
+
         m_numSamples = meta->subchunk2_size;
-        
+
         int index = 0;
 		while (!feof(infile))
 		{
@@ -112,24 +114,24 @@ bool WavLoader::readFile(const char* file, float* bufferToFill)
             for (int i=0;i<nb;i++)
             {
                 bufferToFill[index+i]  = (((float)buff[i])/ maxIntValue);
-                
+
                 pdAssert( ( ( bufferToFill[index+i] <=1.) && (bufferToFill[index+i] >=-1. ) ) , "val out of [-1;1] in HRTF 1");
             }
 
             index += nb;
 		}
-        
 
-        
+
+
         result = true;
 	}
     else
     {
         pdAssert(false, "Error in WavLoader::read");
     }
-    
+
     free(meta);
     closeFile();
-    
+
     return result;
 }

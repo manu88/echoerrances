@@ -9,9 +9,16 @@
 #ifndef encoder__AudioTools_h
 #define encoder__AudioTools_h
 
-#include <math.h>
+//#ifdef WIN32
+//#define _USE_MATH_DEFINES
+//#endif // WIN32
 
-#include "Debug_pd.h"
+#include <cmath>
+#ifndef M_PI
+#define M_PI 3.14159265358979323846
+#endif // M_PI
+
+#include "../PDObjects/Debug_pd.h"
 
 namespace AudioTools
 {
@@ -22,9 +29,9 @@ namespace AudioTools
         int i = 0;
         for (;i<xSize;i++)
             delete [] array[i];
-        
+
         delete [] array;
-        
+
     }
     /* **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** */
     static inline float radianWrap(const float angle)
@@ -34,11 +41,11 @@ namespace AudioTools
             _angle += M_PI*2;
         while(_angle > M_PI*2)
             _angle -= M_PI*2;
-        
+
         return _angle;
     }
-        
-    /* **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** */    
+
+    /* **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** */
     static void clipVal(float &val, float min,float max)
     {
         if (val>max)
@@ -47,7 +54,7 @@ namespace AudioTools
             val=min;
     }
 
-    /* **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** */    
+    /* **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** */
     class LinearInterPolator
     {
     public:
@@ -57,18 +64,18 @@ namespace AudioTools
         m_currentPos(from),
         m_dir(1)
         {
-            
+
         }
         ~LinearInterPolator()
         {
-            
+
         }
-        
+
         void changeDestination(float newEndPoint)
         {
             m_start = m_currentPos;
             m_end   = newEndPoint;
-            
+
             if (m_end<m_start)
             {
                 m_dir =-1;
@@ -79,10 +86,10 @@ namespace AudioTools
             }
             else
                 m_dir = 1;
-            
+
 
         }
-        
+
         float incPosition()
         {
             m_currentPos+=(0.002)*m_dir;
@@ -90,33 +97,33 @@ namespace AudioTools
 
             return m_currentPos;
         }
-        
+
         float getPosition() const
         {
             return m_currentPos;
         }
-        
+
         float getDestination() const
         {
             return m_end;
         }
-        
+
         float getStartPoint() const
         {
             return m_start;
         }
-        
+
     private:
         float m_currentPos;
         float m_start;
         float m_end;
-        
+
         int   m_dir;
     };
-    /* **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** */        
+    /* **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** */
 
 
-    
-    
+
+
 } // namespace AudioTools
 #endif

@@ -1,2 +1,0 @@
-#N canvas 216 53 450 300 10;
-#X obj 61 82 binaural~;

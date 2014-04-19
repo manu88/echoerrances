@@ -1,0 +1,5 @@
+#N canvas 71 495 450 300 10;
+#X obj 145 113 Library;
+#X obj 150 48 encoder~ -------------------;
+#X obj 251 126 decoder~ --------------------~;
+#X obj 145 166 ambiToBinaural;

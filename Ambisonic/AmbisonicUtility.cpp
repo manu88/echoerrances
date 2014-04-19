@@ -7,7 +7,7 @@
 //
 
 #include "AmbisonicUtility.h"
-#include "AudioTools.h"
+#include "../AudioTools/AudioTools.h"
 #include <stdlib.h>
 
 
@@ -22,20 +22,20 @@ AmbisonicUtility* AmbisonicUtility::s_instance = nullptr;
 int InternalAmbisonic::getHarmonicIndex(int index)
 {
     int i = 0;
-    
+
     if (index == 0)
         return 0;
-    
+
     else if( (index > 0) && (index < m_numberOfHarmonics) )
     {
         i = (index - 1) / 2. + 1.;
-        
+
         if (index % 2 == 1)
             i *=-1;
-        
+
         return i;
     }
-    
+
     return 0;
 }
 
@@ -52,10 +52,10 @@ InternalAmbisonicEncoder::InternalAmbisonicEncoder(int order) :
 InternalAmbisonic(order)
 {
     m_encoderMatrix = new float*[m_numberOfHarmonics];
-    
+
     for (int i=0; i<m_numberOfHarmonics ; i++)
         m_encoderMatrix[i] = new float[numberOfCirclePoints];
-    
+
     computeEncodingMatrix();
 }
 
@@ -64,7 +64,7 @@ InternalAmbisonicEncoder::~InternalAmbisonicEncoder()
 
     for (int i=0; i<m_numberOfHarmonics ; i++)
         delete[] m_encoderMatrix[i];
-    
+
     delete[] m_encoderMatrix;
 }
 
@@ -91,7 +91,7 @@ void InternalAmbisonicEncoder::computeEncodingMatrix()
             }
         }
     }
-    
+
 }
 /* **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** */
 /* **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** */
@@ -101,19 +101,19 @@ InternalAmbisonic(order),
 m_outputCount(numberOfOutputs)
 {
     m_decoderMatrix = new float*[m_outputCount];
-    
+
     int i=0;
     for (; i<m_outputCount ; i++)
         m_decoderMatrix[i] = new float[m_numberOfHarmonics];
-    
+
     computeDecodingMatrix();
-    
+
 }
 InternalAmbisonicDecoder::~InternalAmbisonicDecoder()
 {
     for (int i=0; i<m_outputCount ; i++)
         delete[] m_decoderMatrix[i];
-    
+
     delete[] m_decoderMatrix;
 }
 
@@ -124,7 +124,7 @@ void InternalAmbisonicDecoder::computeDecodingMatrix()
 	{
 		float angle = M_PI* 2 * ((float)i / (float)(m_outputCount));
         angle = AudioTools::radianWrap(angle);
-        
+
         int j = 0;
 		for (; j < m_numberOfHarmonics; j++)
 		{
@@ -132,22 +132,22 @@ void InternalAmbisonicDecoder::computeDecodingMatrix()
             if(j == 0)
             {
                 m_decoderMatrix[i][j] = 0.5 / (float)(m_order+1.);
-                
+
             }
             else if(index > 0)
             {
                 float value = cos(fabs((float)index) * angle) / (float)(m_order+1.);
                 m_decoderMatrix[i][j] = value;
-                
+
             }
 			else if(index < 0)
             {
                 float value = sin(fabs((float)index) * angle) / (float)(m_order+1.);
-                m_decoderMatrix[i][j] = value;                
+                m_decoderMatrix[i][j] = value;
             }
 		}
     }
-    
+
 }
 
 
@@ -164,13 +164,13 @@ AmbisonicUtility::~AmbisonicUtility()
 
     m_encoderList.clear();
     m_encoderList.clear();
-    
+
 }
 
 InternalAmbisonicEncoder* AmbisonicUtility::getEncoderForOrder(int order,bool retain)
 {
     InternalAmbisonicEncoder *encoder = containsEncoder(order);
-    
+
     if (encoder == nullptr)
     {
         encoder = new InternalAmbisonicEncoder(order);
@@ -178,14 +178,14 @@ InternalAmbisonicEncoder* AmbisonicUtility::getEncoderForOrder(int order,bool re
     }
     if (retain)
         encoder->retain();
-    
+
     return encoder;
 }
 
 InternalAmbisonicDecoder* AmbisonicUtility::getDecoderForOrder(int order, int numberOfOutputs,bool retain)
 {
     InternalAmbisonicDecoder *decoder = containsDecoder(order, numberOfOutputs);
-    
+
     if (decoder==nullptr)
     {
         decoder = new InternalAmbisonicDecoder(order,numberOfOutputs);
@@ -194,14 +194,14 @@ InternalAmbisonicDecoder* AmbisonicUtility::getDecoderForOrder(int order, int nu
     if (retain)
         decoder->retain();
 
-    
+
     return decoder;
 }
 
 
 InternalAmbisonicEncoder* AmbisonicUtility::containsEncoder(int order)
 {
-    
+
     for(std::list<InternalAmbisonicEncoder*>::iterator iter = m_encoderList.begin();iter != m_encoderList.end(); iter++)
     {
         if ((*iter)->getOrder()==order)
@@ -225,11 +225,11 @@ void AmbisonicUtility::inspectEncoderList()
 {
     for(std::list<InternalAmbisonicEncoder*>::iterator iter = m_encoderList.begin();iter != m_encoderList.end(); iter++)
     {
-        if ((*iter)->getRefCount() == 0)     
+        if ((*iter)->getRefCount() == 0)
             m_encoderList.remove( (*iter));
 
     }
-    
+
 }
 
 void AmbisonicUtility::inspectDecoderList()
@@ -240,7 +240,7 @@ void AmbisonicUtility::inspectDecoderList()
         if ((*iter)->getRefCount() == 0)
             m_decoderList.remove( (*iter));
     }
-    
+
 }
 
 

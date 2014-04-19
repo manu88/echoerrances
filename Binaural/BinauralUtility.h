@@ -10,8 +10,8 @@
 #define __encoder___BinauralUtility__
 
 #include <iostream>
-#include "WavLoader.h"
-#include "Config.h"
+#include "../AudioTools/WavLoader.h"
+#include "../Config.h"
 
 /* **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** */
 
@@ -26,27 +26,27 @@ typedef enum
 class HrtfReader : public WavLoader
 {
 public :
-    
+
     enum {HrtfLength = HRTF_LENGTH};
-    
+
     HrtfReader(int angle, int sampleRate , HrtfSize size );
     ~HrtfReader();
-    
-    
+
+
     void getHrtfSet(float* bufferL, float* bufferR);
-    
+
 private:
-    
-    
+
+
     int      m_angle;
     int      m_sampleRate;
     int      m_numSamples;
     HrtfSize m_size;
     int      m_channels;
 
-    
 
-    
+
+
 
 };
 

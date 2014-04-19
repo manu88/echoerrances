@@ -1,0 +1,192 @@
+# depslib dependency file v1.0
+1397830918 source:c:\dossiers personnels\paul\programation\cpp\echoerrance\echoerrances\ambisonic\ambisonicreverb.cpp
+	"AmbisonicReverb.h"
+
+1397842934 c:\dossiers personnels\paul\programation\cpp\echoerrance\echoerrances\ambisonic\ambisonicreverb.h
+	<iostream>
+	"AmbisonicUtility.h"
+	"../AudioTools/AudioInternals.h"
+	"../AudioTools/FloatComputation.h"
+	"../PDObjects/Debug_pd.h"
+
+1397842871 c:\dossiers personnels\paul\programation\cpp\echoerrance\echoerrances\ambisonic\ambisonicutility.h
+	<list>
+	"../AudioTools/AudioTools.h"
+	"../Internal/Internal.h"
+
+1397843956 c:\dossiers personnels\paul\programation\cpp\echoerrance\echoerrances\audiotools\audiotools.h
+	<cmath>
+	"../PDObjects/Debug_pd.h"
+
+1397842904 c:\dossiers personnels\paul\programation\cpp\echoerrance\echoerrances\pdobjects\debug_pd.h
+	"m_pd.h"
+	"../Config.h"
+	<assert.h>
+
+1397838701 c:\dossiers personnels\paul\programation\cpp\echoerrance\echoerrances\pdobjects\m_pd.h
+	<stddef.h>
+	<stdint.h>
+	<stdio.h>
+
+1397854593 c:\dossiers personnels\paul\programation\cpp\echoerrance\echoerrances\config.h
+
+1397830918 c:\dossiers personnels\paul\programation\cpp\echoerrance\echoerrances\internal\internal.h
+	<iostream>
+
+1397830918 c:\dossiers personnels\paul\programation\cpp\echoerrance\echoerrances\audiotools\audiointernals.h
+	<list>
+
+1397842940 c:\dossiers personnels\paul\programation\cpp\echoerrance\echoerrances\audiotools\floatcomputation.h
+	"../Config.h"
+	"Audio_Basic.h"
+	"Audio_Neon.h"
+	"Audio_Darwin.h"
+
+1397842949 c:\dossiers personnels\paul\programation\cpp\echoerrance\echoerrances\audiotools\audio_basic.h
+	"../PDObjects/Debug_pd.h"
+
+1397830918 c:\dossiers personnels\paul\programation\cpp\echoerrance\echoerrances\audiotools\audio_neon.h
+
+1397830918 c:\dossiers personnels\paul\programation\cpp\echoerrance\echoerrances\audiotools\audio_darwin.h
+	<immintrin.h>
+	<string>
+
+1397838701 source:c:\dossiers personnels\paul\programation\cpp\echoerrance\echoerrances\ambisonic\ambisonicrotation.cpp
+	"AmbisonicRotation.h"
+
+1397844159 c:\dossiers personnels\paul\programation\cpp\echoerrance\echoerrances\ambisonic\ambisonicrotation.h
+	<iostream>
+	"AmbisonicUtility.h"
+	"../AudioTools/AudioInternals.h"
+	"../AudioTools/FloatComputation.h"
+	"../PDObjects/Debug_pd.h"
+
+1397844180 source:c:\dossiers personnels\paul\programation\cpp\echoerrance\echoerrances\ambisonic\ambisonicutility.cpp
+	"AmbisonicUtility.h"
+	"../AudioTools/AudioTools.h"
+	<stdlib.h>
+
+1397844187 source:c:\dossiers personnels\paul\programation\cpp\echoerrance\echoerrances\audiotools\audiointernals.cpp
+	"AudioInternals.h"
+	"../PDObjects/Debug_pd.h"
+
+1397844245 source:c:\dossiers personnels\paul\programation\cpp\echoerrance\echoerrances\audiotools\wavloader.cpp
+	<cstdlib>
+	"WavLoader.h"
+	"FloatComputation.h"
+	"AudioTools.h"
+	"../PDObjects/Debug_pd.h"
+
+1397830918 c:\dossiers personnels\paul\programation\cpp\echoerrance\echoerrances\audiotools\wavloader.h
+	<iostream>
+
+1397844360 source:c:\dossiers personnels\paul\programation\cpp\echoerrance\echoerrances\binaural\binaural.cpp
+	"Binaural.h"
+	"BinauralUtility.h"
+	"../Config.h"
+	"../PDObjects/Debug_pd.h"
+
+1397844287 c:\dossiers personnels\paul\programation\cpp\echoerrance\echoerrances\binaural\binaural.h
+	"../Ambisonic/Ambisonic.h"
+	"../Binaural/BinauralUtility.h"
+	"../AudioTools/FloatComputation.h"
+	"../AudioTools/AudioInternals.h"
+
+1397844336 c:\dossiers personnels\paul\programation\cpp\echoerrance\echoerrances\ambisonic\ambisonic.h
+	"AmbisonicUtility.h"
+	"../AudioTools/AudioInternals.h"
+	"../AudioTools/FloatComputation.h"
+	"AmbisonicReverb.h"
+	"AmbisonicRotation.h"
+	"../PDObjects/Debug_pd.h"
+
+1397844350 c:\dossiers personnels\paul\programation\cpp\echoerrance\echoerrances\binaural\binauralutility.h
+	<iostream>
+	"../AudioTools/WavLoader.h"
+	"../Config.h"
+
+1397844715 source:c:\dossiers personnels\paul\programation\cpp\echoerrance\echoerrances\binaural\binauralutility.cpp
+	<string>
+	"BinauralUtility.h"
+	"../AudioTools/AudioTools.h"
+	"../PDObjects/Debug_pd.h"
+
+1397845536 source:c:\dossiers personnels\paul\programation\cpp\echoerrance\echoerrances\internal\grandmaster.cpp
+	"GrandMaster.h"
+	"../PDObjects/Debug_pd.h"
+
+1397845528 c:\dossiers personnels\paul\programation\cpp\echoerrance\echoerrances\internal\grandmaster.h
+	<iostream>
+	"Internal.h"
+	"../AudioTools/AudioInternals.h"
+
+1397845599 source:c:\dossiers personnels\paul\programation\cpp\echoerrance\echoerrances\pdobjects\ambisonicreverb~.cpp
+	<stdio.h>
+	"obj_pd_commons.h"
+	"../Ambisonic/Ambisonic.h"
+	"../AudioTools/FloatComputation.h"
+	"../AudioTools/AudioTools.h"
+	"../Internal/GrandMaster.h"
+
+1397845551 c:\dossiers personnels\paul\programation\cpp\echoerrance\echoerrances\pdobjects\obj_pd_commons.h
+	"m_pd.h"
+	"Debug_pd.h"
+	"../Ambisonic/Ambisonic.h"
+	"../Internal/GrandMaster.h"
+
+1397845629 source:c:\dossiers personnels\paul\programation\cpp\echoerrance\echoerrances\pdobjects\binaural~.cpp
+	"m_pd.h"
+	"../Binaural/BinauralUtility.h"
+	"../Binaural/Binaural.h"
+	"../AudioTools/FloatComputation.h"
+	"obj_pd_commons.h"
+
+1397845666 source:c:\dossiers personnels\paul\programation\cpp\echoerrance\echoerrances\pdobjects\decoder~.cpp
+	"m_pd.h"
+	"../Ambisonic/Ambisonic.h"
+	"../AudioTools/FloatComputation.h"
+	"../AudioTools/AudioTools.h"
+	"obj_pd_commons.h"
+	"../Internal/GrandMaster.h"
+
+1397845718 source:c:\dossiers personnels\paul\programation\cpp\echoerrance\echoerrances\pdobjects\encoder~.cpp
+	"obj_pd_commons.h"
+	"../Ambisonic/Ambisonic.h"
+	"../AudioTools/FloatComputation.h"
+	"../AudioTools/AudioTools.h"
+	"../AudioTools/AudioInternals.h"
+	"../Internal/GrandMaster.h"
+
+1397845727 source:c:\dossiers personnels\paul\programation\cpp\echoerrance\echoerrances\pdobjects\library~.cpp
+	"obj_pd_commons.h"
+	"../Internal/GrandMaster.h"
+
+1397838701 source:c:\dossiers personnels\paul\programation\cpp\echoerrance\echoerrances\pdobjects\libstat.cpp
+	<stdio.h>
+	"m_pd.h"
+	"obj_pd_commons.h"
+
+1397845753 source:c:\dossiers personnels\paul\programation\cpp\echoerrance\echoerrances\pdobjects\rotator~.cpp
+	<stdio.h>
+	"obj_pd_commons.h"
+	"../Ambisonic/Ambisonic.h"
+	"../AudioTools/FloatComputation.h"
+	"../AudioTools/AudioTools.h"
+	"../Internal/GrandMaster.h"
+
+1397845774 source:c:\dossiers personnels\paul\programation\cpp\echoerrance\echoerrances\pdobjects\wavplayer~.cpp
+	"obj_pd_commons.h"
+	"../AudioTools/WavLoader.h"
+	"../AudioTools/FloatComputation.h"
+
+1385106360 c:\program files\pdn\src\m_pd.h
+	<stddef.h>
+	<stdint.h>
+	<stdio.h>
+
+1397853810 source:c:\dossiers personnels\paul\programation\cpp\echoerrance\echoerrances\pdobjects\ambitobinaural~.cpp
+	"m_pd.h"
+	"../Binaural/Binaural.h"
+	"obj_pd_commons.h"
+	"../Internal/GrandMaster.h"
+

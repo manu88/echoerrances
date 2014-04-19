@@ -10,7 +10,7 @@
 #define audioLib_Debug_pd_h
 
 #include "m_pd.h"
-#include "Config.h"
+#include "../Config.h"
 #include <assert.h>
 
 
@@ -26,8 +26,8 @@ static void pdAssert(bool cond, const char *err, int num = 123456)
         else
             error("Assertion ERROR : %s %i",err,num);
     }
-    
-    
+
+
     //assert(cond);
 #endif
 }

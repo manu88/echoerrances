@@ -2,7 +2,7 @@
 #define simdAudioTest_FloatComputation_h
 
 
-#include "Config.h"
+#include "../Config.h"
 
 /*
  Definitions
@@ -18,10 +18,10 @@ static inline void  matrixByVector(const float **mat, const float *vec, float *r
 static inline void  addWithMultiply (float* dest, const float* src, float multiplier, int num);
 static inline void  add(const float* src, float* dest, int num);
 /*
- 
- Todo : mettre ce qui n'est pas optimisable ici 
+
+ Todo : mettre ce qui n'est pas optimisable ici
  (ex clearVector, etc.)
- 
+
  */
 
 

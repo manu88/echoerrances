@@ -12,10 +12,10 @@
 #include <iostream>
 
 #include "AmbisonicUtility.h"
-#include "AudioInternals.h"
-#include "FloatComputation.h"
+#include "../AudioTools/AudioInternals.h"
+#include "../AudioTools/FloatComputation.h"
 
-#include "Debug_pd.h"
+#include "../PDObjects/Debug_pd.h"
 
 class AmbisonicReverb : public InternalAmbisonic, public AudioProcessorBase
 {
@@ -31,13 +31,13 @@ public:
             FloatComputation::copyVector(ins[i], outs[i], bufferSize);
         }
     }
-    
-    
+
+
     virtual void internalPrepare();
-    
+
 private:
-    
-    
+
+
 
 
 };

@@ -14,18 +14,18 @@
 #ifndef encoder__Audio_Basic_h
 #define encoder__Audio_Basic_h
 
-#include "Debug_pd.h"
+#include "../PDObjects/Debug_pd.h"
 
 namespace FloatComputation
 {
-    
-    
+
+
     /* **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** */
     /* **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** */
     static inline void clearVector(float* vector,int size)
     {
 //        memset(vector, 0, size * sizeof (float));
-        
+
         int i;
         for (i=0 ; i<size; i++)
             vector[i] = 0.0;
@@ -41,11 +41,11 @@ namespace FloatComputation
             dest[i] = src[i];
 
 //        memcpy(dest, src, size * sizeof(float));
-        
+
     }
-    
-    
-    
+
+
+
     /* **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** */
     /* **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** */
     static inline void multiplyByConstant(const float *input, float *output, float value, int size)
@@ -55,9 +55,9 @@ namespace FloatComputation
         {
             output[i] = input[i] * value;
         }
-        
+
     }
-    
+
     /* **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** */
     /* **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** */
     static inline void multiply(const float *input1, const float *input2, float *output, int size)
@@ -66,8 +66,8 @@ namespace FloatComputation
         for (i=0 ; i<size; i++)
             output[i] = input1[i] * input2[i];
     }
-    
-    
+
+
     /* **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** */
     /* **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** */
     static inline float vectors_dot_prod(const float *x, const float *y, int n)
@@ -81,7 +81,7 @@ namespace FloatComputation
                     x[i+1] * y[i+1] +
                     x[i+2] * y[i+2] +
                     x[i+3] * y[i+3]);
-            
+
         }
         for (; i < n; i++)
         {
@@ -89,7 +89,7 @@ namespace FloatComputation
         }
         return res;
     }
-    
+
     /* **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** */
     /* **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** */
     static inline void  matrixByVector(const float **mat, const float *vec, float *result, int rows, int cols)
@@ -122,8 +122,8 @@ namespace FloatComputation
             dest[i] += src[i];
         }
     }
-    
-    
+
+
 } // namespace
 
 

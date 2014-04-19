@@ -9,10 +9,10 @@
 #include <string>
 
 #include "BinauralUtility.h"
-#include "AudioTools.h"
+#include "../AudioTools/AudioTools.h"
 
 
-#include "Debug_pd.h"
+#include "../PDObjects/Debug_pd.h"
 
 
 
@@ -24,7 +24,7 @@ m_size(size),
 m_channels(0)
 
 {
-    
+
 }
 
 HrtfReader::~HrtfReader()
@@ -37,35 +37,35 @@ HrtfReader::~HrtfReader()
 
 void HrtfReader::getHrtfSet(float* bufferL, float* bufferR)
 {
-    
+
     std::string url = HRTF_FILEPATH;
     url+=std::to_string(m_sampleRate);
-    
+
     if (m_size == Large)
         url+="/Large/";
     else
         url+="/Small/";
-    
-    
+
+
     std::string urlL = url;
     std::string urlR = url;
-    
+
     urlL+="left";
     urlR+="right";
-    
+
     urlL+=std::to_string(m_angle);
     urlR+=std::to_string(m_angle);
-    
+
     urlL+=".wav";
     urlR+=".wav";
-    
-    
+
+
 
     bool isOk = openAndCopyWavFile(urlL.c_str(), bufferL);
     pdAssert(isOk, "left ERROR :");
 
     isOk = openAndCopyWavFile(urlR.c_str(),bufferR);
-    
+
     pdAssert(isOk, "right ERROR");
 
 }

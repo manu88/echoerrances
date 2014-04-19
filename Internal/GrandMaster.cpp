@@ -8,7 +8,7 @@
 
 #include "GrandMaster.h"
 
-#include "Debug_pd.h"
+#include "../PDObjects/Debug_pd.h"
 
 
 GrandMaster* GrandMaster::s_instance = nullptr;
@@ -18,7 +18,7 @@ GrandMaster::GrandMaster()
 {
     post("new grand master");
     m_graph = new AudioGraph();
-    
+
 }
 
 
