@@ -36,6 +36,7 @@ namespace AudioTools
     /* **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** */
     static inline float radianWrap(const float angle)
     {
+        /*
         float _angle = angle;
         while(_angle < 0.)
             _angle += M_PI*2;
@@ -43,6 +44,8 @@ namespace AudioTools
             _angle -= M_PI*2;
 
         return _angle;
+         */
+        return fmod(angle, 2*M_PI);
     }
 
     /* **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** */
@@ -58,13 +61,12 @@ namespace AudioTools
     class LinearInterPolator
     {
     public:
-        LinearInterPolator(float from, float to):
-        m_start(from),
-        m_end(to),
-        m_currentPos(from),
-        m_dir(1)
+        LinearInterPolator(float from, float to)
         {
-
+            m_start = from;
+            m_end = to;
+            m_currentPos = from;
+            m_dir = 1;
         }
         ~LinearInterPolator()
         {

@@ -10,6 +10,10 @@
 #include "../Binaural/Binaural.h"
 #include "obj_pd_commons.h"
 #include "../Internal/GrandMaster.h"
+#include "../Internal/align.h"
+
+#include <cstdlib>
+#include <string>
 
 typedef struct ambiToBinaural
 {
@@ -37,8 +41,29 @@ t_int *ambiToBinaural_perform(t_int *w)
 {
     t_ambiToBinaural *x	= (t_ambiToBinaural *)(w[1]);
 
+    t_sample **ins_aligned = new t_sample*[x->m_proc->getNumOfHarmonics()];
+    for(int i=0; i<x->m_proc->getNumOfHarmonics(); i++)
+    {
+        ins_aligned[i] = (t_sample*) aligned_alloc(16, sizeof(t_sample)*x->m_proc->getBufferSize());
+        memcpy(ins_aligned[i], x->m_ins[i], sizeof(t_sample)*x->m_proc->getBufferSize());
+    }
 
-    x->m_proc->process(x->m_ins, x->m_outs, x->m_proc->getBufferSize());
+    t_sample **outs_aligned = new t_sample*[2];
+    for(int i=0; i<2; i++)
+        outs_aligned[i] = (t_sample*) aligned_alloc(16, sizeof(t_sample)*x->m_proc->getBufferSize());
+
+    x->m_proc->process(ins_aligned, outs_aligned, x->m_proc->getBufferSize());
+
+    for(int i=0; i<2; i++)
+    {
+        memcpy(x->m_outs[i], outs_aligned[i], sizeof(t_sample)*x->m_proc->getBufferSize());
+        aligned_free(outs_aligned[i]);
+    }
+    delete[] outs_aligned;
+
+    for(int i=0; i<x->m_proc->getNumOfHarmonics(); i++)
+        aligned_free(ins_aligned[i]);
+    delete[] ins_aligned;
 
     return (w + 2);
 }

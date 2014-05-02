@@ -8,19 +8,19 @@
 
 #include "AmbisonicReverb.h"
 AmbisonicReverb::AmbisonicReverb(int order):
-AudioProcessorBase(AudioProcessorFX),
-InternalAmbisonic(order)
+    InternalAmbisonic(order),
+    AudioProcessorBase(AudioProcessorFX)
 {
-        
+
 }
 
 AmbisonicReverb::~AmbisonicReverb()
 {
-    
+
 }
 
 
 void AmbisonicReverb::internalPrepare()
 {
-    
+
 }

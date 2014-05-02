@@ -14,8 +14,12 @@
 #endif // __APPLE__
 
 #ifdef __WIN32__
-#define HRTF_FILEPATH "C:\dossiers personnels\paul\programation\cpp\echoerrance\HrtfDatabase"
+#define HRTF_FILEPATH "C:\\dossiers personnels\\paul\\programation\\cpp\\echoerrance\\HrtfDatabase\\"
 #endif // __WIN32__
+
+#ifdef __linux
+#define HRTF_FILEPATH "/home/cubie/echoerrance/HrtfDatabase/"
+#endif // __LINUX__
 
 // debug mode
 #define PD_DEBUG
@@ -29,3 +33,4 @@
 
 
 #endif
+

@@ -35,7 +35,8 @@ WavLoader::~WavLoader()
 
 void WavLoader::closeFile()
 {
-    fclose(m_currentFile);
+    if(m_currentFile)
+        fclose(m_currentFile);
     m_currentFile = NULL;
 }
 
@@ -43,16 +44,19 @@ void WavLoader::closeFile()
 bool WavLoader::getWavAttributes(const char* file)
 {
     bool result = false;
-    FILE * infile = fopen(file,"rb");
+    //FILE * infile = fopen(file,"rb");
+    m_currentFile = fopen(file, "rb");
 
 
 
 	header_p meta = (header_p)malloc(sizeof(header));
 
 
-	if (infile)
+	//if (infile)
+	if(m_currentFile)
 	{
-		fread(meta, 1, sizeof(header), infile);
+		//fread(meta, 1, sizeof(header), infile);
+		fread(meta, 1, sizeof(header), m_currentFile);
 
 
         m_sampleRate = meta->sample_rate;
@@ -83,7 +87,8 @@ bool WavLoader::getWavAttributes(const char* file)
 bool WavLoader::readFile(const char* file, float* bufferToFill)
 {
     bool result = false;
-    FILE * infile = fopen(file,"rb");
+    //FILE * infile = fopen(file,"rb");
+    m_currentFile = fopen(file, "rb");
 
 
 	const int bufSize = 512;
@@ -93,9 +98,11 @@ bool WavLoader::readFile(const char* file, float* bufferToFill)
 	header_p meta = (header_p)malloc(sizeof(header));
 
 	int nb;
-	if (infile)
+	//if (infile)
+      if(m_currentFile)
 	{
-		fread(meta, 1, sizeof(header), infile);
+		//fread(meta, 1, sizeof(header), infile);*
+		fread(meta, 1, sizeof(header), m_currentFile);
 
         if (meta->sample_rate!=m_sampleRate)
         {
@@ -107,9 +114,11 @@ bool WavLoader::readFile(const char* file, float* bufferToFill)
         m_numSamples = meta->subchunk2_size;
 
         int index = 0;
-		while (!feof(infile))
+		//while (!feof(infile))
+		while (!feof(m_currentFile))
 		{
-			nb = fread(buff,meta->block_align,bufSize,infile);
+			//nb = fread(buff,meta->block_align,bufSize,infile);
+			nb = fread(buff,meta->block_align,bufSize,m_currentFile);
 
             for (int i=0;i<nb;i++)
             {

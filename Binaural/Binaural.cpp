@@ -29,8 +29,11 @@ m_size(size)
 
     const int sampleSize = numVirtualOutputs*m_numSamplesPerImpulse;
 
-    m_hrtfArray[0] = new float[sampleSize];
-    m_hrtfArray[1] = new float[sampleSize];
+    //m_hrtfArray[0] = new float[sampleSize];
+    //m_hrtfArray[1] = new float[sampleSize];
+
+    m_hrtfArray[0] = (float*) aligned_alloc(16, sizeof(float)*sampleSize);
+    m_hrtfArray[1] = (float*) aligned_alloc(16, sizeof(float)*sampleSize);
 
     FloatComputation::clearVector(m_hrtfArray[0], sampleSize);
     FloatComputation::clearVector(m_hrtfArray[1], sampleSize);
@@ -58,22 +61,23 @@ m_size(size)
 
         index+=angle ;
     }
+
+
 }
 
 /* **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** */
 
 AmbisonicBinauralDecoder::~AmbisonicBinauralDecoder()
 {
-    delete [] m_hrtfArray[0];
-    delete [] m_hrtfArray[1];
+    //delete [] m_hrtfArray[0];
+    //delete [] m_hrtfArray[1];
+    aligned_free(m_hrtfArray[0]);
+    aligned_free(m_hrtfArray[1]);
     delete [] m_hrtfArray;
 
     deleteBuffers();
 
     delete m_ambiDecoder;
-
-
-
 }
 
 /* **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** */
@@ -85,8 +89,8 @@ void AmbisonicBinauralDecoder::deleteBuffers()
         int i = 0;
         for(;i<m_numberOfVirtualOutputs;i++)
         {
-            delete[] m_tempOutput[i];
-            m_tempOutput[i] = NULL;
+            //delete[] m_tempOutput[i];
+            aligned_free(m_tempOutput[i]);
         }
 
         delete[] m_tempOutput;
@@ -95,10 +99,10 @@ void AmbisonicBinauralDecoder::deleteBuffers()
 
     if (m_tempBuffer!=NULL)
     {
-        delete [] m_tempBuffer[0];
-        m_tempBuffer[0] = NULL;
-        delete [] m_tempBuffer[1];
-        m_tempBuffer[1] = NULL;
+        //delete [] m_tempBuffer[0];
+        aligned_free(m_tempBuffer[0]);
+        //delete [] m_tempBuffer[1];
+        aligned_free(m_tempBuffer[1]);
         delete [] m_tempBuffer;
         m_tempBuffer = NULL;
     }
@@ -123,16 +127,19 @@ void AmbisonicBinauralDecoder::internalPrepare()
     int i = 0;
     for(;i<m_numberOfVirtualOutputs;i++)
     {
-        m_tempOutput[i] = new float[getBufferSize()];
+        //m_tempOutput[i] = new float[getBufferSize()];
+        m_tempOutput[i] = (float*) aligned_alloc(16, sizeof(float)*getBufferSize());
         FloatComputation::clearVector(m_tempOutput[i], getBufferSize());
     }
 
 
     m_tempBuffer = new float*[2];
-    const int tempSize  = 2*getBufferSize();
+    const int tempSize  = 2*getBufferSize()+4;
 
-    m_tempBuffer[0] = new float[tempSize];
-    m_tempBuffer[1] = new float[tempSize];
+    //m_tempBuffer[0] = new float[tempSize];
+    m_tempBuffer[0] = (float*) aligned_alloc(16, sizeof(float)*tempSize);
+    //m_tempBuffer[1] = new float[tempSize];
+    m_tempBuffer[1] = (float*) aligned_alloc(16, sizeof(float)*tempSize);
 
     FloatComputation::clearVector(m_tempBuffer[0], tempSize);
     FloatComputation::clearVector(m_tempBuffer[1], tempSize);

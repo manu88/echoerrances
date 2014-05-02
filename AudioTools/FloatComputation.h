@@ -6,7 +6,7 @@
 
 /*
  Definitions
- */
+
 static inline void  clearVector(float* vector,int size);
 static inline void  copyVector(const float* src , float* dest, const int size);
 static inline void  multiplyByConstant(const float *input, float *output, float value, int size);
@@ -17,6 +17,7 @@ static inline void  matrixByVector(const float **mat, const float *vec, float *r
 //! inverser source <-> dest dans les arguments
 static inline void  addWithMultiply (float* dest, const float* src, float multiplier, int num);
 static inline void  add(const float* src, float* dest, int num);
+*/
 /*
 
  Todo : mettre ce qui n'est pas optimisable ici
@@ -28,7 +29,6 @@ static inline void  add(const float* src, float* dest, int num);
 /*
     Includes selon les modes de calcul supportés par l'architecture
  */
-
 #ifdef USE_BASIC_COMPUTATION
     #include "Audio_Basic.h"
 
@@ -36,7 +36,14 @@ static inline void  add(const float* src, float* dest, int num);
     #include "Audio_Neon.h"
 
 #elif defined  __APPLE__
-    #include "Audio_Darwin.h"
+//    #include "Audio_Darwin.h"
+#include "Audio_Windows.h"
+
+#elif defined __WIN32__
+    #include "Audio_Windows.h"
+
+#else //defined USE_BASIC_COMPUTATION
+#error "No optim "
 
 #endif
 

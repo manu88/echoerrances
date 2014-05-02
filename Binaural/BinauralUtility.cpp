@@ -63,10 +63,24 @@ void HrtfReader::getHrtfSet(float* bufferL, float* bufferR)
 
     bool isOk = openAndCopyWavFile(urlL.c_str(), bufferL);
     pdAssert(isOk, "left ERROR :");
+#ifndef __arm__
+    for(int i=0; i < HrtfReader::HrtfLength; i+=4)
+    {
+        std::swap(bufferL[i], bufferL[i+3]);
+        std::swap(bufferL[i+1], bufferL[i+2]);
+    }
+#endif // __arm__
 
     isOk = openAndCopyWavFile(urlR.c_str(),bufferR);
-
     pdAssert(isOk, "right ERROR");
+
+#ifndef __arm__
+    for(int i=0; i < HrtfReader::HrtfLength; i+=4)
+    {
+        std::swap(bufferR[i], bufferR[i+3]);
+        std::swap(bufferR[i+1], bufferR[i+2]);
+    }
+#endif // __arm__
 
 }
 

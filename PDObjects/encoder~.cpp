@@ -88,9 +88,8 @@ static void encoder_polar(t_encoder *x, t_symbol *s, long argc, t_atom *argv)
     float r = atom_getfloat(argv);
     float angle = atom_getfloat(argv+1);
 
-    float conv = (2*M_PI) - angle - (M_PI/2);
-
-
+    float conv = (2*M_PI) - angle ;//+ (M_PI/2);
+  
 
     x->m_proc->setDistance(r);
     x->m_proc->setAngle(conv);
@@ -164,7 +163,7 @@ static void encoder_free(t_encoder *x)
 
 
 
-        delete x->m_in;
+        //delete x->m_in;
         delete[] x->m_outs;
 
         delete[] x->m_harmonics;

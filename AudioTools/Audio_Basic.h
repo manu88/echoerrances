@@ -123,6 +123,13 @@ namespace FloatComputation
         }
     }
 
+    static inline void convolve(float* input, size_t inputSize, float* impulse, size_t impulseSize, float* output)
+    {
+        int i = 0;
+        for (; i<inputSize;i++) // bufferIN
+            addWithMultiply(output+i+1, impulse, input[i], impulseSize);
+
+    }
 
 } // namespace
 

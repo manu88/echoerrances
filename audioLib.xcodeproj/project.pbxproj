@@ -194,6 +194,27 @@
 		59B07A9C18D6DB3800288B59 /* Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = 59B07A9A18D6DB3800288B59 /* Internal.h */; };
 		59B07AA018D6E06600288B59 /* AudioInternals.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 59B07A9E18D6E06600288B59 /* AudioInternals.cpp */; };
 		59B07AA118D6E06600288B59 /* AudioInternals.h in Headers */ = {isa = PBXBuildFile; fileRef = 59B07A9F18D6E06600288B59 /* AudioInternals.h */; };
+		59B444C3190F186600C927E8 /* align.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 59B444C1190F186600C927E8 /* align.cpp */; };
+		59B444C4190F186600C927E8 /* align.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 59B444C1190F186600C927E8 /* align.cpp */; };
+		59B444C5190F186600C927E8 /* align.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 59B444C1190F186600C927E8 /* align.cpp */; };
+		59B444C6190F186600C927E8 /* align.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 59B444C1190F186600C927E8 /* align.cpp */; };
+		59B444C7190F186600C927E8 /* align.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 59B444C1190F186600C927E8 /* align.cpp */; };
+		59B444C8190F186600C927E8 /* align.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 59B444C1190F186600C927E8 /* align.cpp */; };
+		59B444C9190F186600C927E8 /* align.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 59B444C1190F186600C927E8 /* align.cpp */; };
+		59B444CA190F186600C927E8 /* align.h in Headers */ = {isa = PBXBuildFile; fileRef = 59B444C2190F186600C927E8 /* align.h */; };
+		59B444CB190F186600C927E8 /* align.h in Headers */ = {isa = PBXBuildFile; fileRef = 59B444C2190F186600C927E8 /* align.h */; };
+		59B444CC190F186600C927E8 /* align.h in Headers */ = {isa = PBXBuildFile; fileRef = 59B444C2190F186600C927E8 /* align.h */; };
+		59B444CD190F186600C927E8 /* align.h in Headers */ = {isa = PBXBuildFile; fileRef = 59B444C2190F186600C927E8 /* align.h */; };
+		59B444CE190F186600C927E8 /* align.h in Headers */ = {isa = PBXBuildFile; fileRef = 59B444C2190F186600C927E8 /* align.h */; };
+		59B444CF190F186600C927E8 /* align.h in Headers */ = {isa = PBXBuildFile; fileRef = 59B444C2190F186600C927E8 /* align.h */; };
+		59B444D0190F186600C927E8 /* align.h in Headers */ = {isa = PBXBuildFile; fileRef = 59B444C2190F186600C927E8 /* align.h */; };
+		59B444D2190F1B0600C927E8 /* Audio_Windows.h in Headers */ = {isa = PBXBuildFile; fileRef = 59B444D1190F1B0600C927E8 /* Audio_Windows.h */; };
+		59B444D3190F1B0600C927E8 /* Audio_Windows.h in Headers */ = {isa = PBXBuildFile; fileRef = 59B444D1190F1B0600C927E8 /* Audio_Windows.h */; };
+		59B444D4190F1B0600C927E8 /* Audio_Windows.h in Headers */ = {isa = PBXBuildFile; fileRef = 59B444D1190F1B0600C927E8 /* Audio_Windows.h */; };
+		59B444D5190F1B0600C927E8 /* Audio_Windows.h in Headers */ = {isa = PBXBuildFile; fileRef = 59B444D1190F1B0600C927E8 /* Audio_Windows.h */; };
+		59B444D6190F1B0600C927E8 /* Audio_Windows.h in Headers */ = {isa = PBXBuildFile; fileRef = 59B444D1190F1B0600C927E8 /* Audio_Windows.h */; };
+		59B444D7190F1B0600C927E8 /* Audio_Windows.h in Headers */ = {isa = PBXBuildFile; fileRef = 59B444D1190F1B0600C927E8 /* Audio_Windows.h */; };
+		59B444D8190F1B0600C927E8 /* Audio_Windows.h in Headers */ = {isa = PBXBuildFile; fileRef = 59B444D1190F1B0600C927E8 /* Audio_Windows.h */; };
 		59DA84EF189BA228007699EC /* Binaural.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5917A613189AC29F00047F39 /* Binaural.cpp */; };
 		59DA84F0189BA228007699EC /* BinauralUtility.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5917A615189AC29F00047F39 /* BinauralUtility.cpp */; };
 		59DA84F3189BA228007699EC /* Audio_Basic.h in Headers */ = {isa = PBXBuildFile; fileRef = 5917A5FF189AC29200047F39 /* Audio_Basic.h */; };
@@ -253,6 +274,9 @@
 		59B07A9A18D6DB3800288B59 /* Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Internal.h; path = Internal/Internal.h; sourceTree = "<group>"; };
 		59B07A9E18D6E06600288B59 /* AudioInternals.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AudioInternals.cpp; path = AudioTools/AudioInternals.cpp; sourceTree = "<group>"; };
 		59B07A9F18D6E06600288B59 /* AudioInternals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AudioInternals.h; path = AudioTools/AudioInternals.h; sourceTree = "<group>"; };
+		59B444C1190F186600C927E8 /* align.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = align.cpp; path = Internal/align.cpp; sourceTree = "<group>"; };
+		59B444C2190F186600C927E8 /* align.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = align.h; path = Internal/align.h; sourceTree = "<group>"; };
+		59B444D1190F1B0600C927E8 /* Audio_Windows.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Audio_Windows.h; path = AudioTools/Audio_Windows.h; sourceTree = "<group>"; };
 		59DA84FD189BA228007699EC /* wavPlayer~.pd_darwin */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = "wavPlayer~.pd_darwin"; sourceTree = BUILT_PRODUCTS_DIR; };
 		59DA84FF189BA3E4007699EC /* WavLoader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = WavLoader.cpp; path = AudioTools/WavLoader.cpp; sourceTree = "<group>"; };
 		59DA8500189BA3E4007699EC /* WavLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WavLoader.h; path = AudioTools/WavLoader.h; sourceTree = "<group>"; };
@@ -319,6 +343,7 @@
 				5917A5FF189AC29200047F39 /* Audio_Basic.h */,
 				5917A600189AC29200047F39 /* Audio_Darwin.h */,
 				5917A601189AC29200047F39 /* Audio_Neon.h */,
+				59B444D1190F1B0600C927E8 /* Audio_Windows.h */,
 				5917A602189AC29200047F39 /* AudioTools.h */,
 				5917A603189AC29200047F39 /* FloatComputation.h */,
 				59DA8500189BA3E4007699EC /* WavLoader.h */,
@@ -375,6 +400,8 @@
 		59B07A9D18D6DB4200288B59 /* Internal */ = {
 			isa = PBXGroup;
 			children = (
+				59B444C1190F186600C927E8 /* align.cpp */,
+				59B444C2190F186600C927E8 /* align.h */,
 				5965D603190172AC00ECA8D2 /* GrandMaster.cpp */,
 				5965D604190172AC00ECA8D2 /* GrandMaster.h */,
 				59B07A9A18D6DB3800288B59 /* Internal.h */,
@@ -431,6 +458,8 @@
 				5965D6261901826B00ECA8D2 /* AmbisonicRotation.h in Headers */,
 				5965D64E190182DC00ECA8D2 /* Debug_pd.h in Headers */,
 				5965D671190182DC00ECA8D2 /* obj_pd_commons.h in Headers */,
+				59B444CC190F186600C927E8 /* align.h in Headers */,
+				59B444D4190F1B0600C927E8 /* Audio_Windows.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -453,6 +482,8 @@
 				5965D6281901826B00ECA8D2 /* AmbisonicRotation.h in Headers */,
 				5965D650190182DC00ECA8D2 /* Debug_pd.h in Headers */,
 				5965D673190182DC00ECA8D2 /* obj_pd_commons.h in Headers */,
+				59B444CE190F186600C927E8 /* align.h in Headers */,
+				59B444D6190F1B0600C927E8 /* Audio_Windows.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -476,6 +507,8 @@
 				5965D6291901826B00ECA8D2 /* AmbisonicRotation.h in Headers */,
 				5965D651190182DC00ECA8D2 /* Debug_pd.h in Headers */,
 				5965D674190182DC00ECA8D2 /* obj_pd_commons.h in Headers */,
+				59B444CF190F186600C927E8 /* align.h in Headers */,
+				59B444D7190F1B0600C927E8 /* Audio_Windows.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -499,6 +532,8 @@
 				5965D62A1901826B00ECA8D2 /* AmbisonicRotation.h in Headers */,
 				5965D652190182DC00ECA8D2 /* Debug_pd.h in Headers */,
 				5965D675190182DC00ECA8D2 /* obj_pd_commons.h in Headers */,
+				59B444D0190F186600C927E8 /* align.h in Headers */,
+				59B444D8190F1B0600C927E8 /* Audio_Windows.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -520,6 +555,8 @@
 				5965D6251901826B00ECA8D2 /* AmbisonicRotation.h in Headers */,
 				5965D64D190182DC00ECA8D2 /* Debug_pd.h in Headers */,
 				5965D670190182DC00ECA8D2 /* obj_pd_commons.h in Headers */,
+				59B444CB190F186600C927E8 /* align.h in Headers */,
+				59B444D3190F1B0600C927E8 /* Audio_Windows.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -541,6 +578,8 @@
 				5965D6271901826B00ECA8D2 /* AmbisonicRotation.h in Headers */,
 				5965D64F190182DC00ECA8D2 /* Debug_pd.h in Headers */,
 				5965D672190182DC00ECA8D2 /* obj_pd_commons.h in Headers */,
+				59B444CD190F186600C927E8 /* align.h in Headers */,
+				59B444D5190F1B0600C927E8 /* Audio_Windows.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -564,6 +603,8 @@
 				5965D6241901826B00ECA8D2 /* AmbisonicRotation.h in Headers */,
 				5965D64C190182DC00ECA8D2 /* Debug_pd.h in Headers */,
 				5965D66F190182DC00ECA8D2 /* obj_pd_commons.h in Headers */,
+				59B444CA190F186600C927E8 /* align.h in Headers */,
+				59B444D2190F1B0600C927E8 /* Audio_Windows.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -740,6 +781,7 @@
 				5965D678190182DC00ECA8D2 /* rotator~.cpp in Sources */,
 				5965D67F190182DC00ECA8D2 /* wavPlayer~.cpp in Sources */,
 				5965D6871901869500ECA8D2 /* AmbisonicReverb~.cpp in Sources */,
+				59B444C5190F186600C927E8 /* align.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -762,6 +804,7 @@
 				5965D67A190182DC00ECA8D2 /* rotator~.cpp in Sources */,
 				5965D681190182DC00ECA8D2 /* wavPlayer~.cpp in Sources */,
 				5965D6891901869500ECA8D2 /* AmbisonicReverb~.cpp in Sources */,
+				59B444C7190F186600C927E8 /* align.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -782,6 +825,7 @@
 				5965D67B190182DC00ECA8D2 /* rotator~.cpp in Sources */,
 				5965D682190182DC00ECA8D2 /* wavPlayer~.cpp in Sources */,
 				5965D68A1901869500ECA8D2 /* AmbisonicReverb~.cpp in Sources */,
+				59B444C8190F186600C927E8 /* align.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -806,6 +850,7 @@
 				5965D683190182DC00ECA8D2 /* wavPlayer~.cpp in Sources */,
 				5965D68B1901869500ECA8D2 /* AmbisonicReverb~.cpp in Sources */,
 				595D8EAE19026D300004C1CD /* ambiToBinaural~.cpp in Sources */,
+				59B444C9190F186600C927E8 /* align.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -826,6 +871,7 @@
 				5965D677190182DC00ECA8D2 /* rotator~.cpp in Sources */,
 				5965D67E190182DC00ECA8D2 /* wavPlayer~.cpp in Sources */,
 				5965D6861901869500ECA8D2 /* AmbisonicReverb~.cpp in Sources */,
+				59B444C4190F186600C927E8 /* align.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -847,6 +893,7 @@
 				5965D679190182DC00ECA8D2 /* rotator~.cpp in Sources */,
 				5965D680190182DC00ECA8D2 /* wavPlayer~.cpp in Sources */,
 				5965D6881901869500ECA8D2 /* AmbisonicReverb~.cpp in Sources */,
+				59B444C6190F186600C927E8 /* align.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -868,6 +915,7 @@
 				5965D67D190182DC00ECA8D2 /* wavPlayer~.cpp in Sources */,
 				5965D6851901869500ECA8D2 /* AmbisonicReverb~.cpp in Sources */,
 				595D8EAD19026D300004C1CD /* ambiToBinaural~.cpp in Sources */,
+				59B444C3190F186600C927E8 /* align.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

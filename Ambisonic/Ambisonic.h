@@ -17,6 +17,9 @@
 
 //debug
 #include "../PDObjects/Debug_pd.h"
+#include "../Internal/align.h"
+
+#include <cstring>
 
 
 /* **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** */
@@ -103,12 +106,22 @@ public :
 
         const float mult = m_multiplierLine.incPosition();
 
+        float** m_ins = new float*[1];
+        float** m_outs = new float*[getHarmonicNumber()];
+
+        m_ins[0] = (float*) aligned_alloc(16, sizeof(float)*bufferSize);
+        for(int i=0; i<getHarmonicNumber(); i++)
+            m_outs[i] = (float*) aligned_alloc(16, sizeof(float)*bufferSize);
+
+//        memcpy(m_ins[0], ins[0], sizeof(float)*bufferSize);
+        FloatComputation::copyVector(m_ins[0] , ins[0], bufferSize);
+
         // muted
         if (m_distance>=MaxDistance)
         {
             int i = 0;
             for(; i < getHarmonicNumber(); i++)
-                FloatComputation::clearVector(outs[i], bufferSize);
+                FloatComputation::clearVector(m_outs[i], bufferSize);
         }
 
         // go !
@@ -117,21 +130,29 @@ public :
             const int index = AudioTools::radianWrap(m_angleLine.incPosition() ) * CICM_1OVER2PI_RATIO;
 
 
-            FloatComputation::multiplyByConstant(ins[0], outs[0],mult , bufferSize);
+            FloatComputation::multiplyByConstant(m_ins[0], m_outs[0],mult , bufferSize);
 
-            int i = 1;
-            for(; i < getHarmonicNumber(); i++)
+            for(int i = 1; i < getHarmonicNumber(); i++)
             {
-                int j = 0;
-                for(; j < bufferSize; j++)
+                for(int j = 0; j < bufferSize; j++)
                 {
-                    outs[i][j] = getEncodingMatrix()[i][index] * ins[0][j] * mult;
+                    m_outs[i][j] = getEncodingMatrix()[i][index] * m_ins[0][j] * mult;
                     //pdAssert( ( (outs[i][j] <=1.) && (outs[i][j] >=-1. ) ) , "val out of [-1;1] in encoder");
 
 
                 }
             }
         }
+
+        for(int i=0; i<getHarmonicNumber(); i++)
+        {
+            memcpy(outs[i], m_outs[i], sizeof(float)*bufferSize);
+            aligned_free(m_outs[i]);
+        }
+        delete[] m_outs;
+
+        aligned_free(m_ins[0]);
+        delete[] m_ins;
     }
 
 
@@ -192,8 +213,8 @@ public:
         pimpl = AmbisonicUtility::getDecoder(order, numOuts);
         AmbisonicUtility::retainInstance();
 
-        m_vectorInput  = NULL;
-        m_vectorOutput = NULL;
+        m_vectorInput  = nullptr;
+        m_vectorOutput = nullptr;
     }
 
     ~AmbisonicDecoder()
@@ -227,7 +248,7 @@ public:
 
         for(int i = 0; i < bufferSize; i++)
         {
-            for(int j = 0; j < getHarmonicNumber(); j++)
+            for(int j = 0; j < getHarmonicNumber(); j++)    //NOTE FOR PROGRAMING : getHarmonicNumber() = 7
             {
                 m_vectorInput[j] = ins[j][i];
             }
@@ -257,14 +278,27 @@ private:
     {
         deleteBuffers();
 
-        m_vectorInput  = new float[pimpl->getHarmonicNumber()];
-        m_vectorOutput = new float[pimpl->getHarmonicNumber()];
+        //m_vectorInput  = new float[pimpl->getHarmonicNumber()];
+        m_vectorInput = (float*) aligned_alloc(16, sizeof(float)*pimpl->getHarmonicNumber());
+
+        //m_vectorOutput = new float[pimpl->getHarmonicNumber()];
+        m_vectorOutput = (float*) aligned_alloc(16, sizeof(float)*pimpl->getHarmonicNumber());
     }
 
     void deleteBuffers()
     {
-        delete[] m_vectorInput;
-        delete[] m_vectorOutput;
+        if(m_vectorInput)
+        {
+            //delete[] m_vectorInput;
+            aligned_free(m_vectorInput);
+            m_vectorInput = nullptr;
+        }
+        if(m_vectorOutput)
+        {
+            //delete[] m_vectorOutput;
+            aligned_free(m_vectorOutput);
+            m_vectorOutput = nullptr;
+        }
     }
     InternalAmbisonicDecoder* pimpl;
 

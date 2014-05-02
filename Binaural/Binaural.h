@@ -14,6 +14,9 @@
 #include "../AudioTools/FloatComputation.h"
 #include "../AudioTools/AudioInternals.h"
 
+#include <iostream>
+#include "../Internal/wave.h"
+
 
 /* **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** */
 /*
@@ -53,6 +56,7 @@ public:
 
     /*virtual*/ inline void process(float **ins, float **outs, int bufferSize)
     {
+
         const float att = 1. /m_numberOfVirtualOutputs;
 
         //     1 : décodage du flux ambisonique sur m_numberOfVirtualOutputs.
@@ -67,15 +71,23 @@ public:
 
 
         //on recopie la queue du buffer precedent à la place du buffer
-
-        FloatComputation::copyVector(m_tempBuffer[0]+bufferSize, m_tempBuffer[0], bufferSize);
-        FloatComputation::copyVector(m_tempBuffer[1]+bufferSize, m_tempBuffer[1], bufferSize);
+#ifndef __arm__
+        FloatComputation::copyVector(m_tempBuffer[0]+bufferSize+1, m_tempBuffer[0]+1, bufferSize);
+        FloatComputation::copyVector(m_tempBuffer[1]+bufferSize+1, m_tempBuffer[1]+1, bufferSize);
+#else
+        FloatComputation::copyVector(m_tempBuffer[0]+bufferSize, m_tempBuffer[0]+1, bufferSize);
+        FloatComputation::copyVector(m_tempBuffer[1]+bufferSize, m_tempBuffer[1]+1, bufferSize);
+#endif // __arm__
 
 
         //     On efface la queue du buffer
-
+#ifndef __arm__
+        FloatComputation::clearVector(m_tempBuffer[0]+bufferSize+1, bufferSize);
+        FloatComputation::clearVector(m_tempBuffer[1]+bufferSize+1, bufferSize);
+#else
         FloatComputation::clearVector(m_tempBuffer[0]+bufferSize, bufferSize);
         FloatComputation::clearVector(m_tempBuffer[1]+bufferSize, bufferSize);
+#endif // __arm__
 
 
         //     2 on effectue l'encodage Binaural pour chaque haut-parleur virtuel
@@ -87,24 +99,22 @@ public:
             const int hrtfSize     = HrtfReader::HrtfLength;
             const int hrtfPosition = speaker*hrtfSize;
 
+            FloatComputation::convolve(m_tempOutput[speaker], bufferSize, m_hrtfArray[0]+hrtfPosition, hrtfSize, m_tempBuffer[0]);
+            FloatComputation::convolve(m_tempOutput[speaker], bufferSize, m_hrtfArray[1]+hrtfPosition, hrtfSize, m_tempBuffer[1]);
 
-            int i = 0;
-            for (; i<bufferSize;i++) // bufferIN
-            {
-                const float inVal = m_tempOutput[speaker][i];
 
-                FloatComputation::addWithMultiply(m_tempBuffer[0]+i, m_hrtfArray[0]+hrtfPosition, inVal, hrtfSize);
-                FloatComputation::addWithMultiply(m_tempBuffer[1]+i, m_hrtfArray[1]+hrtfPosition, inVal, hrtfSize);
-
-            }
             // acum de la contrib de chaque HP dans la sortie stéréo
-            FloatComputation::addWithMultiply( outs[0] , m_tempBuffer[0] , att , bufferSize);
-            FloatComputation::addWithMultiply( outs[1] , m_tempBuffer[1] , att , bufferSize);
-
-
-
-
+            //FloatComputation::addWithMultiply( outs[0] , m_tempBuffer[0]+1 , att , bufferSize);
+            //FloatComputation::addWithMultiply( outs[1] , m_tempBuffer[1]+1 , att , bufferSize);
         }
+
+#ifndef __arm__
+        FloatComputation::multiplyByConstant(m_tempBuffer[0]+1, outs[0], att, bufferSize);
+        FloatComputation::multiplyByConstant(m_tempBuffer[1]+1, outs[1], att, bufferSize);
+#else
+        FloatComputation::multiplyByConstant(m_tempBuffer[0], outs[0], att, bufferSize);
+        FloatComputation::multiplyByConstant(m_tempBuffer[1], outs[1], att, bufferSize);
+#endif // __arm__
         /*
         for (int i = 0; i<bufferSize;i++)
         {
@@ -132,7 +142,6 @@ private:
     int      m_numSamplesPerImpulse;
 
     HrtfSize m_size;
-
 
 };
 
